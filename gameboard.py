@@ -5,8 +5,6 @@ df = pd.read_csv('data/Rushhour6x6_1.csv')
 import matplotlib.pyplot as plt
 import numpy as np
 
-df = pd.read_csv('Rushhour6x6_1.csv')
-
 def gameboard(N, dataframe):
     """
     Arguments: width and height N of the gameboard, dataframe with car positions
