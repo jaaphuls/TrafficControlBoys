@@ -1,5 +1,6 @@
 import pandas as pd
-df = pd.read_csv('Rushhour6x6_1.csv')
+
+df = pd.read_csv('data/Rushhour6x6_1.csv')
 
 import matplotlib.pyplot as plt
 import numpy as np
