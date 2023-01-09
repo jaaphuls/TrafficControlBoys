@@ -1,16 +1,18 @@
 import pandas as pd
-df = pd.read_csv('Rushhour6x6_1.csv')
-
 import matplotlib.pyplot as plt
 import numpy as np
+
+df = pd.read_csv('Rushhour6x6_1.csv')
 
 def gameboard(N, dataframe):
     """
     Arguments: width and height N of the gameboard, dataframe with car positions
+    
+    Creates an NxN gameboard with an edge
 
     Returns the Rush Hour gameboard
     """
-
+    
     gameboard = np.zeros((N+2, N+2, 3))
     gameboard[1:N+1, 1:N+1] = gameboard[3,N+1] = 1
 
