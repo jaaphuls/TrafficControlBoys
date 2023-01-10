@@ -30,15 +30,15 @@ n = possibilities per option
                 r!(n-1)!        r!(n-r)!
     
 
-# hunted pussy
+# hunted pussy (misschien interessant for rush hour wie weet LOL)
 
-def puss_hunt(num_of_puss):
-        hunted_puss = 0
-        for i in range(num_of_puss):
-                hunted_puss += 1
-        
-        return hunted_puss
+#       def puss_hunt(num_of_puss):
+#              hunted_puss = 0
+#              for i in range(num_of_puss):
+#                      hunted_puss += 1
+#     
+#            return hunted_puss
 
-davide_hunted_puss = 837
+# davide_hunted_puss = 837
 
-print(puss_hunt(davide_hunted_puss))
+# print(puss_hunt(davide_hunted_puss))
