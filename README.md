@@ -25,7 +25,20 @@ n = possibilities per option
     Order             Repetiton
                 yes             No
         Yes     n^r             n! / (n-r)! 
-        
+
         No      (r+n-1)! /      n! /
                 r!(n-1)!        r!(n-r)!
     
+
+# hunted pussy
+
+def puss_hunt(num_of_puss):
+        hunted_puss = 0
+        for i in range(num_of_puss):
+                hunted_puss += 1
+        
+        return hunted_puss
+
+davide_hunted_puss = 837
+
+print(puss_hunt(davide_hunted_puss))
