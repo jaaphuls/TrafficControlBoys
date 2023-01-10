@@ -24,7 +24,7 @@ n = possibilities per option
 
                         Repetiton
                 yes             No
-Order   Yes     n^r             n! / (n-r)! 
+        Yes     n^r             n! / (n-r)! 
         No      (r+n-1)! /      n! /
                 r!(n-1)!        r!(n-r)!
     
