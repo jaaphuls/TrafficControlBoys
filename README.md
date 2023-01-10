@@ -26,6 +26,6 @@ n = possibilities per option
                 yes             No
         Yes     n^r             n! / (n-r)!
 ORDER 
-        No      (r+n -1)! /     n! /
+        No      (r+n-1)! /      n! /
                 r!(n-1)!        r!(n-r)!
     
