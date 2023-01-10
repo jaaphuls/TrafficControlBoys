@@ -8,3 +8,10 @@ This project consist of solving various Rush Hour puzzels. The goal is to create
 ## - gameboard.py
 
 This python script visualises the gameboard of Rush Hour. 
+
+# objective function
+
+Try to minimalise the amount of steps that it takes to solve the puzzle
+Think about constraits; no negative amount of steps, no jumping of cars etc. 
+
+
