@@ -1,8 +1,11 @@
 import pandas as pd
 
-df = pd.read_csv('data/Rushhour6x6_1.csv')
+# df = pd.read_csv('data/Rushhour6x6_1.csv')
 # df = pd.read_csv('data/Rushhour6x6_2.csv')
 # df = pd.read_csv('data/Rushhour6x6_3.csv')
+# df = pd.read_csv('data/Rushhour9x9_4.csv')
+# df = pd.read_csv('data/Rushhour9x9_5.csv')
+df = pd.read_csv('data/Rushhour9x9_6.csv')
 
 
 import matplotlib.pyplot as plt
@@ -18,9 +21,13 @@ def gameboard(N, dataframe):
     """
     
     # list with random colors
-    color_list = [[0.5, 0.5, 0], [0, 1, 0], [0, 0.5, 0], [0, 1, 1],\
-    [0, 0.5, 0.5], [0, 0, 1], [0, 0, 0.5], [1, 0, 1], \
-    [0.5, 0, 0.5], [0.5,0.5,0.5], [1,1,0], [1, 0.5, 0]]
+    color_list = [[0, 0, 0.5], [0, 0, 1], [0, 0.5, 0], \
+    [0, 0.5, 0.5], [0, 0.5, 1], [0, 1, 0], [0, 1, 0.5], \
+    [0, 1, 1], [0.5, 0, 0], [0.5, 0, 0.5], [0.5, 0, 1], \
+    [0.5, 0.5, 0], [0.5, 0.5, 0.5], [0.5, 0.5, 1], \
+    [0.5, 1, 0], [0.5, 1, 0.5], [0.5, 1, 1], [1, 0, 0.5], \
+    [1, 0, 1], [1, 0.5, 0], [1, 0.5, 0.5], [1, 0.5, 1], \
+    [1, 1, 0], [1, 1, 0.5], [0.9,0.9,0.9]]
 
     # create an NxN gameboard with an edge 1 and an RGB color channel
     gameboard = np.zeros((N+2, N+2, 3))
@@ -44,6 +51,6 @@ def gameboard(N, dataframe):
 
     return gameboard
 
-puzzle = gameboard(6, df)
+puzzle = gameboard(9, df)
 plt.imshow(puzzle)
 plt.show()
