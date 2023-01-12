@@ -1,11 +1,11 @@
 import pandas as pd
 
-# df = pd.read_csv('data/Rushhour6x6_1.csv')
+df = pd.read_csv('data/Rushhour6x6_1.csv')
 # df = pd.read_csv('data/Rushhour6x6_2.csv')
 # df = pd.read_csv('data/Rushhour6x6_3.csv')
 # df = pd.read_csv('data/Rushhour9x9_4.csv')
 # df = pd.read_csv('data/Rushhour9x9_5.csv')
-df = pd.read_csv('data/Rushhour9x9_6.csv')
+# df = pd.read_csv('data/Rushhour9x9_6.csv')
 # df = pd.read_csv('data/Rushhour12x12_7.csv')
 
 
@@ -74,6 +74,7 @@ def gameboard(N, dataframe):
 
     return gameboard
 
-puzzle = gameboard(9, df)
+puzzle = gameboard(6, df)
 plt.imshow(puzzle)
 plt.show()
+
