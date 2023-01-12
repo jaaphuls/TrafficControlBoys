@@ -78,12 +78,15 @@ puzzle = gameboard(6, df)
 plt.imshow(puzzle)
 plt.show()
 
-# create an NxN gameboard with a width 1 edge and an RGB color channel
-game_board = np.zeros((N+2, N+2, 3))
-    
-    # the inner side of the gameboard should be changed to white
-game_board[1:N+1, 1:N+1] = [1, 1, 1]
+class game_board():
 
+    def __init__(self, N):
+        N = 6
+        # create an NxN gameboard with a width 1 edge and an RGB color channel
+        self.gameboard = np.zeros((N+2, N+2, 3))
+
+        # the inner side of the gameboard should be changed to white
+        self.gameboard[1:N+1, 1:N+1] = [1, 1, 1]
 
 class vehicle():
 
@@ -94,7 +97,7 @@ class vehicle():
         self.x_pos = col
         self.y_pos = row
         self.length = length
-        if car != X:
+        if car != "X":
             self.color = [random.random, random.random, random.random]
         else: 
             self.color = [1,0,0]
@@ -103,7 +106,7 @@ class vehicle():
     def mover(self):
 
         # check if the orientation is horizontal or vertiacal because this decides if the cars moves up/down or left/right
-        if self.orientation == H:
+        if self.orientation == "H":
 
             # we have to check if it is at the edge of the board or it is against a different car it should not move in that
             # direction so the car have to be skipped or moved in the different direction on its oritentation.
@@ -116,11 +119,13 @@ class vehicle():
             # also remind the previous states to prevent a loop on moving a car up and then down etc
 
             # define the area where the car is on the board 
-            self.area_vehicle = [self.y_pos, self.x_pos : self.x_pos + self.length]
+            self.area_vehicle = [[self.y_pos, self.x_pos], [self.y_pos, self.x_pos + 1]]
 
             # position infront or behind the car where the car is moved to
-            check_spot = [self.y_pos, self.x_pos + 1 : self.x_pos + self.length + 1]
+            check_spot = [self.y_pos, self.x_pos + self.length + 1]
 
-            if check_spot == []:
+            # to move the car 
+            if game_board[check_spot] == [1,1,1]:
                 self.x_pos += 1
+                self.area_vehicle = [[self.y_pos, self.x_pos], [self.y_pos, self.x_pos + 1]]
 
