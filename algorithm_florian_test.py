@@ -78,3 +78,4 @@ puzzle = gameboard(6, df)
 plt.imshow(puzzle)
 plt.show()
 
+# dit is een test line
