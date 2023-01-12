@@ -18,7 +18,7 @@ def gameboard(input_filename):
     
     # find the width and height N of the gameboard
     # the slicing is corrected for N > 9
-    if len(input_filename) == 15:
+    if len(input_filename) == 22:
         N = int(input_filename[15])
 
     else:
