@@ -78,13 +78,14 @@ puzzle = gameboard(6, df)
 plt.imshow(puzzle)
 plt.show()
 
-class cars():
+class vehicle():
     
     # here the cars are made and given a place and an orientation 
-    def __init__(self, x_pos, y_pos, orientation):
+    def __init__(self, x_pos, y_pos, orientation, length):
         self.x_pos = x_pos 
         self.y_pos = y_pos
         self.orientation = orientation
+        self.length = length
 
     # here a new position is given to a specific car
     def mover(self):
@@ -94,4 +95,11 @@ class cars():
 
             # we have to check if it is at the edge of the board or it is against a different car it should not move in that 
             # direction so the car have to be skipped or moved in the different direction on its oritentation.
+
+            # TO DO
+            # make a way to check if the surrounding positions of the car has values higher than [0, 0, 0]. 
+            # if the position has a value of [0, 0, 0] the car can move in that direction. 
+            # KEEP IN MIND that a car covers multiple positons on the board 
+
+            # also remind the previous states to prevent a loop on moving a car up and then down etc 
             self.x_pos += 1
