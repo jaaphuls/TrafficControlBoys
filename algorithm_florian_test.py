@@ -109,3 +109,5 @@ class vehicle():
             self.x_pos += 1
 
             # zie je dit?
+
+            # dd
