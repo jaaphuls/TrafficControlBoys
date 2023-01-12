@@ -1,25 +1,22 @@
 import pandas as pd
-
-# df = pd.read_csv('data/Rushhour6x6_1.csv')
-# df = pd.read_csv('data/Rushhour6x6_2.csv')
-# df = pd.read_csv('data/Rushhour6x6_3.csv')
-# df = pd.read_csv('data/Rushhour9x9_4.csv')
-# df = pd.read_csv('data/Rushhour9x9_5.csv')
-df = pd.read_csv('data/Rushhour9x9_6.csv')
-# df = pd.read_csv('data/Rushhour12x12_7.csv')
+import argparse
 
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-def gameboard(N, dataframe):
+def gameboard(input_filename):
     """
-    Arguments: width and height N of the gameboard, dataframe with car positions
+    Arguments: csv input filename with car positions
     
     Creates an NxN gameboard with a black edge and colored cars
 
     Returns the Rush Hour gameboard
     """
+    
+    dataframe = pd.read_csv(input_filename)
+
+    N = int(input_filename[15])
     
     # list with random colors
     color_list = [[0, 0, 0.5], [0, 0, 1], [0, 0.5, 0], \
@@ -74,6 +71,16 @@ def gameboard(N, dataframe):
 
     return gameboard
 
-puzzle = gameboard(9, df)
+parser = argparse.ArgumentParser()
+
+# Adding arguments
+parser.add_argument("input", help = "input file (csv)")
+
+# Read arguments from command line
+args = parser.parse_args()
+
+# Run main with provide arguments
+puzzle = gameboard(args.input)
+
 plt.imshow(puzzle)
 plt.show()
