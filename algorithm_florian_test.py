@@ -1,5 +1,7 @@
 import pandas as pd
 import random 
+import matplotlib.pyplot as plt
+import numpy as np
 
 df = pd.read_csv('data/Rushhour6x6_1.csv')
 # df = pd.read_csv('data/Rushhour6x6_2.csv')
@@ -9,9 +11,6 @@ df = pd.read_csv('data/Rushhour6x6_1.csv')
 # df = pd.read_csv('data/Rushhour9x9_6.csv')
 # df = pd.read_csv('data/Rushhour12x12_7.csv')
 
-
-import matplotlib.pyplot as plt
-import numpy as np
 
 def gameboard(N, dataframe):
     """
@@ -79,6 +78,13 @@ puzzle = gameboard(6, df)
 plt.imshow(puzzle)
 plt.show()
 
+# create an NxN gameboard with a width 1 edge and an RGB color channel
+game_board = np.zeros((N+2, N+2, 3))
+    
+    # the inner side of the gameboard should be changed to white
+game_board[1:N+1, 1:N+1] = [1, 1, 1]
+
+
 class vehicle():
 
     # here the cars are made and given a place and an orientation, column is x and row is y
@@ -110,11 +116,11 @@ class vehicle():
             # also remind the previous states to prevent a loop on moving a car up and then down etc
 
             # define the area where the car is on the board 
-            self.area_vehicle = self.x_pos + self.length - 1
+            self.area_vehicle = [self.y_pos, self.x_pos : self.x_pos + self.length]
 
-            if self.x_pos:
+            # position infront or behind the car where the car is moved to
+            check_spot = [self.y_pos, self.x_pos + 1 : self.x_pos + self.length + 1]
+
+            if check_spot == []:
                 self.x_pos += 1
 
-            # zie je dit?
-
-            # dd
