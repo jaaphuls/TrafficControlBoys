@@ -87,7 +87,10 @@ class vehicle():
         self.x_pos = col
         self.y_pos = row
         self.length = length
-        self.color = [random.random, random.random, random.random]
+        if car =! X:
+            self.color = [random.random, random.random, random.random]
+        else: 
+            self.color = [1,0,0]
 
     # here a new position is given to a specific car
     def mover(self):
