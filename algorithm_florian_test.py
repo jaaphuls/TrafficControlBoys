@@ -1,4 +1,5 @@
 import pandas as pd
+import random 
 
 df = pd.read_csv('data/Rushhour6x6_1.csv')
 # df = pd.read_csv('data/Rushhour6x6_2.csv')
@@ -87,7 +88,7 @@ class vehicle():
         self.x_pos = col
         self.y_pos = row
         self.length = length
-        if car =! X:
+        if car != X:
             self.color = [random.random, random.random, random.random]
         else: 
             self.color = [1,0,0]
