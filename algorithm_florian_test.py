@@ -15,12 +15,12 @@ import numpy as np
 def gameboard(N, dataframe):
     """
     Arguments: width and height N of the gameboard, dataframe with car positions
-    
+
     Creates an NxN gameboard with a black edge and colored cars
 
     Returns the Rush Hour gameboard
     """
-    
+
     # list with random colors
     color_list = [[0, 0, 0.5], [0, 0, 1], [0, 0.5, 0], \
     [0, 0.5, 0.5], [0, 0.5, 1], [0, 1, 0], [0, 1, 0.5], \
@@ -32,17 +32,17 @@ def gameboard(N, dataframe):
 
     # create an NxN gameboard with a width 1 edge and an RGB color channel
     gameboard = np.zeros((N+2, N+2, 3))
-    
+
     # the inner side of the gameboard should be changed to white
     gameboard[1:N+1, 1:N+1] = [1, 1, 1]
 
     # loop through the indices and rows of the car positions dataframe
     for i, row in dataframe.iterrows():
-        
+
         # reset to 0 if i reaches the length of the color list
         if i >= len(color_list):
             i -= len(color_list)
-        
+
         # the x and y coordinates correspond to the current column and row respectively
         x = row['col']
         y = row['row']
@@ -52,23 +52,23 @@ def gameboard(N, dataframe):
 
         # check if the car is not the red car
         if row['car'] != 'X':
-            
+
             # find the orientation of the car
             if row['orientation'] == 'H':
-                
+
                 # add the length to the x coordinate if the orientation is horizontal
                 gameboard[y, x:x+length] = color_list[i]
             else:
-                
+
                 # add the length to the y coordinate if the orientation is vertical
                 gameboard[y:y+length, x] = color_list[i]
-                
+
         # car 'X' corresponds to the red car
         else:
-            
+
             # make this car red
             gameboard[y, x:x+length] = [1, 0, 0]
-            
+
             # change the edge block in the exit to white
             gameboard[y, N+1] = [1, 1, 1]
 
@@ -79,14 +79,15 @@ plt.imshow(puzzle)
 plt.show()
 
 class vehicle():
-    
+
     # here the cars are made and given a place and an orientation, column is x and row is y
     def __init__(self, car, orientation, col, row, length):
         self.car = car
         self.orientation = orientation
-        self.x_pos = x_pos
-        self.y_pos = y_pos
+        self.x_pos = col
+        self.y_pos = row
         self.length = length
+        self.color = [random.random, random.random, random.random]
 
     # here a new position is given to a specific car
     def mover(self):
@@ -94,19 +95,21 @@ class vehicle():
         # check if the orientation is horizontal or vertiacal because this decides if the cars moves up/down or left/right
         if self.orientation == H:
 
-            # we have to check if it is at the edge of the board or it is against a different car it should not move in that 
+            # we have to check if it is at the edge of the board or it is against a different car it should not move in that
             # direction so the car have to be skipped or moved in the different direction on its oritentation.
 
             # TO DO
-            # make a way to check if the surrounding positions of the car has values higher than [0, 0, 0]. 
-            # if the position has a value of [0, 0, 0] the car can move in that direction. 
-            # KEEP IN MIND that a car covers multiple positons on the board 
+            # make a way to check if the surrounding positions of the car has values higher than [0, 0, 0].
+            # if the position has a value of [0, 0, 0] the car can move in that direction.
+            # KEEP IN MIND that a car covers multiple positons on the board
 
-            # also remind the previous states to prevent a loop on moving a car up and then down etc 
-            self.area_vehicle = self.x_pos + self.length
+            # also remind the previous states to prevent a loop on moving a car up and then down etc
 
-            if self.x_pos 
-            self.x_pos += 1
+            # define the area where the car is on the board 
+            self.area_vehicle = self.x_pos + self.length - 1
+
+            if self.x_pos:
+                self.x_pos += 1
 
             # zie je dit?
 
