@@ -86,6 +86,7 @@ class vehicle():
         self.y_pos = y_pos
         self.orientation = orientation
         self.length = length
+        self.move = False
 
     # here a new position is given to a specific car
     def mover(self):
@@ -106,5 +107,25 @@ class vehicle():
 
     # this function executes every move
     def step(self): 
-        
+
+        # check if the car should move with this step
+        if self.move == True: 
+            
+            # check in what orientation the car should move
+            if self.orientation == 'H': 
+
+                # give a chance of 0.5 to either move towards the right or left
+                if random.randint(1, 2) != 1: 
+                    self.x_pos += 1 
+                else: 
+                    self.x_pos -= 1
+            
+            # if the orientation is not horizontal, move on the y-axis
+            else: 
+
+                # give the same chance of 0.5 to move towards the top or the bottem
+                if random.randint(1, 2) != 1: 
+                    self.y_pos += 1 
+                else: 
+                    self.y_pos -= 1
         
