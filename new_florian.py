@@ -4,102 +4,80 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 
-def gameboard(input_filename):
-    """
-    Arguments: csv input filename with car positions
-    
-    Creates an NxN gameboard with a black edge and colored cars
+class gameboard():
 
-    Returns the Rush Hour gameboard
-    """
-    
-    # read the csv input file as a pandas dataframe
-    dataframe = pd.read_csv(input_filename)
-    
-    # find the width and height N of the gameboard
-    # the slicing is corrected for N > 9
-    if len(input_filename) == 15:
-        N = int(input_filename[15])
+    def __init__(self, input_filename):
+        """
+        Arguments: csv input filename with car positions
+        
+        Creates an NxN gameboard with a black edge and colored cars
 
-    else:
-        N = int(input_filename[16:18])
+        Returns the Rush Hour gameboard
+        """
+        
+        # read the csv input file as a pandas dataframe
+        self.dataframe = pd.read_csv(input_filename)
 
-    # create an NxN gameboard with a width 1 edge and an RGB color channel
-    gameboard = np.zeros((N+2, N+2, 3))
-    
-    # the inner side of the gameboard should be changed to white
-    gameboard[1:N+1, 1:N+1] = [1, 1, 1]
-
-    # loop through the indices and rows of the car positions dataframe
-    for i, row in dataframe.iterrows():
-        
-        # the x and y coordinates correspond to the current column and row respectively
-        x = row['col']
-        y = row['row']
-        
-        # find the length of the current car
-        length = row['length']
-        
-        # create random color values
-        # the red value is limited to prevent red cars from appearing
-        r = random.uniform(0,0.7)
-        
-        # cars with different lengths are given a slightly different color
-        if length == 2:
-            g = random.uniform(0,0.8)
-            b = random.random()
+        # find the width and height N of the gameboard
+        # the slicing is corrected for N > 9
+        if len(input_filename) == 15:
+            self.N = int(input_filename[15])
 
         else:
-            g = random.random()
-            b = random.uniform(0,0.8)
+            self.N = int(input_filename[13])
 
-        # check if the car is not the red car
-        if row['car'] != 'X':
+        # create an NxN gameboard with a width 1 edge and an RGB color channel
+        self.gameboard = np.zeros((self.N+2, self.N+2, 3))
+        
+        # the inner side of the gameboard should be changed to white
+        self.gameboard[1:self.N+1, 1:self.N+1] = [1, 1, 1]
+
+    def game_board(self):
+
+        # loop through the indices and rows of the car positions dataframe
+        for i, row in self.dataframe.iterrows():
             
-            # find the orientation of the car
-            if row['orientation'] == 'H':
+            # the x and y coordinates correspond to the current column and row respectively
+            self.x = row['col']
+            self.y = row['row']
+            
+            # find the length of the current car
+            self.length = row['length']
+            
+            # create random color values
+            # the red value is limited to prevent red cars from appearing
+            r = random.uniform(0,0.7)
+            
+            # cars with different lengths are given a slightly different color
+            if self.length == 2:
+                g = random.uniform(0,0.8)
+                b = random.random()
+
+            else:
+                g = random.random()
+                b = random.uniform(0,0.8)
+
+            # check if the car is not the red car
+            if row['car'] != 'X':
                 
-                # add the length to the x coordinate if the orientation is horizontal
-                gameboard[y, x:x+length] = [r, g, b]
+                # find the orientation of the car
+                if row['orientation'] == 'H':
+                    
+                    # add the length to the x coordinate if the orientation is horizontal
+                    self.gameboard[self.y, self.x:self.x+self.length] = [r, g, b]
+                else:
+                    
+                    # add the length to the y coordinate if the orientation is vertical
+                    self.gameboard[self.y:self.y+self.length, self.x] = [r, g, b]
+                    
+            # car 'X' corresponds to the red car
             else:
                 
-                # add the length to the y coordinate if the orientation is vertical
-                gameboard[y:y+length, x] = [r, g, b]
+                # make this car red
+                self.gameboard[self.y, self.x:self.x+self.length] = [1, 0, 0]
                 
-        # car 'X' corresponds to the red car
-        else:
-            
-            # make this car red
-            gameboard[y, x:x+length] = [1, 0, 0]
-            
-            # change the edge block in the exit to white
-            gameboard[y, N+1] = [1, 1, 1]
-
-    return gameboard
-
-parser = argparse.ArgumentParser()
-
-# Adding arguments
-parser.add_argument("input", help = "input file (csv)")
-
-# Read arguments from command line
-args = parser.parse_args()
-
-# Run main with provide arguments
-puzzle = gameboard(args.input)
-
-plt.imshow(puzzle)
-plt.show()
-
-class game_board():
-
-    def __init__(self, N):
-        N = 6
-        # create an NxN gameboard with a width 1 edge and an RGB color channel
-        self.gameboard = np.zeros((N+2, N+2, 3))
-
-        # the inner side of the gameboard should be changed to white
-        self.gameboard[1:N+1, 1:N+1] = [1, 1, 1]
+                # change the edge block in the exit to white
+                self.gameboard[self.y, self.N+1] = [1, 1, 1]
 
 class vehicle():
 
@@ -138,7 +116,23 @@ class vehicle():
             check_spot = [self.y_pos, self.x_pos + self.length + 1]
 
             # to move the car 
-            if game_board[check_spot] == [1,1,1]:
+            if self.gameboard[check_spot] == [1,1,1]:
                 self.x_pos += 1
                 self.area_vehicle = [[self.y_pos, self.x_pos], [self.y_pos, self.x_pos + 1]]
 
+'''
+parser = argparse.ArgumentParser()
+
+# Adding arguments
+parser.add_argument("input", help = "input file (csv)")
+
+# Read arguments from command line
+args = parser.parse_args()
+
+# Run main with provide arguments
+puzzle = gameboard(args.input)'''
+
+puzzle = gameboard('data/Rushhour6x6_1.csv')
+
+plt.imshow(puzzle)
+plt.show()
