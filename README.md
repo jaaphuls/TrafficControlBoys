@@ -22,10 +22,11 @@ Repetition = can I repeat same possibilitiy?
 r = number of options
 n = possibilities per option
 
-    Order             Repetiton
+                        Repetiton
                 yes             No
-        Yes     n^r             n! / (n-r)! 
-
-        No      (r+n-1)! /      n! /
+        Yes     n^r             n! / (n-r)!
+ORDER 
+        No      (r+n -1)! /     n! /
                 r!(n-1)!        r!(n-r)!
- 
+
+    
