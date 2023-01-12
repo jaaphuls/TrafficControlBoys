@@ -103,3 +103,4 @@ class vehicle():
 
             # also remind the previous states to prevent a loop on moving a car up and then down etc 
             self.x_pos += 1
+
