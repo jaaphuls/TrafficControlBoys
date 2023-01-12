@@ -80,11 +80,12 @@ plt.show()
 
 class vehicle():
     
-    # here the cars are made and given a place and an orientation 
+    # here the cars are made and given a place and an orientation, column is x and row is y
     def __init__(self, car, orientation, col, row, length):
+        self.car = car
+        self.orientation = orientation
         self.x_pos = x_pos
         self.y_pos = y_pos
-        self.orientation = orientation
         self.length = length
 
     # here a new position is given to a specific car
@@ -102,4 +103,7 @@ class vehicle():
             # KEEP IN MIND that a car covers multiple positons on the board 
 
             # also remind the previous states to prevent a loop on moving a car up and then down etc 
+            self.area_vehicle = self.x_pos + self.length
+
+            if self.x_pos 
             self.x_pos += 1
