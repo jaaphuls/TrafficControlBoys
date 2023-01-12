@@ -78,4 +78,20 @@ puzzle = gameboard(6, df)
 plt.imshow(puzzle)
 plt.show()
 
-# dit is een test line
+class cars():
+    
+    # here the cars are made and given a place and an orientation 
+    def __init__(self, x_pos, y_pos, orientation):
+        self.x_pos = x_pos 
+        self.y_pos = y_pos
+        self.orientation = orientation
+
+    # here a new position is given to a specific car
+    def mover(self):
+
+        # check if the orientation is horizontal or vertiacal because this decides if the cars moves up/down or left/right
+        if self.orientation == H:
+
+            # we have to check if it is at the edge of the board or it is against a different car it should not move in that 
+            # direction so the car have to be skipped or moved in the different direction on its oritentation.
+            self.x_pos += 1
