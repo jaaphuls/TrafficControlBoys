@@ -81,8 +81,8 @@ plt.show()
 class vehicle():
     
     # here the cars are made and given a place and an orientation 
-    def __init__(self, x_pos, y_pos, orientation, length):
-        self.x_pos = x_pos 
+    def __init__(self, car, orientation, col, row, length):
+        self.x_pos = x_pos
         self.y_pos = y_pos
         self.orientation = orientation
         self.length = length
