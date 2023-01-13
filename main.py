@@ -18,10 +18,10 @@ args = parser.parse_args()
 dataframe = pd.read_csv(args.input)
 
 # loop through the indices and rows of the car positions dataframe
+car_list = []
+
 for i, row in dataframe.iterrows():
-    # print(row[0])
-    vehicle(row[0], row[1], row[2], row[3], row[4])
-    print(vehicle)
-    
+    car_list.append(vehicle(row[0], row[1], row[2], row[3], row[4]))
+
 # Run main with provide arguments
 board_visualized = gb(dataframe, 6)
