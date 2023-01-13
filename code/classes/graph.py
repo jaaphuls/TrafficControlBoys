@@ -1,5 +1,4 @@
 import pandas as pd
-import argparse
 import random
 import matplotlib.pyplot as plt
 import numpy as np
@@ -22,15 +21,14 @@ class graph():
         self.dataframe = pd.read_csv(input_filename)
         
         # find the size of the board
-        N = self.dataframe.max()
+        self.N = self.dataframe.max()
 
         # create an NxN gameboard with a width 1 edge and an RGB color channel
-        gameboard = np.zeros((N+2, N+2, 3))
+        self.gameboard = np.zeros((self.N+2, self.N+2, 3))
         
         # the inner side of the gameboard should be changed to white
-        gameboard[1:N+1, 1:N+1] = [1, 1, 1]
+        self.gameboard[1:self.N+1, 1:self.N+1] = [1, 1, 1]
 
-        return gameboard
 
     def add_vehicles(self):
 
@@ -77,22 +75,15 @@ class graph():
                 self.board[y, x:x+length] = [1, 0, 0]
                 
                 # change the edge block in the exit to white
-                self.board[y, N+1] = [1, 1, 1]
+                self.board[y, self.N+1] = [1, 1, 1]
 
-        return self.board
+        #return self.board
 
-    # parser = argparse.ArgumentParser()
 
-    # Adding arguments
-    # parser.add_argument("input", help = "input file (csv)")
-
-    # Read arguments from command line
-    # args = parser.parse_args()
-
-    file_name = "data/Rushhour6x6_1.csv"
+file_name = "Rushhour6x6_1.csv"
 
     # Run main with provide arguments
-    puzzle = graph(file_name)
+puzzle = graph(file_name)
 
-    plt.imshow(puzzle)
-    plt.show()
+plt.imshow(puzzle)
+plt.show()
