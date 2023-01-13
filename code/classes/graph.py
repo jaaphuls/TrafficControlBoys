@@ -1,23 +1,28 @@
-import csv
 import pandas as pd
-import numpy as np
+import argparse
 import random
-import matplotlib as plt
+import matplotlib.pyplot as plt
+import numpy as np
 
-# from clases.cars import 
+class graph():
 
-class Graph:
+    def __init__(self, input_filename):
+        self.board = self.create_board(input_filename)
 
-    def __init__(self, source_file):
-
-        self.board = self.load_board(source_file)
-
-    def load_board(self, source_file):
+    def create_board(self, input_filename):
+        """
+        Arguments: csv input filename with car positions
         
-        self.df = pd.read_csv(source_file)
+        Creates an NxN gameboard with a black edge and colored cars
 
+        Returns the Rush Hour gameboard
+        """
+        
+        # read the csv input file as a pandas dataframe
+        self.dataframe = pd.read_csv(input_filename)
+        
         # find the size of the board
-        N = self.df.max()
+        N = self.dataframe.max()
 
         # create an NxN gameboard with a width 1 edge and an RGB color channel
         gameboard = np.zeros((N+2, N+2, 3))
@@ -27,24 +32,24 @@ class Graph:
 
         return gameboard
 
-    def load_cars(self):
+    def add_vehicles(self):
 
         # loop through the indices and rows of the car positions dataframe
-        for i, row in self.df.iterrows():
+        for i, row in self.dataframe.iterrows():
             
             # the x and y coordinates correspond to the current column and row respectively
-            self.x = row['col']
-            self.y = row['row']
+            x = row['col']
+            y = row['row']
             
             # find the length of the current car
-            self.length = row['length']
+            length = row['length']
             
             # create random color values
             # the red value is limited to prevent red cars from appearing
             r = random.uniform(0,0.7)
             
             # cars with different lengths are given a slightly different color
-            if self.length == 2:
+            if length == 2:
                 g = random.uniform(0,0.8)
                 b = random.random()
 
@@ -59,25 +64,35 @@ class Graph:
                 if row['orientation'] == 'H':
                     
                     # add the length to the x coordinate if the orientation is horizontal
-                    self.gameboard[self.y, self.x:self.x+self.length] = [r, g, b]
+                    self.board[y, x:x+length] = [r, g, b]
                 else:
                     
                     # add the length to the y coordinate if the orientation is vertical
-                    self.gameboard[self.y:self.y+self.length, self.x] = [r, g, b]
+                    self.board[y:y+length, x] = [r, g, b]
                     
             # car 'X' corresponds to the red car
             else:
                 
                 # make this car red
-                self.gameboard[self.y, self.x:self.x+self.length] = [1, 0, 0]
+                self.board[y, x:x+length] = [1, 0, 0]
                 
                 # change the edge block in the exit to white
-                self.gameboard[self.y, self.N+1] = [1, 1, 1]
+                self.board[y, N+1] = [1, 1, 1]
 
+        return self.board
 
-source_file = "data/Rushhour6x6_1.csv"
+    # parser = argparse.ArgumentParser()
 
-puzzle = Graph(source_file)
+    # Adding arguments
+    # parser.add_argument("input", help = "input file (csv)")
 
-plt.imshow(puzzle)
-plt.show()
+    # Read arguments from command line
+    # args = parser.parse_args()
+
+    file_name = "data/Rushhour6x6_1.csv"
+
+    # Run main with provide arguments
+    puzzle = graph(file_name)
+
+    plt.imshow(puzzle)
+    plt.show()
