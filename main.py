@@ -1,4 +1,5 @@
 from code.visualisation.visualise import gameboard as gb 
+from code.classes.vehicle import vehicle
 import pandas as pd
 import argparse
 import random
@@ -15,6 +16,12 @@ args = parser.parse_args()
 
 # read the csv input file as a pandas dataframe
 dataframe = pd.read_csv(args.input)
+
+# loop through the indices and rows of the car positions dataframe
+for i, row in dataframe.iterrows():
+    # print(row[0])
+    vehicle(row[0], row[1], row[2], row[3], row[4])
+    print(vehicle)
     
 # Run main with provide arguments
 board_visualized = gb(dataframe, 6)
