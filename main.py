@@ -1,4 +1,9 @@
-from code.visualisation import gameboard 
+from code.visualisation.visualise import gameboard as gb 
+import pandas as pd
+import argparse
+import random
+import matplotlib.pyplot as plt
+import numpy as np
 
 parser = argparse.ArgumentParser()
 
@@ -9,7 +14,4 @@ parser.add_argument("input", help = "input file (csv)")
 args = parser.parse_args()
 
 # Run main with provide arguments
-puzzle = gameboard(args.input)
-
-plt.imshow(puzzle)
-plt.show()
+puzzle = gb(args.input)
