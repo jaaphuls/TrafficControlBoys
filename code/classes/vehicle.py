@@ -1,3 +1,5 @@
+
+
 class vehicle:
 
     def __init__(self, name, column, row, orientation, length):
