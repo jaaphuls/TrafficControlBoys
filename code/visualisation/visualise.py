@@ -4,7 +4,7 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 
-def gameboard(input_filename):
+def gameboard(input_filename, N):
     """
     Arguments: csv input filename with car positions
     
@@ -12,17 +12,6 @@ def gameboard(input_filename):
 
     Returns the Rush Hour gameboard
     """
-    
-    # read the csv input file as a pandas dataframe
-    dataframe = pd.read_csv(input_filename)
-    
-    # find the width and height N of the gameboard
-    # the slicing is corrected for N > 9
-    if len(input_filename) == 22:
-        N = int(input_filename[15])
-
-    else:
-        N = int(input_filename[16:18])
 
     # create an NxN gameboard with a width 1 edge and an RGB color channel
     gameboard = np.zeros((N+2, N+2, 3))
@@ -31,7 +20,7 @@ def gameboard(input_filename):
     gameboard[1:N+1, 1:N+1] = [1, 1, 1]
 
     # loop through the indices and rows of the car positions dataframe
-    for i, row in dataframe.iterrows():
+    for i, row in input_filename.iterrows():
         
         # the x and y coordinates correspond to the current column and row respectively
         x = row['col']
@@ -77,20 +66,3 @@ def gameboard(input_filename):
 
     plt.imshow(gameboard)
     plt.show()
-
-    #return gameboard
-'''
-parser = argparse.ArgumentParser()
-
-# Adding arguments
-parser.add_argument("input", help = "input file (csv)")
-
-# Read arguments from command line
-args = parser.parse_args()
-
-# Run main with provide arguments
-puzzle = gameboard(args.input)
-
-plt.imshow(puzzle)
-plt.show()
-'''

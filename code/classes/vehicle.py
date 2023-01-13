@@ -2,9 +2,9 @@
 
 class vehicle:
 
-    def __init__(self, name, column, row, orientation, length):
-        self.name = name
-        self.x = column
+    def __init__(self, car, orientation, col, row, length):
+        self.car = car
+        self.x = col
         self.y = row
         self.orientation = orientation
         self.length = length 
