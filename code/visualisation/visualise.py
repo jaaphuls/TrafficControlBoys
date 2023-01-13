@@ -75,8 +75,8 @@ def gameboard(input_filename):
             # change the edge block in the exit to white
             gameboard[y, N+1] = [1, 1, 1]
 
-    return gameboard
-
+    #return gameboard
+'''
 parser = argparse.ArgumentParser()
 
 # Adding arguments
@@ -90,3 +90,4 @@ puzzle = gameboard(args.input)
 
 plt.imshow(puzzle)
 plt.show()
+'''
