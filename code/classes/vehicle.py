@@ -3,6 +3,7 @@
 class vehicle:
 
     def __init__(self, car, orientation, col, row, length):
+        self.color = [0,0,0]
         self.car = car
         self.x = col
         self.y = row
