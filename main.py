@@ -20,8 +20,7 @@ dataframe = pd.read_csv(args.input)
 # loop through the indices and rows of the car positions dataframe
 for i, row in dataframe.iterrows():
     # print(row[0])
-    vehicle(row[0], row[1], row[2], row[3], row[4])
-    print(vehicle)
+    vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length'])
     
 # Run main with provide arguments
 board_visualized = gb(dataframe, 6)
