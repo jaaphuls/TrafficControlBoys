@@ -1,5 +1,5 @@
 from code.visualisation.visualise import gameboard as gb 
-from code.classes.vehicle import vehicle
+from code.classes.vehicle import Vehicle
 import pandas as pd
 import argparse
 import random
@@ -21,7 +21,7 @@ dataframe = pd.read_csv(args.input)
 car_list = []
 
 for i, row in dataframe.iterrows():
-    car_list.append(vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
+    car_list.append(Vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
 
 # Run main with provide arguments
 board_visualized = gb(dataframe, 6)

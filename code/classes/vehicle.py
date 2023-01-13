@@ -1,6 +1,6 @@
 
 
-class vehicle:
+class Vehicle:
 
     def __init__(self, car, orientation, col, row, length):
         self.color = [0,0,0]
