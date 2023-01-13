@@ -13,5 +13,8 @@ parser.add_argument("input", help = "input file (csv)")
 # Read arguments from command line
 args = parser.parse_args()
 
+# read the csv input file as a pandas dataframe
+dataframe = pd.read_csv(args.input)
+    
 # Run main with provide arguments
-puzzle = gb(args.input)
+board_visualized = gb(dataframe, 6)
