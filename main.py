@@ -21,7 +21,7 @@ dataframe = pd.read_csv(args.input)
 car_list = []
 
 for i, row in dataframe.iterrows():
-    car_list.append(vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length'])
+    car_list.append(vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
 
 # Run main with provide arguments
 board_visualized = gb(dataframe, 6)
