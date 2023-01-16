@@ -4,7 +4,6 @@ import random
 
 from code.classes.vehicle import Vehicle
 
-
 class create_board:
 
     def __init__(self, cars, N=6,):
@@ -20,6 +19,12 @@ class create_board:
                 pass
             
                 # self.rush_board = self.rush_board[car.area]
+
+    def check_move(self):
+
+        for car in self.car_list:
+            
+ 
     
 
         
