@@ -8,7 +8,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-board_size = input('What are the board dimensions? \n')
+while True:
+    board_size = input("What are the board dimensions (6x6, 9x9 or 12x12)? \n")
+    if board_size not in ('6', '9', '12', '6x6', '9x9', '12x12'):
+        print("There are no boards with these dimensions, please chose the correct dimensions!")
+    else:
+        break
+
 
 if board_size == '6' or board_size == '6x6':
     board_size = 6 
