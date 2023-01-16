@@ -17,7 +17,7 @@ while True:
 
 if board_size == '6' or board_size == '6x6':
     board_size = 6 
-    game_number = int(input(' Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n'))
+    game_number = int(input('Which game would you like to play? \n Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n'))
 
     if game_number == 1: 
         csv_rh = 'data/Rushhour6x6_1.csv'
@@ -28,7 +28,7 @@ if board_size == '6' or board_size == '6x6':
 
 elif board_size == '9' or board_size == '9x9': 
     board_size = 9
-    game_number = int(input(' Enter 1 for game 4 \n Enter 2 for game 5 \n Enter 3 for game 6 \n'))
+    game_number = int(input('Which game would you like to play? \n Enter 1 for game 4 \n Enter 2 for game 5 \n Enter 3 for game 6 \n'))
 
     if game_number == 1: 
         csv_rh = 'data/Rushhour9x9_4.csv'
@@ -39,7 +39,7 @@ elif board_size == '9' or board_size == '9x9':
 
 elif board_size == '12' or board_size == '12x12':
     board_size = 12 
-    game_number = int(input(' Enter 1 for game 1 \n'))
+    game_number = int(input('Which game would you like to play? \n Enter 1 for game 1 \n'))
 
     if game_number == 1: 
         csv_rh = 'data/Rushhour12x12_7.csv'
