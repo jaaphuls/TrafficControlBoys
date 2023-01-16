@@ -45,7 +45,16 @@ class create_board:
                     return True
 
         return False
-            
+
+
+    def is_solved(self): 
+
+        correct_x = 
+        for car in self.car_list: 
+            if car.car == 'X' and car.x == correct_x: 
+                return True
+        
+        return False
 
                 
       
