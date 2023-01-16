@@ -7,7 +7,7 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+# this code block asks for a user input and keeps asking untill a good input is given
 while True:
     board_size = input("What are the board dimensions (6x6, 9x9 or 12x12)? \n")
     if board_size not in ('6', '9', '12', '6x6', '9x9', '12x12'):
