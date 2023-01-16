@@ -11,7 +11,7 @@ import numpy as np
 board_size = int(input('What are the board dimensions? \n'))
 
 if board_size == 6: 
-    game_number = input(' Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n')
+    game_number = int(input(' Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n'))
 
     if game_number == 1: 
         csv_rh = 'data/Rushhour6x6_1.csv'
@@ -21,7 +21,7 @@ if board_size == 6:
         csv_rh = 'data/Rushhour6x6_3.csv'
 
 elif board_size == 9: 
-    game_number = input(' Enter 1 for game 4 \n Enter 2 for game 5 \n Enter 3 for game 6 \n')
+    game_number = int(input(' Enter 1 for game 4 \n Enter 2 for game 5 \n Enter 3 for game 6 \n'))
 
     if game_number == 1: 
         csv_rh = 'data/Rushhour9x9_4.csv'
@@ -31,18 +31,11 @@ elif board_size == 9:
         csv_rh = 'data/Rushhour9x9_6.csv'
 
 elif board_size == 12: 
-    game_number = input(' Enter 1 for game 1 \n')
+    game_number = int(input(' Enter 1 for game 1 \n'))
 
     if game_number == 1: 
         csv_rh = 'data/Rushhour12x12_7.csv'
 
-# parser = argparse.ArgumentParser()
-
-# Adding arguments
-# parser.add_argument("input", help = "input file (csv)")
-
-# Read arguments from command line
-# args = parser.parse_args()
 
 # read the csv input file as a pandas dataframe
 dataframe = pd.read_csv(csv_rh)
