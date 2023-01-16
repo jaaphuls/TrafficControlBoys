@@ -21,7 +21,7 @@ def gameboard(input_filename, N):
 
     for vehicle_ in input_filename:
 
-        print(vehicle_.car)
+        print(vehicle_.area)
 
 '''
     # loop through the indices and rows of the car positions dataframe
