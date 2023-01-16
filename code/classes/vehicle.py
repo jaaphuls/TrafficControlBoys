@@ -18,12 +18,12 @@ class Vehicle:
         for i in range(self.length):
 
             if self.orientation == "H":
-                self.area.append((self.x, self.y))
+                self.area.append((self.y, self.x))
                 self.x += 1
                 
             
             else:
-                self.area.append((self.x, self.y))
+                self.area.append((self.y, self.x))
                 self.y += 1
     
     def color_vehicle(self):
