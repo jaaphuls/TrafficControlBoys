@@ -15,7 +15,6 @@ while True:
     else:
         break
 
-
 if board_size == '6' or board_size == '6x6':
     board_size = 6 
     game_number = int(input(' Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n'))
