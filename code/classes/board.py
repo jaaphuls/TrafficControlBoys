@@ -22,7 +22,7 @@ class create_board:
                 # self.rush_board = self.rush_board[car.area]
     
 
-    def step(self): 
+    def random_step(self): 
 
         car = random.choice(self.car_list)
 
