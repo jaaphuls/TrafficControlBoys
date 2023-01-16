@@ -51,3 +51,4 @@ board_visualized = gb(car_list, board_size)
 
 board = create_board(car_list)
 board.create_state()
+board.check_move()
