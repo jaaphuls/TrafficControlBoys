@@ -4,9 +4,9 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 
-def gameboard(input_filename, N):
+def gameboard(car_list, N):
     """
-    Arguments: csv input filename with car positions
+    Arguments: car list with Vehicle objects
     
     Creates an NxN gameboard with a black edge and colored cars
 
@@ -19,7 +19,7 @@ def gameboard(input_filename, N):
     # the inner side of the gameboard should be changed to white
     gameboard[1:N+1, 1:N+1] = [1, 1, 1]
 
-    for vehicle_ in input_filename:
+    for vehicle_ in car_list:
 
         for coordinate in (vehicle_.area):
 
