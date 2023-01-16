@@ -18,7 +18,6 @@ class create_board:
             for coordinate in car.area:
                 self.rush_board[(coordinate)] = car
 
-
     def check_move(self):
 
         for car in self.car_list:
@@ -26,9 +25,11 @@ class create_board:
             # check in what orientation the car should move
             if car.orientation == 'H': 
                 temp_area = car.area
-                temp_x = (car.y, (temp_area[0][0])+1)
-                print(temp_x)
-
+                print(f'this is temp_area {temp_area}')
+                check_x_left = (car.y, (temp_area[0][1])-1)
+                check_x_right = (car.y, (temp_area[1][-1])+1)
+                print(f'this is check_x_left {check_x_left}')
+                print(f'this is check_x_right {check_x_right}')
 
     def is_solved(self): 
 
