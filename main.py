@@ -7,10 +7,16 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 
+# this code block asks for a user input and keeps asking untill a good input is given
+while True:
+    board_size = input("What are the board dimensions (6x6, 9x9 or 12x12)? \n")
+    if board_size not in ('6', '9', '12', '6x6', '9x9', '12x12'):
+        print("There are no boards with these dimensions, please chose the correct dimensions!")
+    else:
+        break
 
-board_size = int(input('What are the board dimensions? \n'))
-
-if board_size == 6: 
+if board_size == '6' or board_size == '6x6':
+    board_size = 6 
     game_number = int(input(' Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n'))
 
     if game_number == 1: 
@@ -20,7 +26,8 @@ if board_size == 6:
     elif game_number == 3: 
         csv_rh = 'data/Rushhour6x6_3.csv'
 
-elif board_size == 9: 
+elif board_size == '9' or board_size == '9x9': 
+    board_size = 9
     game_number = int(input(' Enter 1 for game 4 \n Enter 2 for game 5 \n Enter 3 for game 6 \n'))
 
     if game_number == 1: 
@@ -30,7 +37,8 @@ elif board_size == 9:
     elif game_number == 3: 
         csv_rh = 'data/Rushhour9x9_6.csv'
 
-elif board_size == 12: 
+elif board_size == '12' or board_size == '12x12':
+    board_size = 12 
     game_number = int(input(' Enter 1 for game 1 \n'))
 
     if game_number == 1: 
