@@ -19,6 +19,16 @@ class create_board:
 
             
                 # self.rush_board = self.rush_board[car.area]
+    
+    def step(self, car_id): 
+
+        for car in self.car_list: 
+            if car_id == car.car: 
+                if car.orientation == 'H': 
+                    car.x += 1
+                else: 
+                    car.y += 1
+
 
         
       
