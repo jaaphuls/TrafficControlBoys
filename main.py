@@ -25,7 +25,7 @@ for i, row in dataframe.iterrows():
     car_list.append(Vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
 
 # Run main with provide arguments
-# board_visualized = gb(dataframe, 6)
+board_visualized = gb(car_list, 6)
 
 board = create_board(car_list)
 board.create_state()
