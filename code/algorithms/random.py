@@ -27,3 +27,14 @@ def random_step(self):
         else: 
             if gameboard[car.x, car.y - 1] == [1, 1, 1]:
                 car.y -= 1
+    
+
+    def is_solved(self): 
+
+        correct_x = 
+        correct_y = 
+        for car in self.car_list: 
+            if car.car == 'X' and car.x == correct_x and car.y == correct_y: 
+                return True
+        
+        return False
