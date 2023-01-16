@@ -16,10 +16,7 @@ class create_board:
         for car in self.car_list:
             # print(car.area)
             for coordinate in car.area:
-                #print(coordinate)
-                pass
-            
-                # self.rush_board = self.rush_board[car.area]
+                self.rush_board[(coordinate)] = car
 
 
     def check_move(self):
@@ -28,24 +25,9 @@ class create_board:
 
             # check in what orientation the car should move
             if car.orientation == 'H': 
-
-                if gameboard[car.x + 1, car.y] == [1, 1, 1]:  
-                    return True 
-
-                elif gameboard[car.x - 1, car.y] == [1, 1, 1]:  
-                    return True
-            
-            # if the orientation is not horizontal, move on the y-axis
-            else: 
-
-                # give the same chance of 0.5 to move towards the top or the bottom
-                if gameboard[car.x, car.y + 1] == [1, 1, 1]:
-                    return True
-     
-                elif gameboard[car.x, car.y - 1] == [1, 1, 1]:
-                    return True
-
-        return False
+                temp_area = car.area
+                temp_x = (car.y, (temp_area[0][0])+1)
+                print(temp_x)
 
 
     def is_solved(self): 

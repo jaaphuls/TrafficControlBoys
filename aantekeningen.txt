@@ -22,3 +22,18 @@ State space vragen
 Eind presentatie 
 
     welk algorithme efficienter is en waarom de ene beter is dan de andere en hoe ze werken zonder in de code te duiken
+
+
+lecture constructief algorithme
+
+Random algorithme:
+
+
+Greedy algorithme:
+
+
+Greedy + Random algorithme:
+
+
+Constructief algorithme:
+    - Bre
