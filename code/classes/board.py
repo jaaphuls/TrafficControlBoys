@@ -16,8 +16,8 @@ class create_board:
         for car in self.car_list:
             # print(car.area)
             for coordinate in car.area:
-                print(coordinate)
-
+                #print(coordinate)
+                pass
             
                 # self.rush_board = self.rush_board[car.area]
     
