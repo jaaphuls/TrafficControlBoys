@@ -6,7 +6,8 @@ from code.classes.vehicle import Vehicle
 
 class create_board:
 
-    def __init__(self, cars, N=6,):
+    def __init__(self, cars, N=6):
+        self.N = N 
         self.rush_board = np.zeros((N + 2, N + 2), dtype=Vehicle)
         self.car_list = cars
        
@@ -49,7 +50,7 @@ class create_board:
 
     def is_solved(self): 
 
-        correct_x = 
+        correct_x = self.N + 2
         for car in self.car_list: 
             if car.car == 'X' and car.x == correct_x: 
                 return True
