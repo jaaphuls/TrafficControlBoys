@@ -21,16 +21,39 @@ class create_board:
                 self.car_dict[coordinate] = car
 
     def check_move(self, car):
-        
+
         # check the orientation of the car and if the car is able to move
         if car.orientation == 'H': 
             check_x_left = (car.y, (car.area[0][1])-1)
-
             check_x_right = (car.y, (car.area[-1][1])+1)
+
+            if check_x_left not in self.car_dict and check_x_right not in  self.car_dict:
+                return True, True
+
+            if check_x_left not in self.car_dict and check_x_right in self.car_dict:
+                return True, False
+            
+            if check_x_left in self.car_dict and check_x_right not in self.car_dict:
+                return False, True
+
+            if check_x_left in self.car_dict and check_x_right in self.car_dict:
+                return False, False
 
         elif car.orientation == "V":
             check_y_up = ((car.area[0][0])-1, car.x)
             check_y_down = ((car.area[-1][0])+1, car.x)
+
+            if check_y_up not in self.car_dict and check_y_down not in  self.car_dict:
+                return True, True
+
+            if check_y_up not in self.car_dict and check_y_down in self.car_dict:
+                return True, False
+            
+            if check_y_up in self.car_dict and check_y_down not in self.car_dict:
+                return False, True
+
+            if check_y_up in self.car_dict and check_y_down in self.car_dict:
+                return False, False
 
     def is_solved(self): 
 
