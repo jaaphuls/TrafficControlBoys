@@ -59,16 +59,15 @@ for i, row in dataframe.iterrows():
 board_visualized = gb(car_list, board_size)
 
 for car in car_list: 
-    print(f"x and y locations are {car.x} & {car.y}")
+    print(f"first board x and y locations are {car.x} & {car.y}")
 
 board = Board(car_list)
 board.create_state()
-board.check_move(car_list[1])
 random_step(board)
 
 board_visualized = gb(car_list, board_size)
 
 for car in car_list: 
-    print(f"x and y locations are {car.x} & {car.y}")
+    print(f"second board x and y locations are {car.x} & {car.y}")
 
 

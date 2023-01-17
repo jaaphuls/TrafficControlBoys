@@ -20,7 +20,6 @@ class Vehicle:
             if self.orientation == "H":
                 self.area.append((self.y, self.x))
                 self.x += 1
-                
             
             else:
                 self.area.append((self.y, self.x))
