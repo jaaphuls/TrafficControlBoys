@@ -21,8 +21,8 @@ class Board:
             borders[N + 1, x] = 'border'
 
         for y in range(N + 2):
-            borders[0,y] = 'border'
-            borders[N + 1, y] = 'border'
+            borders[y, 0] = 'border'
+            borders[y, N + 1] = 'border'
         
         return borders
 
