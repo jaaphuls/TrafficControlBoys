@@ -18,7 +18,7 @@ while True:
 
 if board_size == '6' or board_size == '6x6':
     board_size = 6 
-    game_number = int(input('Which game would you like to play? \n Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n'))
+    game_number = int(input('Which game would you like to play? \n Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n Enter 4 for game 4 \n'))
 
     if game_number == 1: 
         csv_rh = 'data/Rushhour6x6_1.csv'
@@ -26,6 +26,8 @@ if board_size == '6' or board_size == '6x6':
         csv_rh = 'data/Rushhour6x6_2.csv'
     elif game_number == 3: 
         csv_rh = 'data/Rushhour6x6_3.csv'
+    elif game_number == 4: 
+        csv_rh = 'data/Rushhour6x6_4.csv'
 
 elif board_size == '9' or board_size == '9x9': 
     board_size = 9
@@ -56,18 +58,15 @@ for i, row in dataframe.iterrows():
     car_list.append(Vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
 
 # Run main with provide arguments
-board_visualized = gb(car_list, board_size)
-
-for car in car_list: 
-    print(f"first board x and y locations are {car.x} & {car.y}")
 
 board = Board(car_list)
 board.create_state()
-random_step(board)
 
 board_visualized = gb(car_list, board_size)
 
-for car in car_list: 
-    print(f"second board x and y locations are {car.x} & {car.y}")
+for i in range(10): 
+    random_step(board)
+    board_visualized = gb(car_list, board_size)
+
 
 

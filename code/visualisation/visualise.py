@@ -18,6 +18,7 @@ def gameboard(car_list, N):
     
     # the inner side of the gameboard should be changed to white
     gameboard[1:N+1, 1:N+1] = [1, 1, 1]
+    gameboard[3, N+1] = [1, 1, 1]
 
     for vehicle_ in car_list:
 
@@ -25,6 +26,5 @@ def gameboard(car_list, N):
 
             gameboard[coordinate] = vehicle_.color
 
-      
     plt.imshow(gameboard)
     plt.show()
