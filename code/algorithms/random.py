@@ -1,10 +1,14 @@
 # this script contains the code to run the random algorithm
-from code.classes.board import self.car_list
+from code.classes.board import self.car_list 
+from code.classes.board import check_move
 
 
 def random_step(self): 
 
     car = random.choice(self.car_list)
+
+    able_to_move = check_move(car)
+
 
     # check in what orientation the car should move
     if car.orientation == 'H': 
@@ -12,6 +16,7 @@ def random_step(self):
         # give a chance of 0.5 to either move towards the right or left
         if random.randint(1, 2) != 1:
             if gameboard[car.x + 1, car.y] == [1, 1, 1]:  
+            
                 car.x += 1 
         else: 
             if gameboard[car.x - 1, car.y] == [1, 1, 1]:  

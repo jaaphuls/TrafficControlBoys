@@ -12,7 +12,7 @@ class create_board:
         self.car_list = cars
        
     def create_state(self):
-        car_dict = {}
+        self.car_dict = {}
 
         for car in self.car_list:
             # print(car.area)
