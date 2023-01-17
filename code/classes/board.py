@@ -25,11 +25,20 @@ class create_board:
             # check in what orientation the car should move
             if car.orientation == 'H': 
                 temp_area = car.area
-                print(f'this is temp_area {temp_area}')
+                #print(f'this is temp_area {temp_area}')
                 check_x_left = (car.y, (temp_area[0][1])-1)
-                check_x_right = (car.y, (temp_area[1][-1])+1)
-                print(f'this is check_x_left {check_x_left}')
-                print(f'this is check_x_right {check_x_right}')
+                check_x_right = (car.y, (temp_area[-1][1])+1)
+                #print(f'this is check_x_left {check_x_left}')
+                #print(f'this is check_x_right {check_x_right}')
+
+            elif car.orientation == "V":
+                temp_area = car.area
+                print(f'this is temp_area {temp_area}')
+                check_y_up = ((temp_area[0][0])-1, car.x)
+                check_y_down = ((temp_area[-1][1])+1, car.x)
+                print(f'this is check_y_up {check_y_up}')
+                print(f'this is check_y_down {check_y_down}')
+
 
     def is_solved(self): 
 
