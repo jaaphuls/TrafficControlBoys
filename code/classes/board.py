@@ -12,17 +12,20 @@ class create_board:
         self.car_list = cars
        
     def create_state(self):
+        car_dict = {}
 
         for car in self.car_list:
             # print(car.area)
             for coordinate in car.area:
                 self.rush_board[(coordinate)] = car
+                car_dict[car.area] = car
 
     def check_move(self, car):
         
         # check the orientation of the car and if the car is able to move
         if car.orientation == 'H': 
             check_x_left = (car.y, (car.area[0][1])-1)
+
             check_x_right = (car.y, (car.area[-1][1])+1)
 
         elif car.orientation == "V":
