@@ -30,13 +30,13 @@ class Board:
             if check_x_left not in self.car_dict and check_x_right not in  self.car_dict:
                 return True, True
 
-            if check_x_left not in self.car_dict and check_x_right in self.car_dict:
+            elif check_x_left not in self.car_dict and check_x_right in self.car_dict:
                 return True, False
             
-            if check_x_left in self.car_dict and check_x_right not in self.car_dict:
+            elif check_x_left in self.car_dict and check_x_right not in self.car_dict:
                 return False, True
 
-            if check_x_left in self.car_dict and check_x_right in self.car_dict:
+            elif check_x_left in self.car_dict and check_x_right in self.car_dict:
                 return False, False
 
         elif car.orientation == "V":
@@ -46,13 +46,13 @@ class Board:
             if check_y_up not in self.car_dict and check_y_down not in  self.car_dict:
                 return True, True
 
-            if check_y_up not in self.car_dict and check_y_down in self.car_dict:
+            elif check_y_up not in self.car_dict and check_y_down in self.car_dict:
                 return True, False
             
-            if check_y_up in self.car_dict and check_y_down not in self.car_dict:
+            elif check_y_up in self.car_dict and check_y_down not in self.car_dict:
                 return False, True
 
-            if check_y_up in self.car_dict and check_y_down in self.car_dict:
+            elif check_y_up in self.car_dict and check_y_down in self.car_dict:
                 return False, False
 
     def is_solved(self): 

@@ -69,6 +69,6 @@ random_step(board)
 board_visualized = gb(car_list, board_size)
 
 for car in car_list: 
-    print(f"x and y locations for car {car} are {car.x} & {car.y}")
+    print(f"x and y locations are {car.x} & {car.y}")
 
 
