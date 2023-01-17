@@ -18,8 +18,9 @@ class Board:
         (6,7) : 'border', (5,7) : 'border', (4,7) : 'border', (2,7) : 'border', (1,7) : 'border', (0,7) : 'border'}
 
         for car in self.car_list:
-            print(car.area)
+            
             for coordinate in car.area:
+                print(coordinate)
                 self.rush_board[(coordinate)] = car
                 self.car_dict[coordinate] = car
 
