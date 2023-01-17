@@ -8,20 +8,30 @@ class Board:
 
     def __init__(self, cars, N=6):
         self.N = N 
+        self.car_dict = self.borders(N)
         self.rush_board = np.zeros((N + 2, N + 2), dtype=Vehicle)
         self.car_list = cars
-       
-    def create_state(self):
-        self.car_dict = {(0,0) :'border', (0,1) :'border', (0,2) : 'border', (0,3) : 'border', (0,4) : 'border', (0,5) : 'border', (0,6) : 'border', (0,7) : 'border',
-        (1,7) : 'border', (2,7) : 'border', (3,7) : 'border', (4,7) : 'border', (5,7) : 'border', (6,7) : 'border', (7,7) : 'border',
-        (7,1) : 'border', (7,2) : 'border', (7,3) : 'border', (7,4) : 'border', (7,5) : 'border', (7,6) : 'border', (7,7) : 'border',
-        (6,7) : 'border', (5,7) : 'border', (4,7) : 'border', (2,7) : 'border', (1,7) : 'border', (0,7) : 'border'}
+    
+    def borders(N):
 
+        borders = {}
+
+        for x in range(N + 2):
+            borders[0, x] = 'border'
+            borders[N + 1, x] = 'border'
+
+        for y in range(N + 2):
+            borders[0,y] = 'border'
+            borders[N + 1, y] = 'border'
+        
+        return borders
+
+    def create_state(self):
         for car in self.car_list:
             
             for coordinate in car.area:
                 print(coordinate)
-                self.rush_board[(coordinate)] = car
+                self.rush_board[coordinate] = car
                 self.car_dict[coordinate] = car
 
     def check_move(self, car):
