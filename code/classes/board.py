@@ -18,7 +18,7 @@ class create_board:
             # print(car.area)
             for coordinate in car.area:
                 self.rush_board[(coordinate)] = car
-                car_dict[car.area] = car
+                self.car_dict[coordinate] = car
 
     def check_move(self, car):
         
