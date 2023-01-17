@@ -35,7 +35,7 @@ class create_board:
                 temp_area = car.area
                 print(f'this is temp_area {temp_area}')
                 check_y_up = ((temp_area[0][0])-1, car.x)
-                check_y_down = ((temp_area[-1][1])+1, car.x)
+                check_y_down = ((temp_area[-1][0])+1, car.x)
                 print(f'this is check_y_up {check_y_up}')
                 print(f'this is check_y_down {check_y_down}')
 
