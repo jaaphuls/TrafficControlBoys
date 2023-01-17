@@ -14,11 +14,14 @@ def random_step(board):
 
     print(able_to_move)
 
+    fifty_fifty = random.randint(1, 2)
+    print(fifty_fifty)
+
     # check in what orientation the car should move
     if car.orientation == 'H': 
 
         if able_to_move == (True, True): 
-            if random.randint(1, 3) == 1:
+            if fifty_fifty == 1:
                 car.x += 1 
             else: 
                 car.x -= 1
