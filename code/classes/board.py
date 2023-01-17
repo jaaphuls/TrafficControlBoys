@@ -31,15 +31,19 @@ class Board:
             check_x_right = (car.y, (car.area[-1][1])+1)
 
             if check_x_left not in self.car_dict.keys() and check_x_right not in self.car_dict.keys():
+                print("twee kanten")
                 return True, True
 
             elif check_x_left not in self.car_dict.keys() and check_x_right in self.car_dict.keys():
+                print("ga links")
                 return True, False
             
             elif check_x_left in self.car_dict.keys() and check_x_right not in self.car_dict.keys():
+                print("ga rechts")
                 return False, True
 
             elif check_x_left in self.car_dict.keys() and check_x_right in self.car_dict.keys():
+                print("kan niks")
                 return False, False
 
         elif car.orientation == "V":
