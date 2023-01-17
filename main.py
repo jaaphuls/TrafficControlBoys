@@ -1,6 +1,7 @@
 from code.visualisation.visualise import gameboard as gb 
 from code.classes.vehicle import Vehicle
-from code.classes.board import create_board
+from code.classes.board import Board
+from code.algorithms.random import random_step
 import pandas as pd
 import argparse
 import random
@@ -57,6 +58,11 @@ for i, row in dataframe.iterrows():
 # Run main with provide arguments
 board_visualized = gb(car_list, board_size)
 
-board = create_board(car_list)
+print(car_list)
+
+board = Board(car_list)
 board.create_state()
 board.check_move(car_list[1])
+random_step(board)
+
+print(car_list)

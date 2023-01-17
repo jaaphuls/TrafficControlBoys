@@ -4,7 +4,7 @@ import random
 
 from code.classes.vehicle import Vehicle
 
-class create_board:
+class Board:
 
     def __init__(self, cars, N=6):
         self.N = N 
