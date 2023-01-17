@@ -19,13 +19,13 @@ def random_step(board):
             else: 
                 car.x -= 1
 
-        if able_to_move == (True, False): 
+        elif able_to_move == (True, False): 
             car.x -= 1 
         
-        if able_to_move == (False, True):
+        elif able_to_move == (False, True):
             car.x += 1
 
-    if car.orientation == 'V': 
+    elif car.orientation == 'V': 
 
         if able_to_move == (True, True): 
             if random.randint(1,2) != 1: 
@@ -33,10 +33,10 @@ def random_step(board):
             else: 
                 car.y -= 1 
 
-        if able_to_move == (True, False): 
+        elif able_to_move == (True, False): 
             car.y += 1 
 
-        if able_to_move == (False, True): 
+        elif able_to_move == (False, True): 
             car.y -= 1
 
     car.location_vehicle()
