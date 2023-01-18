@@ -58,23 +58,21 @@ for i, row in dataframe.iterrows():
     car_list.append(Vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
 
 # Run main with provide arguments
-
-print(car_list[0].x)
-print(car_list[0].y)
-board = Board(car_list, board_size)
-board.create_state()
-board.create_board()
-board.check_move()
-
-
-print("")
-
-car_list = Random.random_step(board)
-print(car_list[0].x)
-print(car_list[0].y)
-
 board = Board(car_list, board_size)
 
-board.create_state()
-board.create_board()
-board.check_move()
+while board.rush_board[2, 5] != "X":
+     #board = Board(car_list, board_size)
+    board.create_state()
+    board.create_board()
+    board.check_move()
+
+    print(board.rush_board[2, 5])
+
+    car_list = Random.random_step(board)
+    board = Board(car_list, board_size)
+    
+    print("")
+
+# board.create_state()
+# board.create_board()
+# board.check_move()
