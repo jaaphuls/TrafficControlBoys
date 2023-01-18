@@ -66,6 +66,7 @@ board_visualized = gb(car_list, board_size)
 
 for i in range(10): 
     random_step(board)
+    board.create_state()
     board_visualized = gb(car_list, board_size)
 
 
