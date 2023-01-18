@@ -6,7 +6,7 @@ from code.classes.vehicle import Vehicle
 
 class Board:
 
-    def __init__(self, cars, N=6):
+    def __init__(self, cars, N):
         self.N = N
         self.rush_board = np.zeros((N , N ), dtype=Vehicle)
         self.car_list = cars

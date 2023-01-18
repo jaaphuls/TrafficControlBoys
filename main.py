@@ -58,7 +58,7 @@ for i, row in dataframe.iterrows():
 
 # Run main with provide arguments
 
-board = Board(car_list)
+board = Board(car_list, board_size)
 board.create_state()
 board.create_board()
 board.check_move()
