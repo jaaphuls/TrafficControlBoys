@@ -28,12 +28,10 @@ class Board:
 
     def create_state(self):
         for car in self.car_list:
-            
+
             for coordinate in car.area:
-                # print(coordinate)
                 self.rush_board[coordinate] = car
                 self.car_dict[coordinate] = car
-        # print(self.car_dict)
 
     def check_move(self, car):
 
@@ -41,22 +39,17 @@ class Board:
         if car.orientation == 'H': 
             check_x_left = (car.y, (car.area[0][1])-1)
             check_x_right = (car.y, (car.area[-1][1])+1)
-        
 
             if check_x_left not in self.car_dict.keys() and check_x_right not in self.car_dict.keys():
-                # print("twee kanten")
                 return True, True
 
             elif check_x_left not in self.car_dict.keys() and check_x_right in self.car_dict.keys():
-                # print("ga links")
                 return True, False
             
             elif check_x_left in self.car_dict.keys() and check_x_right not in self.car_dict.keys():
-                # print("ga rechts")
                 return False, True
 
             elif check_x_left in self.car_dict.keys() and check_x_right in self.car_dict.keys():
-                # print("kan niks")
                 return False, False
             
 
@@ -76,10 +69,6 @@ class Board:
             elif check_y_up in self.car_dict.keys() and check_y_down in self.car_dict.keys():
                 return False, False
 
-        print(f"car's x coordinate is {car.x}")
-        print(f"car's y coordinate is {car.y}")
-        print(f"left x is {check_x_left}")
-        print(f"right x is {check_x_right}")
 
     def is_solved(self): 
 
