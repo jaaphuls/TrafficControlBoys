@@ -11,6 +11,7 @@ class Board:
         self.car_dict = self.borders(N)
         self.rush_board = np.zeros((N + 2, N + 2), dtype=Vehicle)
         self.car_list = cars
+        self.states_list = []
     
     def borders(self, N):
 
@@ -27,11 +28,21 @@ class Board:
         return borders
 
     def create_state(self):
-        for car in self.car_list:
+        state = []
+        for car in vehicle.car:
+            if car.orientation == 'H' and car.length == '2':
+                state.append(car.car, car.x, car.y, car.x + 1, car.y)
+             
+            elif car.orientation == 'H' and car.length == '3':
+                state.append(car.car, car.x, car.y, car.x + 2, car.y)
+            
+            elif car.orientation == 'V' and car.length == '2':
+                state.append(car.car, car.x, car.y, car.x, car.y + 1)
 
-            for coordinate in car.area:
-                self.rush_board[coordinate] = car
-                self.car_dict[coordinate] = car
+            elif car.orientation == 'V' and car.length == '3':
+                state.append(car.car, car.x, car.y, car.x, car.y + 2)
+    
+        self.states_list.append(state)
 
     def check_move(self, car):
 
