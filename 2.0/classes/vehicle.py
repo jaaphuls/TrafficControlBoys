@@ -6,5 +6,4 @@ class Vehicle:
         self.y = row
         self.orientation = orientation
         self.length = length 
-        self.location_vehicle()
-        self.color_vehicle()
+
