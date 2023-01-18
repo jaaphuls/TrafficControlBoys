@@ -1,6 +1,6 @@
 
-from TCB2.classes.vehicle_2 import Vehicle
-from TCB2.classes.board_2 import Board
+from code.classes.vehicle import Vehicle
+from code.classes.board import Board
 import pandas as pd
 import argparse
 import random
