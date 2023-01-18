@@ -15,6 +15,10 @@ class Board:
     def create_state(self):
         state = []
         for car in self.car_list:
+            orientation = car.orientation
+            length = car.length
+            x = car.x
+            y = car.y
             if car.orientation == 'H' and car.length == 2:
                 state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y))
              
@@ -49,10 +53,10 @@ class Board:
                 if self.rush_board[row, column] == 0:
                    possible_moves.append((row, column))
 
-        
         for i in possible_moves:
-            self.rush_board[i] = 'O'
+            self.rush_board[i] = '.'
         print(self.rush_board)
+
         return possible_moves
 
 
