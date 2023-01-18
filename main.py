@@ -1,7 +1,6 @@
-from code.visualisation.visualise import gameboard as gb 
-from code.classes.vehicle import Vehicle
-from code.classes.board import Board
-from code.algorithms.random import random_step
+
+from TCB2.classes.vehicle_2 import Vehicle
+from TCB2.classes.board_2 import Board
 import pandas as pd
 import argparse
 import random
@@ -61,13 +60,5 @@ for i, row in dataframe.iterrows():
 
 board = Board(car_list)
 board.create_state()
-
-board_visualized = gb(car_list, board_size)
-
-for i in range(10): 
-    board = Board(random_step(board))
-    board.create_state()
-    board_visualized = gb(car_list, board_size)
-
-
-
+board.create_board()
+board.check_move()
