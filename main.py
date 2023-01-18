@@ -59,12 +59,22 @@ for i, row in dataframe.iterrows():
 
 # Run main with provide arguments
 
+print(car_list[0].x)
+print(car_list[0].y)
 board = Board(car_list, board_size)
 board.create_state()
 board.create_board()
 board.check_move()
 
-qwerty = Random()
 
-Random.random(qwerty)
+print("")
+
+car_list = Random.random_step(board)
+print(car_list[0].x)
+print(car_list[0].y)
+
+board = Board(car_list, board_size)
+
 board.create_state()
+board.create_board()
+board.check_move()
