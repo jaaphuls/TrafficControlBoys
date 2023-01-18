@@ -5,7 +5,7 @@ from code.classes.board import Board
 class Random():
 
     def __init__(self): 
-        random_step()
+        self.random_step()
         
 
     def random_step(self):
