@@ -37,3 +37,28 @@ class Board:
                 self.rush_board[y, x] = vehicle.car
                 self.occupied.add((y, x))
                 y += 1
+
+    def update_car(self, x, y, car, backwards):
+
+        car_front = car.length - 1
+
+        if car.orientation == 'H':
+
+            if backwards:
+                self.rush_board[y, x + car_front] = 0
+                self.rush_board[y, x - 1] = car
+
+            else:
+                self.rush_board[y, x] = 0
+                self.rush_board[y, x + car.length] = car
+
+        else:
+            if backwards:
+                self.rush_board[y + car_front, x] = 0
+                self.rush_board[y - 1, x] = car
+
+            else:
+                self.rush_board[y, x] = 0
+                self.rush_board[y + car.length, x] = car
+
+
