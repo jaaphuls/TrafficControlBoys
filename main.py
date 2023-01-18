@@ -6,6 +6,7 @@ import argparse
 import random
 import matplotlib.pyplot as plt
 import numpy as np
+from code.algorithms.random import Random 
 
 # this code block asks for a user input and keeps asking untill a good input is given
 while True:
@@ -62,3 +63,5 @@ board = Board(car_list, board_size)
 board.create_state()
 board.create_board()
 board.check_move()
+board.random_step()
+board.create_state
