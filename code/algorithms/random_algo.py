@@ -40,13 +40,19 @@ def random_step(board):
         if x_left >= 1: 
             if board.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.50:
                 car.x -= 1
+        # if x_left - 1 >= 1:
+        #     if board.rush_board[car.y, x_left-1] == '.' and fifty_fifty < 0.50:
+        #         car.x -= 2
             else:
-                print("pass 1 left")
                 pass
 
         if x_right <= board.N - 1: 
             if board.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.50:
                 car.x += 1
+        # if x_right + 2 <= board.N - 1: 
+        #     if board.rush_board[car.y, x_right + 2] == '.' and fifty_fifty > 0.75:
+        #         car.x += 2
+
             else:
                 print("pass 1 right")
                 pass
