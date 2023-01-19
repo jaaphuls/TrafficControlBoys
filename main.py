@@ -61,25 +61,19 @@ for i, row in dataframe.iterrows():
 # Run main with provide arguments
 board = Board(car_list, board_size)
 
-car_dict = board.create_dict()
-board.dict_move()
-
-gameboard(car_dict, board_size)
-
-
-# for i in range(5):
-# #while board.rush_board[2, 5] != "X":
-#      #board = Board(car_list, board_size)
-#     board.create_state()
-#     board.create_board()
-#     board.check_move()
+for i in range(5):
+#while board.rush_board[2, 5] != "X":
+     #board = Board(car_list, board_size)
+    board.create_state()
+    board.create_board()
+    board.check_move()
 
     
 
-    # car_list = Random.random_step(board)
-    # board = Board(car_list, board_size)
+    car_list = Random.random_step(board)
+    board = Board(car_list, board_size)
 
-    # print("")
+    print("")
 
 # board.create_state()
 # board.create_board()
