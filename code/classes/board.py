@@ -51,6 +51,8 @@ class Board:
 
         for row in range(len(self.rush_board)):
             for column in range(len(self.rush_board)):
+
+
                 if self.rush_board[row, column] == 0:
                    possible_moves.append((row, column))
 
