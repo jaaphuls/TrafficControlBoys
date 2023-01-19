@@ -32,7 +32,7 @@ class Random():
                     print("pass 1")
                     pass
 
-            elif x_right <= self.N - 2: 
+            elif x_right <= self.N - 1: 
                 if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5:
                     car.x += 1
                 else:
