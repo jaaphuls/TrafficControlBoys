@@ -70,7 +70,7 @@ while board.rush_board[2, 5] != "X":
      #board = Board(car_list, board_size)
     board.create_state()
     board.create_board()
-    board.check_move()
+    board.visualize()
     step += 1
 
 

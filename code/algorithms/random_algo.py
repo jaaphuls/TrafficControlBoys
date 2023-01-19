@@ -17,7 +17,7 @@ def random_step(board):
     #print(f' this is car.x: {car.x}')
     #print(f' this is car.y: {car.y}')
 
-    mover = board.move_checker(car)
+    mover = board.check_move(car)
 
     if mover == 1 and car.orientation == "H":
         car.x += 1
