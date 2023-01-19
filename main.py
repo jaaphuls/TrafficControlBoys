@@ -67,11 +67,11 @@ step = 0
 #for i in range(5):
 while board.rush_board[2, 5] != "X":
     start_time = time.time()
-     #board = Board(car_list, board_size)
+    board = Board(car_list, board_size)
     board.create_state()
     board.create_board()
     board.visualize()
-    board.car_list = random_step(board)
+    car_list = random_step(board)
     step += 1
 
 
