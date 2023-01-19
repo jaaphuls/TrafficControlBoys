@@ -70,6 +70,9 @@ while board.rush_board[2, 5] != "X":
     board.check_move()
     print(board.rush_board[2, 5])
 
+    if board.rush_board[2, 5] == "X":
+        exit()
+
     
     car_list = Random.random_step(board)
     board = Board(car_list, board_size)
