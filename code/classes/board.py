@@ -45,22 +45,8 @@ class Board:
                     self.rush_board[(car[3], car[2])] = car[0]
                     self.rush_board[(car[5], car[4])] = car[0]
                     self.rush_board[(car[7], car[6])] = car[0]
- 
-    def check_move(self):
-        possible_moves = []
 
-        for row in range(len(self.rush_board)):
-            for column in range(len(self.rush_board)):
-
-
-                if self.rush_board[row, column] == 0:
-                   possible_moves.append((row, column))
-                   self.rush_board[row, column] = '.'
-
-        print(self.rush_board)
-        return self.rush_board
-
-    def move_checker(self, car):
+    def check_move(self, car):
 
         x_left = (car.x - 1)
         x_right = (car.x + car.length)
@@ -83,5 +69,18 @@ class Board:
                 return -1
             else:
                 return 0
-            
+    
+    def visualize(self):
+        possible_moves = []
+
+        for row in range(len(self.rush_board)):
+            for column in range(len(self.rush_board)):
+
+
+                if self.rush_board[row, column] == 0:
+                   possible_moves.append((row, column))
+                   self.rush_board[row, column] = '.'
+
+        print(self.rush_board)
+        return self.rush_board
 
