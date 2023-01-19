@@ -62,7 +62,7 @@ def random_step(board):
         print(f'this is up {y_up}')
         print(f'this is down {y_down}')
 
-        if y_down <= board.N - 2:
+        if y_down <= board.N - 1:
             if board.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:  
                 car.y += 1
             else:
