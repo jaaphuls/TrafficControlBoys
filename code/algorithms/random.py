@@ -13,7 +13,7 @@ class Random():
 
         car = random.choice(self.car_list)
         fifty_fifty = random.random()
-        
+
 
         if car.orientation == 'H': 
             if car.length == 2: 
@@ -52,7 +52,7 @@ class Random():
                 y_down = (car.y - 1)
                 y_up = (car.y + 1) 
 
-                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.,5: 
+                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5: 
                     newCar = Vehicle(car.car, car.orientation, car.x, car.y - 1, car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
