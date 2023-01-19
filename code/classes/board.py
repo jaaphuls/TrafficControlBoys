@@ -8,12 +8,13 @@ class Board:
 
     def __init__(self, cars, N):
         self.N = N
-        self.rush_board = np.zeros((N , N ), dtype=Vehicle)
+        self.rush_board = np.zeros((N, N), dtype=Vehicle)
         self.car_list = cars
         self.states_list = []
 
     def create_state(self):
         state = []
+        
         for car in self.car_list:
             orientation = car.orientation
             length = car.length
