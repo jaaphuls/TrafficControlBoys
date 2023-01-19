@@ -29,13 +29,19 @@ class Random():
                 if x_left >= 1: 
                     if self.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.5:
                         car.x -= 1
+                    else:
+                        print("pass 1")
+                        pass
 
-                if x_right <= self.N - 2: 
+                elif x_right <= self.N - 2: 
                     if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5:
                         car.x += 1
+                    else:
+                        print("pass 1")
+                        pass
 
                 else:
-                    print("pass")
+                    print("pass2")
                     pass
 
             #elif car.length == 3: 
@@ -48,10 +54,17 @@ class Random():
                 if x_left >= 1: 
                     if self.rush_board[car.y, x_left] == '.' and fifty_fifty > 0.5:
                         car.x -= 1
+                    else:
+                        print("pass")
+                        pass
 
-                if x_right <= self.N - 3: 
+                elif x_right <= self.N - 3: 
                     if self.rush_board[car.y, x_right] == '.' and fifty_fifty < 0.5:
                         car.x += 1
+
+                    else:
+                        print("pass")
+                        pass
 
                 else:
                     print("pass")
@@ -71,10 +84,16 @@ class Random():
                 if y_down <= self.N - 2:
                     if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:  
                         car.y += 1
+                    else:
+                        print("pass")
+                        pass
 
-                if y_up >= 1:
+                elif y_up >= 1:
                     if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5: 
                         car.y -= 1
+                    else:
+                        print("pass")
+                        pass
 
                 else:
                     print("pass")
@@ -91,10 +110,16 @@ class Random():
                 if y_down <= self.N - 3: 
                     if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:
                         car.y += 1
+                    else:
+                        print("pass")
+                        pass
 
-                if y_up >= 1: 
+                elif y_up >= 1: 
                     if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5:
                         car.y -= 1
+                    else:
+                        print("pass")
+                        pass
                 
                 else:
                     print("pass")
