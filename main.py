@@ -8,6 +8,7 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 from code.algorithms.random import Random
+import time
 
 # this code block asks for a user input and keeps asking untill a good input is given
 while True:
@@ -80,6 +81,8 @@ while board.rush_board[2, 5] != "X":
     
     car_list = Random.random_step(board)
     board = Board(car_list, board_size)
+
+    #time.sleep(0.1)
 
     print("")
 
