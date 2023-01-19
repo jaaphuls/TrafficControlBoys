@@ -20,58 +20,28 @@ class Random():
 
 
         if car.orientation == 'H': 
-            if car.length == 2: 
-                x_left = (car.x - 1)
-                x_right = (car.x + 2)
-                print(f'this is left {x_left}')
-                print(f'this is right {x_right}')
-                
-                if x_left >= 1: 
-                    if self.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.5:
-                        car.x -= 1
-                    else:
-                        print("pass 1")
-                        pass
-
-                elif x_right <= self.N - 2: 
-                    if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5:
-                        car.x += 1
-                    else:
-                        print("pass 1")
-                        pass
-
+            x_left = (car.x - 1)
+            x_right = (car.x + car.length)
+            print(f'this is left {x_left}')
+            print(f'this is right {x_right}')
+            
+            if x_left >= 1: 
+                if self.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.5:
+                    car.x -= 1
                 else:
-                    print("pass2")
+                    print("pass 1")
                     pass
 
-            #elif car.length == 3: 
+            elif x_right <= self.N - 2: 
+                if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5:
+                    car.x += 1
+                else:
+                    print("pass 1")
+                    pass
+
             else:
-                x_left = (car.x - 1)
-                x_right = (car.x + 3) 
-                print(f'this is left {x_left}')
-                print(f'this is right {x_right}')
-
-                if x_left >= 1: 
-                    if self.rush_board[car.y, x_left] == '.' and fifty_fifty > 0.5:
-                        car.x -= 1
-                    else:
-                        print("pass")
-                        pass
-
-                elif x_right <= self.N - 3: 
-                    if self.rush_board[car.y, x_right] == '.' and fifty_fifty < 0.5:
-                        car.x += 1
-
-                    else:
-                        print("pass")
-                        pass
-
-                else:
-                    print("pass")
-                    
-                    pass
-
-
+                print("pass2")
+                pass
 
         # car oriention 'V'
         else:
