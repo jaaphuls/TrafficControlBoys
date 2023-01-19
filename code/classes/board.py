@@ -62,18 +62,24 @@ class Board:
 
     def move_checker(self, car):
 
+        x_left = (car.x - 1)
+        x_right = (car.x + car.length)
+        y_down = (car.y + car.length)
+        y_up = (car.y - 1) 
+        
         if car.orientation == "H":
-            if self.rush_board[car.y, car.x - 1] == "." or self.rush_board[car.y, car.x - 1] == car.car:
+        
+            if self.rush_board[car.y, car.x - 1] == "." or self.rush_board[car.y, car.x - 1] == car.car and x_left >= 1:
                 return -1
-            elif self.rush_board[car.y, car.x + 1] == "." or self.rush_board[car.y, car.x + 1] == car.car:
+            if self.rush_board[car.y, car.x + 1] == "." or self.rush_board[car.y, car.x + 1] == car.car and x_right <= self.N - 1:
                 return 1
             else:
                 return 0
-        
+
         else:
-            if self.rush_board[car.y -1, car.x] == "." or self.rush_board[car.y -1, car.x] == car.car:
+            if self.rush_board[car.y -1, car.x] == "." or self.rush_board[car.y -1, car.x] == car.car and y_down <= self.N - 2:
                 return 1
-            elif self.rush_board[car.y + 1, car.x] == "." or self.rush_board[car.y + 1, car.x] == car.car:
+            if self.rush_board[car.y + 1, car.x] == "." or self.rush_board[car.y + 1, car.x] == car.car and y_up >= 1:
                 return -1
             else:
                 return 0
