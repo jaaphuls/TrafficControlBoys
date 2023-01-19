@@ -71,6 +71,7 @@ while board.rush_board[2, 5] != "X":
     board.create_state()
     board.create_board()
     board.visualize()
+    board.car_list = random_step(board)
     step += 1
 
 
