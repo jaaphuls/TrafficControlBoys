@@ -7,7 +7,7 @@ import argparse
 import random
 import matplotlib.pyplot as plt
 import numpy as np
-from code.algorithms.random import Random
+from code.algorithms.random_algo import Random
 import time
 
 # this code block asks for a user input and keeps asking untill a good input is given
@@ -61,7 +61,7 @@ for i, row in dataframe.iterrows():
 
 # Run main with provide arguments
 board = Board(car_list, board_size)
-board.check_move
+#board.check_move()
 step = 0
 
 #for i in range(5):
