@@ -39,12 +39,12 @@ class Board:
         for state in self.states_list:
             for car in state:
                 if car[1] == 2:
-                    self.rush_board[(car[3]-1, car[2]-1)] = car[0]
-                    self.rush_board[(car[5]-1, car[4]-1)] = car[0]
+                    self.rush_board[(car[3], car[2])] = car[0]
+                    self.rush_board[(car[5], car[4])] = car[0]
                 if car[1] == 3:
-                    self.rush_board[(car[3]-1, car[2]-1)] = car[0]
-                    self.rush_board[(car[5]-1, car[4]-1)] = car[0]
-                    self.rush_board[(car[7]-1, car[6]-1)] = car[0]
+                    self.rush_board[(car[3], car[2])] = car[0]
+                    self.rush_board[(car[5], car[4])] = car[0]
+                    self.rush_board[(car[7], car[6])] = car[0]
  
     def check_move(self):
         possible_moves = []

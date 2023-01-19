@@ -4,8 +4,8 @@ class Vehicle:
 
     def __init__(self, car, orientation, col, row, length):
         self.car = car
-        self.x = col
-        self.y = row
+        self.x = col -1
+        self.y = row -1
         self.orientation = orientation
         self.length = length 
     #     self.location_vehicle()
