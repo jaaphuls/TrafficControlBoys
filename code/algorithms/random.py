@@ -14,6 +14,7 @@ class Random():
         car = random.choice(self.car_list)
         print(car.car)
         fifty_fifty = random.random()
+        print(fifty_fifty)
 
 
         if car.orientation == 'H': 
@@ -32,6 +33,7 @@ class Random():
                     self.car_list.append(newCar)
 
                 else:
+                    print("pass")
                     pass
 
             #elif car.length == 3: 
@@ -50,6 +52,8 @@ class Random():
                     self.car_list.append(newCar)
 
                 else:
+                    print("pass")
+                    
                     pass
 
 
@@ -71,6 +75,7 @@ class Random():
                     self.car_list.append(newCar)
 
                 else:
+                    print("pass")
                     pass
 
 
@@ -90,6 +95,7 @@ class Random():
                     self.car_list.append(newCar)
                 
                 else:
+                    print("pass")
                     pass
 
         return self.car_list
