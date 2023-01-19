@@ -26,10 +26,13 @@ class Random():
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
 
-                elif self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5 and x_right <= self.board.N - 1: 
+                if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5 and x_right <= self.board.N - 1: 
                     newCar = Vehicle(car.car,car.orientation, car.x + 1, car.y,  car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
+
+                else:
+                    pass
 
             elif car.length == 3: 
                 x_left = (car.x - 1)
@@ -40,10 +43,13 @@ class Random():
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
                 
-                elif self.rush_board[car.y, x_right] == '.' and fifty_fifty < 0.5 and x_right <= self.board.N - 1: 
+                if self.rush_board[car.y, x_right] == '.' and fifty_fifty < 0.5 and x_right <= self.board.N - 2: 
                     newCar = Vehicle(car.car,car.orientation, car.x + 1, car.y,  car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
+
+                else:
+                    pass
 
 
 
@@ -53,29 +59,35 @@ class Random():
                 y_down = (car.y + 1)
                 y_up = (car.y - 1) 
 
-                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and self.board.N >= 1 and self.board.N <= 5: 
-                    newCar = Vehicle(car.car, car.orientation, car.x, car.y - 1, car.length)
+                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and y_down <= self.board.N - 1: 
+                    newCar = Vehicle(car.car, car.orientation, car.x, car.y + 1, car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
 
-                elif self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5 and self.board.N >= 0 and self.board.N <= 4: 
-                    newCar = Vehicle(car.car,car.orientation, car.x, car.y + 1,  car.length)
+                if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5 and y_up >= 0: 
+                    newCar = Vehicle(car.car,car.orientation, car.x, car.y - 1,  car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
+
+                else:
+                    pass
 
 
             elif car.length == 3: 
-                y_down = (car.y - 1)
-                y_up = (car.y + 3) 
+                y_down = (car.y + 1)
+                y_up = (car.y - 3) 
 
-                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and self.board.N >= 1 and self.board.N <= 5: 
-                    newCar = Vehicle(car.car, car.orientation, car.x, car.y - 1, car.length)
+                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and y_down <= self.board.N - 2: 
+                    newCar = Vehicle(car.car, car.orientation, car.x, car.y + 1, car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
 
-                elif self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5 and self.board.N >= 0 and self.board.N <= 4: 
-                    newCar = Vehicle(car.car,car.orientation, car.x, car.y + 1,  car.length)
+                if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5 and y_up >= 0: 
+                    newCar = Vehicle(car.car,car.orientation, car.x, car.y - 1,  car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
+                
+                else:
+                    pass
 
         return self.car_list
