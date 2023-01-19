@@ -44,6 +44,20 @@ class Board:
                     self.rush_board[(car[3]-1, car[2]-1)] = car[0]
                     self.rush_board[(car[5]-1, car[4]-1)] = car[0]
                     self.rush_board[(car[7]-1, car[6]-1)] = car[0]
+
+    def create_dict(self):
+        self.car_dict = {}
+
+        for car in self.car_list:
+            self.car_dict[car.car] = car.orientation, car.y, car.x, car.length
+
+        #print(car_dict)
+
+    def dict_move(self):
+
+        car = self.car_dict["A"]
+        print(car)
+
        
     def check_move(self):
         possible_moves = []
