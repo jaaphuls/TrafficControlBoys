@@ -60,4 +60,4 @@ class Board:
             self.rush_board[i] = '.'
 
         print(self.rush_board)
-        return possible_moves
+        return self.rush_board

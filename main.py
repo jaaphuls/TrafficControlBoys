@@ -61,9 +61,10 @@ for i, row in dataframe.iterrows():
 # Run main with provide arguments
 board = Board(car_list, board_size)
 
-#for i in range(20):
-while board.rush_board[2, 5] != "X":
+for i in range(5):
+#while board.rush_board[2, 5] != "X":
      #board = Board(car_list, board_size)
+    print(board.rush_board)
     board.create_state()
     board.create_board()
     board.check_move()

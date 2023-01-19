@@ -14,9 +14,9 @@ class Random():
         car = random.choice(self.car_list)
         print(car.car)
         fifty_fifty = random.random()
-        print(fifty_fifty)
-        print(f' this is car.x: {car.x}')
-        print(f' this is car.y: {car.y}')
+        #print(fifty_fifty)
+        #print(f' this is car.x: {car.x}')
+        #print(f' this is car.y: {car.y}')
 
 
         if car.orientation == 'H': 
@@ -26,17 +26,17 @@ class Random():
             print(f'this is right {x_right}')
             
             if x_left >= 1: 
-                if self.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.5:
+                if self.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.50:
                     car.x -= 1
                 else:
-                    print("pass 1")
+                    print("pass 1 left")
                     pass
 
-            elif x_right <= self.N - 1: 
-                if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5:
+            if x_right <= self.N - 1: 
+                if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.50:
                     car.x += 1
                 else:
-                    print("pass 1")
+                    print("pass 1 right")
                     pass
 
             else:
