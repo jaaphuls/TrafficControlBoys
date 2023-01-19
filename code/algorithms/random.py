@@ -22,7 +22,7 @@ class Random():
         if car.orientation == 'H': 
             if car.length == 2: 
                 x_left = (car.x - 1)
-                x_right = (car.x + 1)
+                x_right = (car.x + 2)
                 print(f'this is left {x_left}')
                 print(f'this is right {x_right}')
                 
@@ -47,7 +47,7 @@ class Random():
             #elif car.length == 3: 
             else:
                 x_left = (car.x - 1)
-                x_right = (car.x + 1) 
+                x_right = (car.x + 3) 
                 print(f'this is left {x_left}')
                 print(f'this is right {x_right}')
 
@@ -76,7 +76,7 @@ class Random():
         # car oriention 'V'
         else:
             if car.length == 2: 
-                y_down = (car.y + 1)
+                y_down = (car.y + 2)
                 y_up = (car.y - 1) 
                 print(f'this is up {y_up}')
                 print(f'this is down {y_down}')
