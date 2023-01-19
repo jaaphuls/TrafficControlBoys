@@ -55,9 +55,7 @@ class Board:
 
                 if self.rush_board[row, column] == 0:
                    possible_moves.append((row, column))
-
-        for i in possible_moves:
-            self.rush_board[i] = '.'
+                   self.rush_board[row, column] = '.'
 
         print(self.rush_board)
         return self.rush_board
