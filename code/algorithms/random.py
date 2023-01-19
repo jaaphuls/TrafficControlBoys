@@ -12,6 +12,7 @@ class Random():
     def random_step(self):
 
         car = random.choice(self.car_list)
+        print(car.car)
         fifty_fifty = random.random()
 
 
