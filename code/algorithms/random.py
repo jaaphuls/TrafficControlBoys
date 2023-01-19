@@ -45,54 +45,27 @@ class Random():
 
         # car oriention 'V'
         else:
-            if car.length == 2: 
-                y_down = (car.y + 2)
-                y_up = (car.y - 1) 
-                print(f'this is up {y_up}')
-                print(f'this is down {y_down}')
+            y_down = (car.y + car.length)
+            y_up = (car.y - 1) 
+            print(f'this is up {y_up}')
+            print(f'this is down {y_down}')
 
-                if y_down <= self.N - 2:
-                    if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:  
-                        car.y += 1
-                    else:
-                        print("pass")
-                        pass
-
-                elif y_up >= 1:
-                    if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5: 
-                        car.y -= 1
-                    else:
-                        print("pass")
-                        pass
-
+            if y_down <= self.N - 2:
+                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:  
+                    car.y += 1
                 else:
                     print("pass")
                     pass
 
+            elif y_up >= 1:
+                if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5: 
+                    car.y -= 1
+                else:
+                    print("pass")
+                    pass
 
-            #elif car.length == 3: 
             else:
-                y_down = (car.y + 1)
-                y_up = (car.y - 1) 
-                print(f'this is up {y_up}')
-                print(f'this is down {y_down}')
-
-                if y_down <= self.N - 3: 
-                    if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:
-                        car.y += 1
-                    else:
-                        print("pass")
-                        pass
-
-                elif y_up >= 1: 
-                    if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5:
-                        car.y -= 1
-                    else:
-                        print("pass")
-                        pass
-                
-                else:
-                    print("pass")
-                    pass
+                print("pass")
+                pass
 
         return self.car_list
