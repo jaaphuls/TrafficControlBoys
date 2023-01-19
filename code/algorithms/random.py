@@ -10,10 +10,8 @@ class Random():
         
 
     def random_step(self):
-        
-        #car = random.choice(self.car_list)
-        car = self.car_list[0]
-        print(car.car)
+
+        car = random.choice(self.car_list)
 
         if car.orientation == 'H': 
             if car.length == 2: 
@@ -47,34 +45,34 @@ class Random():
 
 
         # car oriention 'V'
-        # else:
-        #     if car.length == 2: 
-        #         y_down = (car.y - 1)
-        #         y_up = (car.y + 1) 
+        else:
+            if car.length == 2: 
+                y_down = (car.y - 1)
+                y_up = (car.y + 1) 
 
-        #         if self.rush_board[y_down, car.x] == '.': 
-        #             newCar = Vehicle(car.car, car.orientation, car.x, car.y - 1, car.length)
-        #             self.car_list.remove(car) 
-        #             self.car_list.append(newCar)
+                if self.rush_board[y_down, car.x] == '.': 
+                    newCar = Vehicle(car.car, car.orientation, car.x, car.y - 1, car.length)
+                    self.car_list.remove(car) 
+                    self.car_list.append(newCar)
 
-        #         elif self.rush_board[y_up, car.x] == '.': 
-        #             newCar = Vehicle(car.car,car.orientation, car.x, car.y + 1,  car.length)
-        #             self.car_list.remove(car) 
-        #             self.car_list.append(newCar)
+                elif self.rush_board[y_up, car.x] == '.': 
+                    newCar = Vehicle(car.car,car.orientation, car.x, car.y + 1,  car.length)
+                    self.car_list.remove(car) 
+                    self.car_list.append(newCar)
 
 
-        #     elif car.length == 3: 
-        #         y_down = (car.y - 1)
-        #         y_up = (car.y + 3) 
+            elif car.length == 3: 
+                y_down = (car.y - 1)
+                y_up = (car.y + 3) 
 
-        #         if self.rush_board[y_down, car.x] == '.': 
-        #             newCar = Vehicle(car.car, car.orientation, car.x, car.y - 1, car.length)
-        #             self.car_list.remove(car) 
-        #             self.car_list.append(newCar)
+                if self.rush_board[y_down, car.x] == '.': 
+                    newCar = Vehicle(car.car, car.orientation, car.x, car.y - 1, car.length)
+                    self.car_list.remove(car) 
+                    self.car_list.append(newCar)
 
-        #         elif self.rush_board[y_up, car.x] == '.': 
-        #             newCar = Vehicle(car.car,car.orientation, car.x, car.y + 1,  car.length)
-        #             self.car_list.remove(car) 
-        #             self.car_list.append(newCar)
+                elif self.rush_board[y_up, car.x] == '.': 
+                    newCar = Vehicle(car.car,car.orientation, car.x, car.y + 1,  car.length)
+                    self.car_list.remove(car) 
+                    self.car_list.append(newCar)
 
-        return self.car_list
+    return self.car_list
