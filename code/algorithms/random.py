@@ -77,4 +77,4 @@ class Random():
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
 
-    return self.car_list
+        return self.car_list
