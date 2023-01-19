@@ -3,8 +3,9 @@ import argparse
 import random
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
-def gameboard(car_list, N):
+def gameboard(car_dict, N):
     """
     Arguments: car list with Vehicle objects
     
@@ -20,11 +21,12 @@ def gameboard(car_list, N):
     gameboard[1:N+1, 1:N+1] = [1, 1, 1]
     gameboard[3, N+1] = [1, 1, 1]
 
-    for vehicle_ in car_list:
+    for car in car_dict.values():
+        print(car[0])
 
-        for coordinate in (vehicle_.area):
+        for coordinate in car[0]:
 
-            gameboard[coordinate] = vehicle_.color
+            gameboard[coordinate] = car[1]
 
     plt.imshow(gameboard)
     plt.show()

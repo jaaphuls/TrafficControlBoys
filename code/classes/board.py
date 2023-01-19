@@ -49,14 +49,13 @@ class Board:
         self.car_dict = {}
 
         for car in self.car_list:
-            self.car_dict[car.car] = car.orientation, car.y, car.x, car.length
+            self.car_dict[car.car] = car.area, car.color
 
-        #print(car_dict)
+        return self.car_dict
 
     def dict_move(self):
 
         car = self.car_dict["A"]
-        print(car)
 
        
     def check_move(self):
