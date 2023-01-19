@@ -34,7 +34,8 @@ class Random():
                 else:
                     pass
 
-            elif car.length == 3: 
+            #elif car.length == 3: 
+            else:
                 x_left = (car.x - 1)
                 x_right = (car.x + 2) 
 
@@ -73,7 +74,8 @@ class Random():
                     pass
 
 
-            elif car.length == 3: 
+            #elif car.length == 3: 
+            else:
                 y_down = (car.y + 1)
                 y_up = (car.y - 3) 
 
