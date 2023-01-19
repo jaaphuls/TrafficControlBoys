@@ -27,7 +27,7 @@ class Random():
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
 
-                if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5 and x_right <= self.board.N - 1: 
+                if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5 and x_right <= self.board.N - 2: 
                     newCar = Vehicle(car.car,car.orientation, car.x + 1, car.y,  car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
@@ -46,7 +46,7 @@ class Random():
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
                 
-                if self.rush_board[car.y, x_right] == '.' and fifty_fifty < 0.5 and x_right <= self.board.N - 2: 
+                if self.rush_board[car.y, x_right] == '.' and fifty_fifty < 0.5 and x_right <= self.board.N - 3: 
                     newCar = Vehicle(car.car,car.orientation, car.x + 1, car.y,  car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
@@ -64,7 +64,7 @@ class Random():
                 y_down = (car.y + 1)
                 y_up = (car.y - 1) 
 
-                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and y_down <= self.board.N - 1: 
+                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and y_down <= self.board.N - 2: 
                     newCar = Vehicle(car.car, car.orientation, car.x, car.y + 1, car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
@@ -84,7 +84,7 @@ class Random():
                 y_down = (car.y + 1)
                 y_up = (car.y - 3) 
 
-                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and y_down <= self.board.N - 2: 
+                if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5 and y_down <= self.board.N - 3: 
                     newCar = Vehicle(car.car, car.orientation, car.x, car.y + 1, car.length)
                     self.car_list.remove(car) 
                     self.car_list.append(newCar)
