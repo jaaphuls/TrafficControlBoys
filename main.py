@@ -66,6 +66,7 @@ step = 0
 
 #for i in range(5):
 while board.rush_board[2, 5] != "X":
+    start_time = time.time()
      #board = Board(car_list, board_size)
     board.create_state()
     board.create_board()
@@ -76,6 +77,7 @@ while board.rush_board[2, 5] != "X":
     if board.rush_board[2, 5] == "X":
         print('SUCCES')
         print(f'the total steps were {step}')
+        print(f"solvetime = {time.time() - start_time} seconds")
         exit()
 
     

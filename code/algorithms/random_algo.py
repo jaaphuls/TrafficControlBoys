@@ -8,6 +8,7 @@ class Random():
         self.board = board
         self.random_step()
         
+
     def random_step(self):
 
         car = random.choice(self.car_list)
@@ -16,9 +17,7 @@ class Random():
         #print(f' this is car.x: {car.x}')
         #print(f' this is car.y: {car.y}')
 
-        #mover = Board.move_checker(self.board, car)
-        print(self.board)
-        #mover = self.board.move_checker(car)
+        mover = Board.move_checker(car)
 
         if mover == 1 and car.orientaion == "H":
             car.x += 1
