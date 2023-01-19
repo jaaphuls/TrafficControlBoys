@@ -11,8 +11,8 @@ class Random():
 
     def random_step(self):
 
-        auto = random.choice(self.car_list)
-        print(auto)
+        car = random.choice(self.car_list)
+        
         fifty_fifty = random.random()
         #print(fifty_fifty)
         #print(f' this is car.x: {car.x}')
@@ -32,7 +32,6 @@ class Random():
         # elif mover == -1 and car.orientaion == "V":
         #     car.y += 1
 
-   
         if car.orientation == 'H': 
             x_left = (car.x - 1)
             x_right = (car.x + car.length)
