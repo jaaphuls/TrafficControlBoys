@@ -10,45 +10,26 @@ import numpy as np
 from code.algorithms.random_algo import random_step
 import time
 
-# this code block asks for a user input and keeps asking untill a good input is given
-while True:
+# this code block asks for a user input and keeps asking until a good input is given
+board_size = None
+
+while type(board_size) != int:
+    dimensions = {'6x6' : '6', '9x9' : '9', '12x12' : '12'}
+    
     board_size = input("What are the board dimensions (6x6, 9x9 or 12x12)? \n")
-    if board_size not in ('6', '9', '12', '6x6', '9x9', '12x12'):
-        print("There are no boards with these dimensions, please chose the correct dimensions!")
+    
+    if board_size in dimensions:
+        board_size = int(dimensions[board_size])
+    
+    elif board_size in dimensions.values():
+        board_size = int(board_size)
+
     else:
-        break
+        print("There are no boards with these dimensions, please choose the correct dimensions!")
 
-if board_size == '6' or board_size == '6x6':
-    board_size = 6 
-    game_number = int(input('Which game would you like to play? \n Enter 1 for game 1 \n Enter 2 for game 2 \n Enter 3 for game 3 \n Enter 4 for game 4 \n'))
-
-    if game_number == 1: 
-        csv_rh = 'data/Rushhour6x6_1.csv'
-    elif game_number == 2: 
-        csv_rh = 'data/Rushhour6x6_2.csv'
-    elif game_number == 3: 
-        csv_rh = 'data/Rushhour6x6_3.csv'
-    elif game_number == 4: 
-        csv_rh = 'data/Rushhour6x6_4.csv'
-
-elif board_size == '9' or board_size == '9x9': 
-    board_size = 9
-    game_number = int(input('Which game would you like to play? \n Enter 1 for game 4 \n Enter 2 for game 5 \n Enter 3 for game 6 \n'))
-
-    if game_number == 1: 
-        csv_rh = 'data/Rushhour9x9_4.csv'
-    elif game_number == 2: 
-        csv_rh = 'data/Rushhour9x9_5.csv'
-    elif game_number == 3: 
-        csv_rh = 'data/Rushhour9x9_6.csv'
-
-elif board_size == '12' or board_size == '12x12':
-    board_size = 12 
-    game_number = int(input('Which game would you like to play? \n Enter 1 for game 1 \n'))
-
-    if game_number == 1: 
-        csv_rh = 'data/Rushhour12x12_7.csv'
-
+game_number = int(input('Which game would you like to play? \n Enter game number \n'))
+    
+csv_rh = f'data/Rushhour{board_size}x{board_size}_{game_number}.csv'
 
 # read the csv input file as a pandas dataframe
 dataframe = pd.read_csv(csv_rh)
