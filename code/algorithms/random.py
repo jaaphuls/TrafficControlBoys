@@ -39,17 +39,10 @@ class Random():
             if x_left >= 1: 
                 if self.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.50:
                     car.x -= 1
-                else:
-                    pass
 
             if x_right <= self.N - 1: 
                 if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.50:
                     car.x += 1
-                else:
-                    pass
-
-            else:
-                pass
 
         # car oriention 'V'
         else:
@@ -59,17 +52,12 @@ class Random():
             if y_down <= self.N - 1:
                 if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:  
                     car.y += 1
-                else:
-                    pass
 
             elif y_up >= 1:
                 if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5: 
                     car.y -= 1
-                else:
-                    pass
 
             else:
                 print("pass")
-                pass
-
+                
         return self.car_list
