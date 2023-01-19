@@ -61,6 +61,7 @@ for i, row in dataframe.iterrows():
 # Run main with provide arguments
 board = Board(car_list, board_size)
 board.check_move
+step = 0
 
 #for i in range(5):
 while board.rush_board[2, 5] != "X":
@@ -68,9 +69,12 @@ while board.rush_board[2, 5] != "X":
     board.create_state()
     board.create_board()
     board.check_move()
-    print(board.rush_board[2, 5])
+    step += 1
+
 
     if board.rush_board[2, 5] == "X":
+        print('SUCCES')
+        print(f'the total steps were {step}')
         exit()
 
     
