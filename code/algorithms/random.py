@@ -17,7 +17,21 @@ class Random():
         #print(f' this is car.x: {car.x}')
         #print(f' this is car.y: {car.y}')
 
+        mover = Board.move_checker(car)
 
+        if mover == 1 and car.orientaion == "H":
+            car.x += 1
+
+        elif mover == -1 and car.orientaion == "H":
+            car.x -= 1
+
+        elif mover == 1 and car.orientaion == "V":
+            car.y -= 1
+
+        elif mover == -1 and car.orientaion == "V":
+            car.y += 1
+
+        '''
         if car.orientation == 'H': 
             x_left = (car.x - 1)
             x_right = (car.x + car.length)
@@ -65,6 +79,6 @@ class Random():
 
             else:
                 print("pass")
-                pass
+                pass'''
 
         return self.car_list
