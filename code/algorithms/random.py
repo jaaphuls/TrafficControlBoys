@@ -28,15 +28,11 @@ class Random():
                 
                 if x_left >= 1: 
                     if self.rush_board[car.y, x_left] == '.' and fifty_fifty < 0.5:
-                        newCar = Vehicle(car.car, car.orientation, car.x - 1, car.y, car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.x -= 1
 
                 if x_right <= self.N - 2: 
                     if self.rush_board[car.y, x_right] == '.' and fifty_fifty > 0.5:
-                        newCar = Vehicle(car.car,car.orientation, car.x + 1, car.y,  car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.x += 1
 
                 else:
                     print("pass")
@@ -51,15 +47,11 @@ class Random():
 
                 if x_left >= 1: 
                     if self.rush_board[car.y, x_left] == '.' and fifty_fifty > 0.5:
-                        newCar = Vehicle(car.car, car.orientation, car.x - 1, car.y, car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.x -= 1
 
                 if x_right <= self.N - 3: 
                     if self.rush_board[car.y, x_right] == '.' and fifty_fifty < 0.5:
-                        newCar = Vehicle(car.car,car.orientation, car.x + 1, car.y,  car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.x += 1
 
                 else:
                     print("pass")
@@ -78,15 +70,11 @@ class Random():
 
                 if y_down <= self.N - 2:
                     if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:  
-                        newCar = Vehicle(car.car, car.orientation, car.x, car.y + 1, car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.y += 1
 
                 if y_up >= 1:
                     if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5: 
-                        newCar = Vehicle(car.car,car.orientation, car.x, car.y - 1,  car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.y -= 1
 
                 else:
                     print("pass")
@@ -102,15 +90,11 @@ class Random():
 
                 if y_down <= self.N - 3: 
                     if self.rush_board[y_down, car.x] == '.' and fifty_fifty > 0.5:
-                        newCar = Vehicle(car.car, car.orientation, car.x, car.y + 1, car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.y += 1
 
                 if y_up >= 1: 
                     if self.rush_board[y_up, car.x] == '.' and fifty_fifty < 0.5:
-                        newCar = Vehicle(car.car,car.orientation, car.x, car.y - 1,  car.length)
-                        self.car_list.remove(car) 
-                        self.car_list.append(newCar)
+                        car.y -= 1
                 
                 else:
                     print("pass")
