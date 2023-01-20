@@ -49,7 +49,6 @@ class Board:
     def check_move(self):
         possible_boards = []
         for car in self.car_list:
-            print(car.car)
 
             if car.orientation == 'H': 
                 x_left = (car.x - 1)
