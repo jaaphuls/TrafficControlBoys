@@ -8,6 +8,18 @@ def random_step(board, board_size):
     start_time = time.time()
     start_board = board
     step = 0
+
+    if board_size == 6: 
+        end_coord = 2,5
+
+    if board_size == 9: 
+        end_coord = 4,8
+    
+    if board_size == 12: 
+        end_coord = 5, 11
+    
+    
+
     
     while True:
         choice = start_board.check_move()
@@ -17,7 +29,7 @@ def random_step(board, board_size):
         start_board.create_board()
         start_board.visualize()
 
-        if start_board.rush_board[2, 5] == "X":
+        if start_board.rush_board[end_coord] == "X":
             
             
             return print(f'the total steps were {step} solvetime = {time.time() - start_time} second')
