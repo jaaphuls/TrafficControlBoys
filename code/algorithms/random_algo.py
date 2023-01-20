@@ -7,10 +7,12 @@ from code.classes.board import Board
 def random_step(board, board_size):
     start_time = time.time()
     start_board = board
-    print(start_board)
     steps = 0
+    
     while True:
-        start_board = Board(random.choice(start_board.check_move()), board_size)
+        choice = start_board.check_move()
+        print(choice)
+        start_board = Board(random.choice(choice), board_size)
         steps += 1
         start_board.create_state()
         start_board.create_board()
