@@ -8,30 +8,8 @@ class Vehicle:
         self.y = row -1
         self.orientation = orientation
         self.length = length 
-
-
-
-
-
-
-
         
-    #     self.location_vehicle()
     #     self.color_vehicle()
-
-    # def location_vehicle(self):
-
-    #     self.area = []
-
-    #     for i in range(self.length):
-
-    #         if self.orientation == "H":
-    #             self.area.append((self.y, self.x))
-    #             self.x += 1
-            
-    #         else:
-    #             self.area.append((self.y, self.x))
-    #             self.y += 1
     
     # def color_vehicle(self):
 

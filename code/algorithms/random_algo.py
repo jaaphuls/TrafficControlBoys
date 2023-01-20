@@ -27,6 +27,7 @@ def random_step(board, board_size):
         start_board.visualize()
 
         if start_board.rush_board[end_coord] == "X":
+            print(f'the total steps were {step} solvetime = {time.time() - start_time} second')
+            time = time.time() - start_time
             
-            
-            return print(f'the total steps were {step} solvetime = {time.time() - start_time} second')
+            return step, time
