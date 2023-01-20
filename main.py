@@ -61,33 +61,45 @@ for i, row in dataframe.iterrows():
 
 # Run main with provide arguments
 board = Board(car_list, board_size)
+board.create_state()
+board.create_board()
+board.visualize()
+new_car_list = random_step(board, board_size)
+new_board = Board(new_car_list, boar_size)
+new_board.create_state()
+new_board.create_board()
+new_board.visualize()
+
+
+
 #board.check_move()
 step = 0
 
+
+
 #for i in range(5):
-while board.rush_board[2, 5] != "X":
-    start_time = time.time()
-     #board = Board(car_list, board_size)
-    board.create_state()
-    board.create_board()
-    board.visualize()
-    board.car_list = random_step(board)
-    step += 1
+# while True:
+#     start_time = time.time()
+#      #board = Board(car_list, board_size)
+#     board.create_state()
+#     board.create_board()
+#     board.visualize()
+#     board.car_list = random_step(board, board_size)
+#     step += 1
 
 
-    if board.rush_board[2, 5] == "X":
-        print('SUCCES')
-        print(f'the total steps were {step}')
-        print(f"solvetime = {time.time() - start_time} seconds")
-        exit()
+#     if board.rush_board[2, 5] == "X":
+#         print('SUCCES')
+#         print(f'the total steps were {step}')
+#         print(f"solvetime = {time.time() - start_time} seconds")
+#         exit()
 
-    
-    car_list = random_step(board)
-    board = Board(car_list, board_size)
+    # car_list = random_step(board, board_size)
+    # board = Board(car_list, board_size)
 
-    #time.sleep(0.1)
+    # #time.sleep(0.1)
 
-    print("")
+    # print("")
 
 # board.create_state()
 # board.create_board()

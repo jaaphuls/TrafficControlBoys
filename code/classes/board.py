@@ -46,29 +46,89 @@ class Board:
                     self.rush_board[(car[5], car[4])] = car[0]
                     self.rush_board[(car[7], car[6])] = car[0]
 
-    def check_move(self, car):
+    def check_move(self):
+        possible_boards = []
+        for car in self.car_list:
 
-        x_left = (car.x - 1)
-        x_right = (car.x + car.length)
-        y_down = (car.y + car.length)
-        y_up = (car.y - 1) 
-        
-        if car.orientation == "H":
-        
-            if self.rush_board[car.y, car.x - 1] == "." or self.rush_board[car.y, car.x - 1] == car.car and x_left >= 1:
-                return -1
-            if self.rush_board[car.y, car.x + 1] == "." or self.rush_board[car.y, car.x + 1] == car.car and x_right <= self.N - 1:
-                return 1
-            else:
-                return 0
+            if car.orientation == 'H': 
+                x_left = (car.x - 1)
+                x_right = (car.x + car.length)
+            
+                if x_left > 0 : 
+                    if self.rush_board[car.y, x_left] == '.':
+                        new_car_list = self.car_list.copy()
+                        new_car = Vehicle(car.car, car.orientation, car.x-1, car.y, car.length)
 
-        else:
-            if self.rush_board[car.y -1, car.x] == "." or self.rush_board[car.y -1, car.x] == car.car and y_down <= self.N - 1:
-                return 1
-            if self.rush_board[car.y + 1, car.x] == "." or self.rush_board[car.y + 1, car.x] == car.car and y_up >= 1:
-                return -1
+                        new_car_list.remove(car)
+                        new_car_list.append(new_car)
+
+                        possible_boards.append(new_car_list)
+
+                if x_right - 1 != self.N - 1: 
+                    if self.rush_board[car.y, x_right] == '.':
+                        new_car_list = self.car_list.copy()
+                        new_car = Vehicle(car.car, car.orientation, car.x+1, car.y, car.length)
+
+                        new_car_list.remove(car)
+                        new_car_list.append(new_car)
+
+                        possible_boards.append(new_car_list)
+                else:
+                    pass
+                        
             else:
-                return 0
+                y_down = (car.y + car.length)
+                y_up = (car.y - 1)
+      
+                if y_down - 1 != self.N - 1:
+                    if self.rush_board[y_down, car.x] == '.':
+                        new_car_list = self.car_list.copy()
+                        new_car = Vehicle(car.car, car.orientation, car.x, car.y+1, car.length)
+
+                        new_car_list.remove(car)
+                        new_car_list.append(new_car)
+
+                        possible_boards.append(new_car_list)
+
+                if y_up >  0:
+                    if self.rush_board[y_up, car.x] == '.':
+                        new_car_list = self.car_list.copy()
+                        new_car = Vehicle(car.car, car.orientation, car.x, car.y-1, car.length)
+                        
+
+                        new_car_list.remove(car)
+                        new_car_list.append(new_car)
+
+                        possible_boards.append(new_car_list)
+
+                else:
+                    pass
+    
+            return possible_boards
+
+    # def check_move(self, car):
+
+    #     x_left = (car.x - 1)
+    #     x_right = (car.x + car.length)
+    #     y_down = (car.y + car.length)
+    #     y_up = (car.y - 1) 
+        
+    #     if car.orientation == "H":
+        
+    #         if self.rush_board[car.y, car.x - 1] == "." or self.rush_board[car.y, car.x - 1] == car.car and x_left >= 1:
+    #             return -1
+    #         if self.rush_board[car.y, car.x + 1] == "." or self.rush_board[car.y, car.x + 1] == car.car and x_right <= self.N - 1:
+    #             return 1
+    #         else:
+    #             return 0
+
+    #     else:
+    #         if self.rush_board[car.y -1, car.x] == "." or self.rush_board[car.y -1, car.x] == car.car and y_down <= self.N - 1:
+    #             return 1
+    #         if self.rush_board[car.y + 1, car.x] == "." or self.rush_board[car.y + 1, car.x] == car.car and y_up >= 1:
+    #             return -1
+    #         else:
+    #             return 0
     
     def visualize(self):
         possible_moves = []
