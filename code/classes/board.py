@@ -49,6 +49,7 @@ class Board:
     def check_move(self):
         possible_boards = []
         for car in self.car_list:
+            print(car.car)
 
             if car.orientation == 'H': 
                 x_left = (car.x - 1)
@@ -57,7 +58,7 @@ class Board:
                 if x_left >= 0 : 
                     if self.rush_board[car.y, x_left] == '.':
                         new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x-1, car.y, car.length)
+                        new_car = Vehicle(car.car, car.orientation, car.x, car.y+1, car.length)
 
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
@@ -67,12 +68,15 @@ class Board:
                 if x_right - 1 != self.N - 1: 
                     if self.rush_board[car.y, x_right] == '.':
                         new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x+1, car.y, car.length)
+                        new_car = Vehicle(car.car, car.orientation, car.x+2, car.y+1, car.length)
 
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
 
                         possible_boards.append(new_car_list)
+                
+                else: 
+                    pass
                         
                         
             else:
@@ -82,7 +86,7 @@ class Board:
                 if y_down - 1 != self.N - 1:
                     if self.rush_board[y_down, car.x] == '.':
                         new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x, car.y+1, car.length)
+                        new_car = Vehicle(car.car, car.orientation, car.x+1, car.y+2, car.length)
 
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
@@ -92,15 +96,18 @@ class Board:
                 if y_up >=  0:
                     if self.rush_board[y_up, car.x] == '.':
                         new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x, car.y-1, car.length)
+                        new_car = Vehicle(car.car, car.orientation, car.x+1, car.y, car.length)
                         
 
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
 
                         possible_boards.append(new_car_list)
+
+                else: 
+                    pass
                 
-            return possible_boards
+        return possible_boards
     
     
     def visualize(self):
