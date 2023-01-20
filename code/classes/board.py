@@ -54,7 +54,7 @@ class Board:
                 x_left = (car.x - 1)
                 x_right = (car.x + car.length)
             
-                if x_left > 0 : 
+                if x_left >= 0 : 
                     if self.rush_board[car.y, x_left] == '.':
                         new_car_list = self.car_list.copy()
                         new_car = Vehicle(car.car, car.orientation, car.x-1, car.y, car.length)
@@ -90,7 +90,7 @@ class Board:
 
                         possible_boards.append(new_car_list)
 
-                if y_up >  0:
+                if y_up >=  0:
                     if self.rush_board[y_up, car.x] == '.':
                         new_car_list = self.car_list.copy()
                         new_car = Vehicle(car.car, car.orientation, car.x, car.y-1, car.length)
@@ -103,7 +103,7 @@ class Board:
 
                 else:
                     pass
-    
+                
             return possible_boards
 
     # def check_move(self, car):

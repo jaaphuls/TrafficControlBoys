@@ -46,10 +46,6 @@ board.create_state()
 board.create_board()
 board.visualize()
 new_car_list = random_step(board, board_size)
-new_board = Board(new_car_list, boar_size)
-new_board.create_state()
-new_board.create_board()
-new_board.visualize()
 
 
 
