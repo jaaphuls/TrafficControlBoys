@@ -61,21 +61,20 @@ if __name__ == '__main__':
         runtimes.append(new_car_list[1])
 
     plt.figure(figsize=[10,6])
-    plt.hist(runtimes, bins = 30)
+    plt.hist(runtimes, bins = 30, label= f"mean runtime = {round(mean(runtimes), 5)} seconds")
     plt.xlabel('time (in seconds)')
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
+    plt.legend()
     plt.show()
 
     plt.figure(figsize=[10,6])
-    plt.hist(count_list, bins = 30)
+    plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps")
     plt.xlabel('amount of steps')
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
+    plt.legend()
     plt.show()
-
-    print(f"avarage amount of time per game: {mean(runtimes)} seconds")
-    print(f"avarage amount of steps per game: {mean(count_list)} steps")
 
 
 
