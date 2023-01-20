@@ -66,7 +66,7 @@ if __name__ == '__main__':
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
     plt.legend()
-    plt.show()
+    plt.savefig(f'code/results/random_results/results_runtime_{game_number}')
 
     plt.figure(figsize=[10,6])
     plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps \nleast amount of steps is {min(count_list)} steps \nmost amount of steps is {max(count_list)} steps")
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
     plt.legend()
-    plt.show()
+    plt.savefig(f'code/results/random_results/results_steps_{game_number}')
 
 
 
