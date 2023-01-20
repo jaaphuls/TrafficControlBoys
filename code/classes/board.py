@@ -73,8 +73,7 @@ class Board:
                         new_car_list.append(new_car)
 
                         possible_boards.append(new_car_list)
-                        
-                        
+                     
             else:
                 y_down = (car.y + car.length)
                 y_up = (car.y - 1)
