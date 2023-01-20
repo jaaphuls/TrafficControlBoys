@@ -60,13 +60,15 @@ if __name__ == '__main__':
         count_list.append(new_car_list[0])
         runtimes.append(new_car_list[1])
 
-    plt.hist(runtimes)
+    plt.figure(figsize=[10,6])
+    plt.hist(runtimes, bins = 30)
     plt.xlabel('time (in seconds)')
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
     plt.show()
 
-    plt.hist(count_list)
+    plt.figure(figsize=[10,6])
+    plt.hist(count_list, bins = 30)
     plt.xlabel('amount of steps')
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
