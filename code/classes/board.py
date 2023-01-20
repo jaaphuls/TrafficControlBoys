@@ -114,6 +114,5 @@ class Board:
                    possible_moves.append((row, column))
                    self.rush_board[row, column] = '.'
 
-        print(self.rush_board)
         return self.rush_board
 

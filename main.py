@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from code.algorithms.random_algo import random_step
 import time
+from tqdm import tqdm
 
 if __name__ == '__main__':
     
@@ -46,7 +47,7 @@ if __name__ == '__main__':
     runtimes = []
     count_list = []
 
-    for i in range(1000): 
+    for i in tqdm(range(1000)): 
 
         # Run main with provide arguments
         board = Board(car_list, board_size)
@@ -59,6 +60,15 @@ if __name__ == '__main__':
         runtimes.append(new_car_list[1])
 
     plt.hist(runtimes)
+    plt.xlabel('time (in seconds)')
+    plt.ylabel('number of games')
+    plt.title('1000 games simulated')
+    plt.show()
+
+    plt.hist(count_list)
+    plt.xlabel('amount of steps')
+    plt.ylabel('number of games')
+    plt.title('1000 games simulated')
     plt.show()
 
 
