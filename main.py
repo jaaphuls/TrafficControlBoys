@@ -29,7 +29,7 @@ while type(board_size) != int:
 
 game_number = int(input('Which game would you like to play? \n Enter game number \n'))
     
-csv_rh = f'data/Rushhour{board_size}x{board_size}_{game_number}.csv'
+csv_rh = (f'data/Rushhour{board_size}x{board_size}_{game_number}.csv')
 
 # read the csv input file as a pandas dataframe
 dataframe = pd.read_csv(csv_rh)
