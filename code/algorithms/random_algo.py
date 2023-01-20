@@ -18,7 +18,6 @@ def random_step(board, board_size):
     if board_size == 12: 
         end_coord = 5, 11
     
-
     while True:
         choice = start_board.check_move()
         start_board = Board(random.choice(choice), board_size)
