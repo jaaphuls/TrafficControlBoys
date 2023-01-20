@@ -57,8 +57,9 @@ if __name__ == '__main__':
 
         count_list.append(new_car_list[0])
         runtimes.append(new_car_list[1])
-        
 
+    plt.hist(runtimes)
+    plt.show()
 
 
 
