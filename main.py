@@ -10,6 +10,7 @@ import numpy as np
 from code.algorithms.random_algo import random_step
 import time
 from tqdm import tqdm
+from statistics import mean
 
 if __name__ == '__main__':
     
@@ -71,6 +72,8 @@ if __name__ == '__main__':
     plt.title('1000 games simulated')
     plt.show()
 
+    print(f"avarage amount of time per game: {mean(runtimes)} seconds")
+    print(f"avarage amount of steps per game: {mean(count_list)} steps")
 
 
 
