@@ -13,34 +13,48 @@ class Board:
         self.states_list = []
 
     def create_state(self):
-        state = []
+        # state = []
         
         for car in self.car_list:
-            if car.orientation == 'H' and car.length == 2:
-                state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y))
+            # if car.orientation == 'H' and car.length == 2:
+            #     state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y))
              
-            elif car.orientation == 'H' and car.length == 3:
-                state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y, car.x + 2, car.y))
+            # elif car.orientation == 'H' and car.length == 3:
+            #     state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y, car.x + 2, car.y))
             
-            elif car.orientation == 'V' and car.length == 2:
-                state.append((car.car, car.length, car.x, car.y, car.x, car.y + 1))
+            # elif car.orientation == 'V' and car.length == 2:
+            #     state.append((car.car, car.length, car.x, car.y, car.x, car.y + 1))
 
-            elif car.orientation == 'V' and car.length == 3:
-                state.append((car.car, car.length, car.x, car.y, car.x, car.y + 1, car.x, car.y + 2))
-    
-        self.states_list.append(state)
+            # elif car.orientation == 'V' and car.length == 3:
+            #     state.append((car.car, car.length, car.x, car.y, car.x, car.y + 1, car.x, car.y + 2))
+
+            state = [car, car.x, car.y]
+            
+            # self.states_list.append(state)
+        # print(len(self.states_list))
 
     def create_board(self):
 
-        for state in self.states_list:
-            for car in state:
-                if car[1] == 2:
-                    self.rush_board[(car[3], car[2])] = car[0]
-                    self.rush_board[(car[5], car[4])] = car[0]
-                if car[1] == 3:
-                    self.rush_board[(car[3], car[2])] = car[0]
-                    self.rush_board[(car[5], car[4])] = car[0]
-                    self.rush_board[(car[7], car[6])] = car[0]
+        # for state in self.states_list:
+        #     for attribute in state:
+        #         if attribute[1] == 2:
+        #             self.rush_board[(attribute[3], attribute[2])] = attribute[0]
+        #             self.rush_board[(attribute[5], attribute[4])] = attribute[0]
+        #         if attribute[1] == 3:
+        #             self.rush_board[(attribute[3], attribute[2])] = attribute[0]
+        #             self.rush_board[(attribute[5], attribute[4])] = attribute[0]
+        #             self.rush_board[(attribute[7], attribute[6])] = attribute[0]
+
+            for car in self.car_list:
+                x = car.x
+                y = car.y
+                for coord in range(car.length):
+                    self.rush_board[y, x] = car.car
+
+                    if car.orientation == 'H':
+                        x += 1
+                    else:
+                        y += 1
 
     def check_move(self):
         possible_boards = []
@@ -109,6 +123,8 @@ class Board:
                 if self.rush_board[row, column] == 0:
                    possible_moves.append((row, column))
                    self.rush_board[row, column] = '.'
+
+        print(self.rush_board)
 
         return self.rush_board
 
