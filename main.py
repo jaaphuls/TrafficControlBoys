@@ -74,7 +74,7 @@ if __name__ == '__main__':
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
     plt.legend()
-    plt.savefig(f'code/results/random_results/results_steps_game_{game_number}_2_steps')
+    plt.savefig(f'code/results/random_results/2_step/results_steps_game_{game_number}_2_steps')
 
 
 
