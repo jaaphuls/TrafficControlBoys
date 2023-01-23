@@ -27,7 +27,7 @@ The following list describes the most important folders and files in the project
   - **/code/visualisation**: contains the code for the visualization
 - **/data**: contains the various data files needed to create and visualize the board
 
-## - objective function
+## - Objective function
 
 Try to minimalise the amount of steps that it takes to solve the puzzle
 
