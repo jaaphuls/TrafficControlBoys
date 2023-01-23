@@ -30,8 +30,7 @@ class Board:
 
             state = [car, car.x, car.y]
             
-            # self.states_list.append(state)
-        # print(len(self.states_list))
+            self.states_list.append(state)
 
     def create_board(self):
 
