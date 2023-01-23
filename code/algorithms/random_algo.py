@@ -36,7 +36,7 @@ def breadth_first(board, board_size):
     start_time = time.time()
     start_board = board
     previous_states = []
-    choices_queue = []
+    choices_queue = queue.Queue()
     
     if board_size == 6: 
         end_coord = 2,5
@@ -51,23 +51,24 @@ def breadth_first(board, board_size):
     while True:
 
         choice = start_board.check_move()
-        choices_queue.append(choice)
+        choices_queue.put(choice)
 
-        for state in choices_queue:
+        while not choices_queue.empty():
+            current_state = choices_queue.get()
 
-            if state not in previous_states:
+            if current_state not in previous_states:
 
-                previous_states.append(state)
+                previous_states.append(current_state)
 
-                start_board = Board(state, board_size) 
-                start_board.create_board()
-                start_board.visualize()
+                new_board = Board(current_state, board_size) 
+                new_board.create_board()
+                new_board.visualize()
 
-                choices_queue.append(start_board)
+                choices_queue.put(new_board)
 
 
         
-                if start_board.rush_board[end_coord] == "X":
+                if new_board.rush_board[end_coord] == "X":
                     runtime = time.time() - start_time
             
                     return runtime
