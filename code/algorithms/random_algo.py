@@ -1,5 +1,6 @@
 import random
 import time
+import queue
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 
@@ -30,3 +31,35 @@ def random_step(board, board_size):
             runtime = time.time() - start_time
             
             return step, runtime
+
+def breadth_first(board, board_size):
+    start_time = time.time()
+    start_board = board
+    previous_states = []
+
+    if board_size == 6: 
+        end_coord = 2,5
+
+    if board_size == 9: 
+        end_coord = 4,8
+    
+    if board_size == 12: 
+        end_coord = 5, 11
+
+
+    while True:
+
+        choice = start_board.check_move()
+
+        for state in choice:
+
+            if state not in previous_states:
+
+                start_board.create_state()
+                start_board.create_board()
+                start_board.visualize()
+            
+            else:
+                pass
+
+        previous_states.append(state)
