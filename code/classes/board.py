@@ -16,10 +16,6 @@ class Board:
         state = []
         
         for car in self.car_list:
-            orientation = car.orientation
-            length = car.length
-            x = car.x
-            y = car.y
             if car.orientation == 'H' and car.length == 2:
                 state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y))
              
