@@ -4,8 +4,9 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+from code.classes.vehicle import Vehicle
 
-def gameboard(car_dict, N):
+def show_board(state, N):
     """
     Arguments: car list with Vehicle objects
     
@@ -19,14 +20,39 @@ def gameboard(car_dict, N):
     
     # the inner side of the gameboard should be changed to white
     gameboard[1:N+1, 1:N+1] = [1, 1, 1]
-    gameboard[3, N+1] = [1, 1, 1]
+    #gameboard[3, N+1] = [1, 1, 1]
 
-    for car in car_dict.values():
-        print(car[0])
+    for car in state:
 
-        for coordinate in car[0]:
+        if car.car == "X":
+            gameboard[car.y+1, N+1] = [1, 1, 1]
 
-            gameboard[coordinate] = car[1]
+        twer = car.color
+
+        if car.length == 2:
+            if car.orientation == "H":
+
+                gameboard[car.y+1, car.x+1] = twer
+                gameboard[car.y+1, car.x+2] = twer
+                #[twer, twer, twer]
+            else:
+                gameboard[car.y+1, car.x+1] = twer
+                gameboard[car.y+2, car.x+1] = twer
+        
+        else:
+            if car.orientation == "H":
+
+                gameboard[car.y+1, car.x+1] = twer
+                gameboard[car.y+1, car.x+2] = twer
+                gameboard[car.y+1, car.x+3] = twer
+
+            else:
+                gameboard[car.y+1, car.x+1] = twer
+                gameboard[car.y+2, car.x+1] = twer
+                gameboard[car.y+3, car.x+1] = twer
+
 
     plt.imshow(gameboard)
-    plt.show()
+    plt.pause(0.1)
+    plt.clf()
+  
