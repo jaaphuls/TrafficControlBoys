@@ -155,18 +155,29 @@ class Board:
                     new_car_list.append(new_car)
 
                     possible_boards.append(new_car_list)
-                    x_left -= 1
+                    
+                    if x_left > 0:
+                        x_left -= 1
+
+                    else:
+                        break
 
                 while x_right < self.N and self.rush_board[car.y, x_right] == '.':
                     new_car_list = self.car_list.copy()
                     new_car = Vehicle(car.car, car.orientation, x_right - car.length + 1, car.y+1, car.length)
+
+                    print(f'x_right: {x_right}')
 
                     new_car_list.remove(car)
                     new_car_list.append(new_car)
 
                     possible_boards.append(new_car_list)
 
-                    x_right += 1                       
+                    if (x_right + 1) < self.N:
+                        x_right += 1
+                 
+                    else:
+                        break
                         
             else:
                 y_down = (car.y + car.length)
@@ -181,7 +192,10 @@ class Board:
 
                     possible_boards.append(new_car_list)
 
-                    y_down += 1
+                    if (y_down + 1) < self.N:
+                        y_down += 1
+                    else:
+                        break
 
                 while y_up >= 0 and self.rush_board[y_up, car.x] == '.':
                     new_car_list = self.car_list.copy()
@@ -193,7 +207,10 @@ class Board:
 
                     possible_boards.append(new_car_list)
 
-                    y_up -= 1             
+                    if y_up > 0:
+                        y_up -= 1
+                    else:
+                        break
 
                 
         return possible_boards
