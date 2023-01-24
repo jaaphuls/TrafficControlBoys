@@ -2,13 +2,13 @@
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import gameboard
+from code.algorithms.random_algo import random_step
+from code.algorithms.breadth_first_algo import breadth_first
 import pandas as pd
 import argparse
 import random
 import matplotlib.pyplot as plt
 import numpy as np
-from code.algorithms.random_algo import random_step
-from code.algorithms.random_algo import breadth_first
 import time
 from tqdm import tqdm
 from statistics import mean
