@@ -62,3 +62,59 @@ class Board:
         print(visualized)
 
 
+
+
+
+
+
+
+
+    def check_move(self):
+        possible_boards = []
+        for index, car in enumerate(self.car_list):
+            
+            if car.orientation == 'H': 
+                x_left = (car.x - 1)
+                x_right = (car.x + car.length)
+            
+                if x_left >= 0 : 
+                    if self.rush_board[car.y, x_left] == '.':
+                        new_car_list = copy.deepcopy(self.car_list)
+
+                        new_car_list[index].x = x_left
+                        
+                        possible_boards.append(new_car_list)
+
+                if x_right - 1 != self.N - 1: 
+                    if self.rush_board[car.y, x_right] == '.':
+                        new_car_list = copy.deepcopy(self.car_list)
+
+                        new_car_list[index].x += 1
+
+                        possible_boards.append(new_car_list)
+                        
+                        
+            else:
+                y_down = (car.y + car.length)
+                y_up = (car.y - 1)
+      
+                if y_down - 1 != self.N - 1:
+                    if self.rush_board[y_down, car.x] == '.':
+                        new_car_list = copy.deepcopy(self.car_list)
+                        car.y += 1
+
+                        
+                        new_car_list[index].y += 1
+
+                        possible_boards.append(new_car_list)
+
+                if y_up >=  0:
+                    if self.rush_board[y_up, car.x] == '.':
+                        new_car_list = copy.deepcopy(self.car_list)
+                        
+                        new_car_list[index].y = y_up
+
+                        possible_boards.append(new_car_list)
+    
+        return possible_boards
+    

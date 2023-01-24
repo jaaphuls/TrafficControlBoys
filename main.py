@@ -55,7 +55,7 @@ if __name__ == '__main__':
         board = Board(car_list, board_size)
         board.create_board()
         board.visualize()
-        new_car_list = breadth_first(board, board_size)
+        new_car_list = random_step(board, board_size)
 
         count_list.append(new_car_list[0])
         runtimes.append(new_car_list[1])
