@@ -46,6 +46,7 @@ n = possibilities per option
 ORDER 
         No      (r+n -1)! /     n! /
                 r!(n-1)!        r!(n-r)!
+                
 
 ## Auteurs
 - David van Hulst
