@@ -8,8 +8,8 @@ from code.classes.board import Board
 def breadth_first(board, board_size):
     start_time = time.time()
     start_board = board
-    previous_states = []
-    previous_states.append(board.states_list)
+    previous_states = set()
+    previous_states.update((board.states_list))
     step = 0
 
     choices_queue = queue.Queue()
@@ -39,17 +39,19 @@ def breadth_first(board, board_size):
 
             if new_game.states_list not in previous_states:
                 
-                previous_states.append(new_game.states_list)
+                print(new_game.states_list)
+                print(previous_states)
+                previous_states.update((new_game.states_list))
                
                 new_game.create_board()
                 new_game.visualize()
 
                 choices_queue.put(new_game)
 
-            
-
                 if new_game.rush_board[end_coord] == "X":
                     runtime = time.time() - start_time
                     print(step)
                     return runtime
+            else:
+                pass
         
