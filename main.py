@@ -1,7 +1,7 @@
 
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
-from code.visualisation.visualise import gameboard
+from code.visualisation.visualise import show_board
 from code.algorithms.random_algo import random_step
 from code.algorithms.breadth_first_algo import breadth_first
 import pandas as pd
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
         # Run main with provide arguments
         board = Board(car_list, board_size)
-        board.create_state()
+        #board.create_state()
         board.create_board()
         board.visualize()
         new_car_list = random_step(board, board_size)

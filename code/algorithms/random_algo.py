@@ -21,10 +21,11 @@ def random_step(board, board_size):
     
     while True:
         choice = start_board.check_move()
-        start_board = Board(random.choice(choice), board_size)
+        this_choice = random.choice(choice)
+        start_board = Board(this_choice, board_size)
         vis_flo = show_board(this_choice, board_size)
         step += 1
-        start_board.create_state()
+        #start_board.create_state()
         start_board.create_board()
         start_board.visualize()
 
