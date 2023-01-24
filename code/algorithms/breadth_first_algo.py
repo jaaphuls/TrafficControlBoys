@@ -23,10 +23,13 @@ def breadth_first(board, board_size):
     while True:
 
         choice = start_board.check_move()
+        print(f"this is the list of possible boards: {choice}")
         choices_queue.put(choice)
+        print(f"this is the choices queue: {choices_queue}")
 
-        while not choices_queue.empty():
+        while choices_queue:
             current_state = choices_queue.get()
+            print(f"this is the current state: {current_state}")
 
             if current_state not in previous_states:
 
