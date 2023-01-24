@@ -7,9 +7,11 @@ from code.classes.board import Board
 # breadth first algorithm
 def breadth_first(board, board_size):
     start_time = time.time()
-    start_board = board
-    previous_states = set()
-    previous_states.update((board.states_list))
+    previous_states = board.states_list
+    previous_states.add(board.string_value)
+    # print(board.string_value)
+    # print(previous_states)
+    
     step = 0
 
     choices_queue = queue.Queue()
@@ -28,20 +30,17 @@ def breadth_first(board, board_size):
 
     while True:
         current_state = choices_queue.get()
-        step += 1
-        print(step)
-
+        
         for states in current_state.check_move():
-
-            new_game = Board(states, board_size)
-            new_game.create_state()
             
+            new_game = Board(states, board_size)
 
-            if new_game.states_list not in previous_states:
-                
-                print(new_game.states_list)
-                print(previous_states)
-                previous_states.update((new_game.states_list))
+            if new_game.string_value not in board.states_list:
+                step += 1
+                print(step)
+                # print(new_game.string_value)
+                # print(board.states_list)
+                board.states_list.add(new_game.string_value)
                
                 new_game.create_board()
                 new_game.visualize()

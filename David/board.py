@@ -101,7 +101,7 @@ class Board:
                 if y_down - 1 != self.N - 1:
                     if self.rush_board[y_down, car.x] == '.':
                         new_car_list = copy.deepcopy(self.car_list)
-                        car.y += 1
+                    
 
                         
                         new_car_list[index].y += 1
