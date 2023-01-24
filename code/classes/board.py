@@ -53,7 +53,7 @@ class Board:
         
         return self.rush_board
 
-    def for_if_check_move(self, car, x_plus, y_plus):
+    def make_new_car_list(self, car, x_plus, y_plus):
 
         new_car_list = self.car_list.copy()
         new_car = Vehicle(car.car, car.orientation, car.x + x_plus, car.y + y_plus, car.length)
@@ -75,24 +75,23 @@ class Board:
             
                 if x_left >= 0 : 
                     if self.rush_board[car.y, x_left] == '.':
-                        new_car_list = self.for_if_check_move(car, 0, 1)
+                        new_car_list = self.make_new_car_list(car, 0, 1)
                         possible_boards.append(new_car_list)
 
                 # if x_left_2 >= 0:
                 #     if self.rush_board[car.y, x_left_2] == '.' and self.rush_board[car.y, x_left] == '.':
-                #         new_car_list = self.for_if_check_move(car, -1, 1)
+                #         new_car_list = self.make_new_car_list(car, -1, 1)
                 #         possible_boards.append(new_car_list)
 
                 if x_right - 1 != self.N - 1: 
                     if self.rush_board[car.y, x_right] == '.':
-                        new_car_list = self.for_if_check_move(car, 2, 1)
+                        new_car_list = self.make_new_car_list(car, 2, 1)
                         possible_boards.append(new_car_list)
                 
                 # if x_right_2 - 1 < self.N - 1: 
                 #     if self.rush_board[car.y, x_right_2] == '.' and self.rush_board[car.y, x_right] == '.':
-                #         new_car_list = self.for_if_check_move(car, 3, 1)
+                #         new_car_list = self.make_new_car_list(car, 3, 1)
                 #         possible_boards.append(new_car_list)
-                        
                         
             else:
                 y_down = (car.y + car.length)
@@ -102,22 +101,22 @@ class Board:
         
                 if y_down - 1 != self.N - 1:
                     if self.rush_board[y_down, car.x] == '.':
-                        new_car_list = self.for_if_check_move(car, 1, 2)
+                        new_car_list = self.make_new_car_list(car, 1, 2)
                         possible_boards.append(new_car_list)
                 
                 # if y_down_2 - 1 < self.N - 1: 
                 #     if self.rush_board[y_down_2, car.x] == '.' and self.rush_board[y_down, car.x] == '.':
-                #         new_car_list = self.for_if_check_move(car, 1, 3)
+                #         new_car_list = self.make_new_car_list(car, 1, 3)
                 #         possible_boards.append(new_car_list)
 
                 if y_up >=  0:
                     if self.rush_board[y_up, car.x] == '.':
-                        new_car_list = self.for_if_check_move(car, 1, 0)
+                        new_car_list = self.make_new_car_list(car, 1, 0)
                         possible_boards.append(new_car_list)
                 
                 # if y_up_2 >= 0: 
                 #     if self.rush_board[y_up_2, car.x] == '.' and self.rush_board[y_up, car.x] == '.':
-                #         new_car_list = self.for_if_check_move(car, 1, -1)
+                #         new_car_list = self.make_new_car_list(car, 1, -1)
                 #         possible_boards.append(new_car_list)               
 
         return possible_boards
