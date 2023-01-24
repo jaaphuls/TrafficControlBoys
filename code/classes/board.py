@@ -38,20 +38,6 @@ class Board:
                         x += 1
                     else:
                         y += 1
-            
-    
-    
-    def visualize(self):
-        possible_moves = []
-
-        for row in range(len(self.rush_board)):
-            for column in range(len(self.rush_board)):
-
-                if self.rush_board[row, column] == 0:
-                   possible_moves.append((row, column))
-                   self.rush_board[row, column] = '.'
-        
-        return self.rush_board
 
     def make_new_car_list(self, car, x_plus, y_plus):
 
@@ -121,7 +107,6 @@ class Board:
 
         return possible_boards
     
-    
     def visualize(self):
         possible_moves = []
 
@@ -131,6 +116,5 @@ class Board:
                 if self.rush_board[row, column] == 0:
                    possible_moves.append((row, column))
                    self.rush_board[row, column] = '.'
-        print(self.rush_board)
+        # print(self.rush_board)
         return self.rush_board
-
