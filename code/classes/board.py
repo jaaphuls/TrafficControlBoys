@@ -69,7 +69,7 @@ class Board:
                     if self.rush_board[car.y, x_left] == '.':
                         new_car_list = self.car_list.copy()
                         new_car = Vehicle(car.car, car.orientation, car.x, car.y+1, car.length)
-
+                        new_car.color = car.color
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
 
@@ -79,7 +79,7 @@ class Board:
                 #     if self.rush_board[car.y, x_left_2] == '.' and self.rush_board[car.y, x_left] == '.':
                 #         new_car_list = self.car_list.copy()
                 #         new_car = Vehicle(car.car, car.orientation, car.x - 1, car.y+1, car.length)
-
+                #          new_car.color = car.color
                 #         new_car_list.remove(car)
                 #         new_car_list.append(new_car)
 
@@ -89,7 +89,7 @@ class Board:
                     if self.rush_board[car.y, x_right] == '.':
                         new_car_list = self.car_list.copy()
                         new_car = Vehicle(car.car, car.orientation, car.x+2, car.y+1, car.length)
-
+                        new_car.color = car.color
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
 
@@ -99,7 +99,7 @@ class Board:
                 #     if self.rush_board[car.y, x_right_2] == '.' and self.rush_board[car.y, x_right] == '.':
                 #         new_car_list = self.car_list.copy()
                 #         new_car = Vehicle(car.car, car.orientation, car.x + 3, car.y+1, car.length)
-
+                #         new_car.color = car.color
                 #         new_car_list.remove(car)
                 #         new_car_list.append(new_car)
 
@@ -116,7 +116,7 @@ class Board:
                     if self.rush_board[y_down, car.x] == '.':
                         new_car_list = self.car_list.copy()
                         new_car = Vehicle(car.car, car.orientation, car.x+1, car.y+2, car.length)
-
+                        new_car.color = car.color
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
 
@@ -126,6 +126,7 @@ class Board:
                 #     if self.rush_board[y_down_2, car.x] == '.' and self.rush_board[y_down, car.x] == '.':
                 #         new_car_list = self.car_list.copy()
                 #         new_car = Vehicle(car.car, car.orientation, car.x+1, car.y+3, car.length)
+                #         new_car.color = car.color
 
                 #         new_car_list.remove(car)
                 #         new_car_list.append(new_car)
@@ -136,7 +137,7 @@ class Board:
                     if self.rush_board[y_up, car.x] == '.':
                         new_car_list = self.car_list.copy()
                         new_car = Vehicle(car.car, car.orientation, car.x+1, car.y, car.length)
-                        
+                        new_car.color = car.color
 
                         new_car_list.remove(car)
                         new_car_list.append(new_car)
@@ -147,7 +148,7 @@ class Board:
                 #     if self.rush_board[y_up_2, car.x] == '.' and self.rush_board[y_up, car.x] == '.':
                 #         new_car_list = self.car_list.copy()
                 #         new_car = Vehicle(car.car, car.orientation, car.x+1, car.y - 1, car.length)
-                        
+                #         new_car.color = car.color
 
                 #         new_car_list.remove(car)
                 #         new_car_list.append(new_car)
