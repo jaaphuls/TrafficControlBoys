@@ -53,28 +53,29 @@ if __name__ == '__main__':
 
         # Run main with provide arguments
         board = Board(car_list, board_size)
+        board.create_state()
         board.create_board()
         board.visualize()
         new_car_list = breadth_first(board, board_size)
 
-        count_list.append(new_car_list[0])
-        runtimes.append(new_car_list[1])
+        #count_list.append(new_car_list[0])
+        #runtimes.append(new_car_list[1])
 
-    plt.figure(figsize=[10,6])
-    plt.hist(runtimes, bins = 30, label= f"mean runtime = {round(mean(runtimes), 5)} seconds \nleast amount of runtime is {round(min(runtimes), 5)} seconds \nmost amount of runtime is {round(max(runtimes), 5)} seconds")
-    plt.xlabel('time (in seconds)')
-    plt.ylabel('number of games')
-    plt.title('1000 games simulated')
-    plt.legend()
-    plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_runtime_game_{game_number}_2_steps')
+    # plt.figure(figsize=[10,6])
+    # plt.hist(runtimes, bins = 30, label= f"mean runtime = {round(mean(runtimes), 5)} seconds \nleast amount of runtime is {round(min(runtimes), 5)} seconds \nmost amount of runtime is {round(max(runtimes), 5)} seconds")
+    # plt.xlabel('time (in seconds)')
+    # plt.ylabel('number of games')
+    # plt.title('1000 games simulated')
+    # plt.legend()
+    # plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_runtime_game_{game_number}_2_steps')
 
-    plt.figure(figsize=[10,6])
-    plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps \nleast amount of steps is {min(count_list)} steps \nmost amount of steps is {max(count_list)} steps")
-    plt.xlabel('amount of steps')
-    plt.ylabel('number of games')
-    plt.title('1000 games simulated')
-    plt.legend()
-    plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_steps_game_{game_number}_2_steps')
+    # plt.figure(figsize=[10,6])
+    # plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps \nleast amount of steps is {min(count_list)} steps \nmost amount of steps is {max(count_list)} steps")
+    # plt.xlabel('amount of steps')
+    # plt.ylabel('number of games')
+    # plt.title('1000 games simulated')
+    # plt.legend()
+    # plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_steps_game_{game_number}_2_steps')
 
 
 

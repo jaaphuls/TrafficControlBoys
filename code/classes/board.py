@@ -10,39 +10,23 @@ class Board:
         self.N = N
         self.rush_board = np.zeros((N, N), dtype=Vehicle)
         self.car_list = cars
-        self.states_list = []
+        self.states_set = set()
 
     def create_state(self):
-        # state = []
-        
+        state = set()
+
+       
         for car in self.car_list:
-            # if car.orientation == 'H' and car.length == 2:
-            #     state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y))
-             
-            # elif car.orientation == 'H' and car.length == 3:
-            #     state.append((car.car, car.length, car.x, car.y, car.x + 1, car.y, car.x + 2, car.y))
-            
-            # elif car.orientation == 'V' and car.length == 2:
-            #     state.append((car.car, car.length, car.x, car.y, car.x, car.y + 1))
+            auto = str(car.car)
+            x = str(car.x)
+            y = str(car.y)
 
-            # elif car.orientation == 'V' and car.length == 3:
-            #     state.append((car.car, car.length, car.x, car.y, car.x, car.y + 1, car.x, car.y + 2))
-
-            state = [car, car.x, car.y]
+            total = auto + x + y
+            state.add(total)
             
-            self.states_list.append(state)
+        self.states_set.add(state)
 
     def create_board(self):
-
-        # for state in self.states_list:
-        #     for attribute in state:
-        #         if attribute[1] == 2:
-        #             self.rush_board[(attribute[3], attribute[2])] = attribute[0]
-        #             self.rush_board[(attribute[5], attribute[4])] = attribute[0]
-        #         if attribute[1] == 3:
-        #             self.rush_board[(attribute[3], attribute[2])] = attribute[0]
-        #             self.rush_board[(attribute[5], attribute[4])] = attribute[0]
-        #             self.rush_board[(attribute[7], attribute[6])] = attribute[0]
 
             for car in self.car_list:
                 x = car.x
@@ -208,8 +192,8 @@ class Board:
             if car.orientation == 'H': 
                 x_left = (car.x - 1)
                 x_right = (car.x + car.length)
-                x_left_2 = (car.x - 2)
-                x_right_2 = (car.x + car.length + 1)
+                # x_left_2 = (car.x - 2)
+                # x_right_2 = (car.x + car.length + 1)
             
                 if x_left >= 0 : 
                     if self.rush_board[car.y, x_left] == '.':
@@ -221,15 +205,15 @@ class Board:
 
                         possible_boards.append(new_car_list)
 
-                if x_left_2 >= 0:
-                    if self.rush_board[car.y, x_left_2] == '.' and self.rush_board[car.y, x_left] == '.':
-                        new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x - 1, car.y+1, car.length)
+                # if x_left_2 >= 0:
+                #     if self.rush_board[car.y, x_left_2] == '.' and self.rush_board[car.y, x_left] == '.':
+                #         new_car_list = self.car_list.copy()
+                #         new_car = Vehicle(car.car, car.orientation, car.x - 1, car.y+1, car.length)
 
-                        new_car_list.remove(car)
-                        new_car_list.append(new_car)
+                #         new_car_list.remove(car)
+                #         new_car_list.append(new_car)
 
-                        possible_boards.append(new_car_list)
+                #         possible_boards.append(new_car_list)
 
                 if x_right - 1 != self.N - 1: 
                     if self.rush_board[car.y, x_right] == '.':
@@ -241,22 +225,22 @@ class Board:
 
                         possible_boards.append(new_car_list)
                 
-                if x_right_2 - 1 < self.N - 1: 
-                    if self.rush_board[car.y, x_right_2] == '.' and self.rush_board[car.y, x_right] == '.':
-                        new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x + 3, car.y+1, car.length)
+                # if x_right_2 - 1 < self.N - 1: 
+                #     if self.rush_board[car.y, x_right_2] == '.' and self.rush_board[car.y, x_right] == '.':
+                #         new_car_list = self.car_list.copy()
+                #         new_car = Vehicle(car.car, car.orientation, car.x + 3, car.y+1, car.length)
 
-                        new_car_list.remove(car)
-                        new_car_list.append(new_car)
+                #         new_car_list.remove(car)
+                #         new_car_list.append(new_car)
 
-                        possible_boards.append(new_car_list)
+                #         possible_boards.append(new_car_list)
                         
                         
             else:
                 y_down = (car.y + car.length)
                 y_up = (car.y - 1)
-                y_down_2 = (car.y + car.length + 1)
-                y_up_2 = (car.y - 2)
+                # y_down_2 = (car.y + car.length + 1)
+                # y_up_2 = (car.y - 2)
         
                 if y_down - 1 != self.N - 1:
                     if self.rush_board[y_down, car.x] == '.':
@@ -268,15 +252,15 @@ class Board:
 
                         possible_boards.append(new_car_list)
                 
-                if y_down_2 - 1 < self.N - 1: 
-                    if self.rush_board[y_down_2, car.x] == '.' and self.rush_board[y_down, car.x] == '.':
-                        new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x+1, car.y+3, car.length)
+                # if y_down_2 - 1 < self.N - 1: 
+                #     if self.rush_board[y_down_2, car.x] == '.' and self.rush_board[y_down, car.x] == '.':
+                #         new_car_list = self.car_list.copy()
+                #         new_car = Vehicle(car.car, car.orientation, car.x+1, car.y+3, car.length)
 
-                        new_car_list.remove(car)
-                        new_car_list.append(new_car)
+                #         new_car_list.remove(car)
+                #         new_car_list.append(new_car)
 
-                        possible_boards.append(new_car_list)
+                #         possible_boards.append(new_car_list)
 
                 if y_up >=  0:
                     if self.rush_board[y_up, car.x] == '.':
@@ -289,16 +273,16 @@ class Board:
 
                         possible_boards.append(new_car_list)
                 
-                if y_up_2 >= 0: 
-                    if self.rush_board[y_up_2, car.x] == '.' and self.rush_board[y_up, car.x] == '.':
-                        new_car_list = self.car_list.copy()
-                        new_car = Vehicle(car.car, car.orientation, car.x+1, car.y - 1, car.length)
+                # if y_up_2 >= 0: 
+                #     if self.rush_board[y_up_2, car.x] == '.' and self.rush_board[y_up, car.x] == '.':
+                #         new_car_list = self.car_list.copy()
+                #         new_car = Vehicle(car.car, car.orientation, car.x+1, car.y - 1, car.length)
                         
 
-                        new_car_list.remove(car)
-                        new_car_list.append(new_car)
+                #         new_car_list.remove(car)
+                #         new_car_list.append(new_car)
 
-                        possible_boards.append(new_car_list)               
+                #         possible_boards.append(new_car_list)               
 
                 
         return possible_boards
@@ -313,6 +297,6 @@ class Board:
                 if self.rush_board[row, column] == 0:
                    possible_moves.append((row, column))
                    self.rush_board[row, column] = '.'
-
+        print(self.rush_board)
         return self.rush_board
 
