@@ -54,6 +54,8 @@ class Board:
                         x += 1
                     else:
                         y += 1
+            
+
 
     # def check_move(self):
     #     possible_boards = []

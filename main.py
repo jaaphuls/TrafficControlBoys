@@ -2,12 +2,13 @@
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import gameboard
+from code.algorithms.random_algo import random_step
+from code.algorithms.breadth_first_algo import breadth_first
 import pandas as pd
 import argparse
 import random
 import matplotlib.pyplot as plt
 import numpy as np
-from code.algorithms.random_algo import random_step
 import time
 from tqdm import tqdm
 from statistics import mean
@@ -48,14 +49,13 @@ if __name__ == '__main__':
     runtimes = []
     count_list = []
 
-    for i in tqdm(range(1000)): 
+    for i in tqdm(range(1)): 
 
         # Run main with provide arguments
         board = Board(car_list, board_size)
-        board.create_state()
         board.create_board()
         board.visualize()
-        new_car_list = random_step(board, board_size)
+        new_car_list = breadth_first(board, board_size)
 
         count_list.append(new_car_list[0])
         runtimes.append(new_car_list[1])
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
     plt.legend()
-    plt.savefig(f'code/results/random_results/2_step/results_runtime_game_{game_number}_2_steps')
+    plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_runtime_game_{game_number}_2_steps')
 
     plt.figure(figsize=[10,6])
     plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps \nleast amount of steps is {min(count_list)} steps \nmost amount of steps is {max(count_list)} steps")
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     plt.ylabel('number of games')
     plt.title('1000 games simulated')
     plt.legend()
-    plt.savefig(f'code/results/random_results/2_step/results_steps_game_{game_number}_2_steps')
+    plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_steps_game_{game_number}_2_steps')
 
 
 
