@@ -11,10 +11,9 @@ The inputs for the function are, a board that contains the info of what car is w
 Also the time and the amound of steps it takes to solve the game is tracked. '''
         
 def random_step(board, board_size):
-    start_time = time.time()
 
-    # this is the board 
-    start_board = board
+    # start the time and step count
+    start_time = time.time()
     step = 0
 
     if board_size == 6: 
@@ -24,36 +23,32 @@ def random_step(board, board_size):
         end_coord = 4,8
     
     if board_size == 12: 
-        end_coord = 5, 11
+        end_coord = 5,11
     
     # the loop needs to continue until the game is solved
-    while True:
+    while board.rush_board[end_coord] != "X":
         # here all the posible moves are created in a list
-        choice = start_board.check_move()
+        choice = board.check_move()
 
         # here one of the posible moves is randomly selected
         this_choice = random.choice(choice)
 
-        # here the start_board is overwritten
-        start_board = Board(this_choice, board_size)
+        # here the board is overwritten
+        board = Board(this_choice, board_size)
 
         # this is so visualize the board 
-        vis_flo = show_board(this_choice, board_size)
+        # vis_flo = show_board(this_choice, board_size)
         step += 1
-        #start_board.create_state()
+        #board.create_state()
 
         # here the board is created
-        start_board.create_board()
+        board.create_board()
 
         # this is used by the check_move
-        start_board.visualize()
+        board.visualize()
 
         # if this is met, the game is solved
-        if start_board.rush_board[end_coord] == "X":
-            runtime = time.time() - start_time
-            
-            return step, runtime
-
-
-
-## pas die while true nog aan naar: while start_board.rush_board[end_coord] == "X":
+    
+    runtime = time.time() - start_time
+    
+    return step, runtime
