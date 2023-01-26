@@ -62,59 +62,55 @@ class Board:
                     x_left = (car.x - 1)
                     x_right = (car.x + car.length)
                 
-                    if x_left >= 0 : 
-                        if self.rush_board[car.y, x_left] == '.':
-                            new_car_list = copy.deepcopy(self.car_list)
+                    if x_left >= 0 and self.rush_board[car.y, x_left] == '.': 
+                        new_car_list = copy.deepcopy(self.car_list)
 
-                            new_car = new_car_list[index]
+                        new_car = new_car_list[index]
 
-                            new_car.x -= 1
-                            
-                            possible_boards.append(new_car_list)
+                        new_car.x -= 1
+                        
+                        possible_boards.append(new_car_list)
 
-                            # x_left = (car.x - 1)
+                        # x_left = (car.x - 1)
 
-                    if x_right - 1 != self.N - 1: 
-                        if self.rush_board[car.y, x_right] == '.':
-                            new_car_list = copy.deepcopy(self.car_list)
+                    if x_right - 1 != self.N - 1 and self.rush_board[car.y, x_right] == '.': 
+                        new_car_list = copy.deepcopy(self.car_list)
 
-                            new_car = new_car_list[index]
+                        new_car = new_car_list[index]
 
-                            new_car.x += 1
-                            
-                            possible_boards.append(new_car_list)
+                        new_car.x += 1
+                        
+                        possible_boards.append(new_car_list)
 
-                            # x_right = (car.x + car.length)
+                        # x_right = (car.x + car.length)
                             
                             
                 else:
                     y_down = (car.y + car.length)
                     y_up = (car.y - 1)
         
-                    if y_down - 1 != self.N - 1:
-                        if self.rush_board[y_down, car.x] == '.':
-                            new_car_list = copy.deepcopy(self.car_list)
+                    if y_down - 1 != self.N - 1 and self.rush_board[y_down, car.x] == '.':
+                        new_car_list = copy.deepcopy(self.car_list)
 
-                            new_car = new_car_list[index]
+                        new_car = new_car_list[index]
 
-                            new_car.y += 1
+                        new_car.y += 1
+                        
+                        possible_boards.append(new_car_list)
+
+                        # y_down = (car.y + car.length)
                             
-                            possible_boards.append(new_car_list)
 
-                            # y_down = (car.y + car.length)
-                            
+                    if y_up >=  0 and self.rush_board[y_up, car.x] == '.':
+                        new_car_list = copy.deepcopy(self.car_list)
+                        
+                        new_car = new_car_list[index]
 
-                    if y_up >=  0:
-                        if self.rush_board[y_up, car.x] == '.':
-                            new_car_list = copy.deepcopy(self.car_list)
-                            
-                            new_car = new_car_list[index]
+                        new_car.y -= 1
 
-                            new_car.y -= 1
+                        possible_boards.append(new_car_list)
 
-                            possible_boards.append(new_car_list)
-
-                            # y_up = (car.y - 1)
+                        # y_up = (car.y - 1)
         
             return possible_boards
 
