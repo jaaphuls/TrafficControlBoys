@@ -9,8 +9,6 @@ def breadth_first(board, board_size):
     start_time = time.time()
     previous_states = board.states_list
     previous_states.add(board.string_value)
-    
-    history = []
 
     states_visited = 0
 
@@ -39,7 +37,6 @@ def breadth_first(board, board_size):
                 history.append(board.car_list)
 
                 states_visited += 1
-                print(states_visited)
                 # print(new_game.string_value)
                 # print(board.states_list)
                 board.states_list.add(new_game.string_value)
@@ -53,4 +50,4 @@ def breadth_first(board, board_size):
 
     runtime = time.time() - start_time
     # print(step)
-    return runtime, history
+    return runtime, states_visited
