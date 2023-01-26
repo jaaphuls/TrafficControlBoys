@@ -1,9 +1,8 @@
 def backtrace(state_list): 
-    
     moves = {}
 
-    for state in state_list: 
-
+    for state in range(len(state_list) - 1):
+        
         # get the current and next state 
         current_state = state_list[state]
         next_state = state_list[state + 1]

@@ -9,9 +9,9 @@ def breadth_first(board, board_size):
     start_time = time.time()
     previous_states = board.states_list
     previous_states.add(board.string_value)
-    # print(board.string_value)
-    # print(previous_states)
     
+    history = []
+
     step = 0
 
     choices_queue = queue.Queue()
@@ -36,6 +36,8 @@ def breadth_first(board, board_size):
             new_game = Board(states, board_size)
 
             if new_game.string_value not in board.states_list:
+                history.append(board.car_list)
+
                 step += 1
                 print(step)
                 # print(new_game.string_value)
@@ -50,7 +52,7 @@ def breadth_first(board, board_size):
                 if new_game.rush_board[end_coord] == "X":
                     runtime = time.time() - start_time
                     print(step)
-                    return runtime
+                    return runtime, history
             else:
                 pass
         
