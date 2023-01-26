@@ -62,7 +62,7 @@ class Board:
                     x_left = (car.x - 1)
                     x_right = (car.x + car.length)
                 
-                    if x_left >= 0 and self.rush_board[car.y, x_left] == '.': 
+                    while self.rush_board[car.y, x_left] == '.': 
                         new_car_list = copy.deepcopy(self.car_list)
 
                         new_car = new_car_list[index]
@@ -71,7 +71,12 @@ class Board:
                         
                         possible_boards.append(new_car_list)
 
-                        # x_left = (car.x - 1)
+                        if x_left != 0 and self.rush_board[new_car.y, x_left] == '.':
+                            x_left = (new_car.x - 1)
+                            print(x_left)
+                            print(car.car)
+                        else:
+                            break
 
                     if x_right - 1 != self.N - 1 and self.rush_board[car.y, x_right] == '.': 
                         new_car_list = copy.deepcopy(self.car_list)
