@@ -73,8 +73,7 @@ class Board:
 
                         if x_left > 0:
                             x_left = (new_car.x - 1)
-                            print(x_left)
-                            print(car.car)
+                            
                         else:
                             break
 
