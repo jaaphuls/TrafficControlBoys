@@ -8,7 +8,7 @@ def backtrace(state_list):
         next_state = state_list[state + 1]
 
         # compare the two states to get the moved car 
-        original_position = list(set(current_state) - set(next_state))
+        original_position = list(set((current_state) - (next_state)))
         next_position = list(set(next_state) - set(current_state))
 
         # check in what way the car moves
