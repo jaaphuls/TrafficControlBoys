@@ -66,17 +66,25 @@ class Board:
                         if self.rush_board[car.y, x_left] == '.':
                             new_car_list = copy.deepcopy(self.car_list)
 
-                            new_car_list[index].x = x_left
+                            new_car = new_car_list[index]
+
+                            new_car.x -= 1
                             
                             possible_boards.append(new_car_list)
+
+                            # x_left = (car.x - 1)
 
                     if x_right - 1 != self.N - 1: 
                         if self.rush_board[car.y, x_right] == '.':
                             new_car_list = copy.deepcopy(self.car_list)
 
-                            new_car_list[index].x += 1
+                            new_car = new_car_list[index]
 
+                            new_car.x += 1
+                            
                             possible_boards.append(new_car_list)
+
+                            # x_right = (car.x + car.length)
                             
                             
                 else:
@@ -86,20 +94,27 @@ class Board:
                     if y_down - 1 != self.N - 1:
                         if self.rush_board[y_down, car.x] == '.':
                             new_car_list = copy.deepcopy(self.car_list)
-                        
 
+                            new_car = new_car_list[index]
+
+                            new_car.y += 1
                             
-                            new_car_list[index].y += 1
-
                             possible_boards.append(new_car_list)
+
+                            # y_down = (car.y + car.length)
+                            
 
                     if y_up >=  0:
                         if self.rush_board[y_up, car.x] == '.':
                             new_car_list = copy.deepcopy(self.car_list)
                             
-                            new_car_list[index].y = y_up
+                            new_car = new_car_list[index]
+
+                            new_car.y -= 1
 
                             possible_boards.append(new_car_list)
+
+                            # y_up = (car.y - 1)
         
             return possible_boards
 
