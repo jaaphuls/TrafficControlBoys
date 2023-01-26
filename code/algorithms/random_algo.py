@@ -28,6 +28,7 @@ def random_step(board, board_size):
     
     # the loop needs to continue until the game is solved
     while True:
+        board.states_list.add(board.car_list)
 
         # here all the posible moves are created in a list
         choice = start_board.check_move()
@@ -55,3 +56,6 @@ def random_step(board, board_size):
             
             return step, runtime
 
+
+
+## pas die while true nog aan naar: while start_board.rush_board[end_coord] == "X":

@@ -3,6 +3,7 @@ from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import show_board
 from code.algorithms.random_algo import random_step
+from code.algorithms.backtracking import backtrace
 from code.algorithms.breadth_first_algo import breadth_first
 import pandas as pd
 import argparse
@@ -56,7 +57,10 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        new_car_list = breadth_first(board, board_size)
+        runtime, history = breadth_first(board, board_size)
+        moves = backtrace(history)
+        print(f"the runtime was: {runtime} seconds")
+        print(moves)
 
         #count_list.append(new_car_list[0])
         #runtimes.append(new_car_list[1])
