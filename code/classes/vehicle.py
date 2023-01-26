@@ -1,15 +1,16 @@
 import random
 
+'''Here the cars and trucks are made into an object and given a random color.'''
 class Vehicle:
 
     def __init__(self, car, orientation, col, row, length):
         self.car = car
+
+        # the column and the row need to be adjusted because of the structure we use for our solving algo
         self.x = col -1
         self.y = row -1
         self.orientation = orientation
         self.length = length 
-        #self.color = random.random()
-        
         self.color_vehicle()
     
     def color_vehicle(self):
