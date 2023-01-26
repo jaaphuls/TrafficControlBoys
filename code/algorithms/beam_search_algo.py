@@ -34,7 +34,7 @@ def beam_search(board, board_size, beam_width):
 
                 if new_game.rush_board[end_coord] == "X":
                     runtime = time.time() - start_time
-                    print(step)
+                    # print(step)
                     return runtime
             else:
                 pass

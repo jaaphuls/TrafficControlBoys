@@ -51,7 +51,7 @@ if __name__ == '__main__':
     runtimes = []
     count_list = []
 
-    for i in tqdm(range(100)): 
+    for i in tqdm(range(1)): 
 
         # Run main with provide arguments
         board = Board(car_list, board_size)
@@ -59,10 +59,10 @@ if __name__ == '__main__':
         board.create_board()
         board.visualize()
         runtime, history = breadth_first(board, board_size)
-        moves = backtrace(history)
+        # moves = backtrace(history)
         print(f"the runtime was: {runtime} seconds")
-        print(moves)
-        new_car_list = breadth_first(board, board_size)
+        # print(moves)
+        # new_car_list = breadth_first(board, board_size)
         #new_car_list = beam_search(board, board_size, 10)
 
         #count_list.append(new_car_list[0])
