@@ -55,79 +55,86 @@ class Board:
         return self.rush_board
 
     def check_move(self):
-            possible_boards = []
-            for index, car in enumerate(self.car_list):
+        possible_boards = []
+        for index, car in enumerate(self.car_list):
+            
+            if car.orientation == 'H': 
+                x_left = (car.x - 1)
+                x_right = (car.x + car.length)
+
+                if x_left >= 0:
+                    step_left = 1
+                    while self.rush_board[car.y, x_left] == '.':                            
+                        if x_left >= 0:
+                            new_car_list = copy.deepcopy(self.car_list)
+
+                            new_car = new_car_list[index]
+
+                            new_car.x -= step_left
+                            step_left += 1
+                            x_left -= 1
+                            
+                            possible_boards.append(new_car_list)
+                        
+                        if x_left == -1:
+                            break
+
+                if x_right < self.N:
+                    step_right = 1
+                    while self.rush_board[car.y, x_right] == '.': 
+                        if x_right < self.N:
+                            new_car_list = copy.deepcopy(self.car_list)
+
+                            new_car = new_car_list[index]
+
+                            new_car.x += step_right
+                            x_right += 1
+                            step_right += 1
+                            
+                            possible_boards.append(new_car_list)
+
+                        if x_right == self.N:
+                            break
+                        
+                        
+            else:
+                y_down = (car.y + car.length)
+                y_up = (car.y - 1)
                 
-                if car.orientation == 'H': 
-                    x_left = (car.x - 1)
-                    x_right = (car.x + car.length)
+                if y_down < self.N:
+                    step_down = 1
+                    while self.rush_board[y_down, car.x] == '.':
+                        if y_down < self.N:
+                            new_car_list = copy.deepcopy(self.car_list)
 
-                    if x_left >= 0:
-                        while self.rush_board[car.y, x_left] == '.':                            
-                            if x_left >= 0:
-                                new_car_list = copy.deepcopy(self.car_list)
+                            new_car = new_car_list[index]
 
-                                new_car = new_car_list[index]
-
-                                new_car.x -= 1
-                                x_left -= 1
-                                
-                                possible_boards.append(new_car_list)
+                            new_car.y += step_down
+                            y_down += 1
+                            step_down += 1
                             
-                            if x_left == -1:
-                                break
+                            possible_boards.append(new_car_list)
+                        
+                        if y_down == self.N:
+                            break
 
-                    if x_right < self.N:
-                        while self.rush_board[car.y, x_right] == '.': 
-                            if x_right < self.N:
-                                new_car_list = copy.deepcopy(self.car_list)
+                if y_up >= 0:
+                    step_up = 1
+                    while self.rush_board[y_up, car.x] == '.':
+                        if y_up >= 0:
+                            new_car_list = copy.deepcopy(self.car_list)
 
-                                new_car = new_car_list[index]
+                            new_car = new_car_list[index]
 
-                                new_car.x += 1
-                                x_right += 1
-                                
-                                possible_boards.append(new_car_list)
-
-                            if x_right == self.N:
-                                break
+                            new_car.y -= step_up
+                            y_up -= 1
+                            step_up += 1
                             
-                            
-                else:
-                    y_down = (car.y + car.length)
-                    y_up = (car.y - 1)
-                    
-                    if y_down < self.N:
-                        while self.rush_board[y_down, car.x] == '.':
-                            if y_down < self.N:
-                                new_car_list = copy.deepcopy(self.car_list)
-
-                                new_car = new_car_list[index]
-
-                                new_car.y += 1
-                                y_down += 1
-                                
-                                possible_boards.append(new_car_list)
-                            
-                            if y_down == self.N:
-                                break
-
-                    if y_up >= 0:
-                        while self.rush_board[y_up, car.x] == '.':
-                            if y_up >= 0:
-                                new_car_list = copy.deepcopy(self.car_list)
-
-                                new_car = new_car_list[index]
-
-                                new_car.y -= 1
-                                y_up -= 1
-                                
-                                possible_boards.append(new_car_list)
-                            
-                            if y_up == -1:
-                                break
-        
-            return possible_boards
+                            possible_boards.append(new_car_list)
+                        
+                        if y_up == -1:
+                            break
+        return possible_boards
 
     # def check_move(self):
     #     possible_boards = []
