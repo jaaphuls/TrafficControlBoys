@@ -3,6 +3,7 @@ from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import show_board
 from code.algorithms.random_algo import random_step
+from code.algorithms.backtracking import backtrace
 from code.algorithms.breadth_first_algo import breadth_first
 from code.algorithms.beam_search_algo import beam_search
 import pandas as pd
@@ -57,6 +58,10 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
+        runtime, history = breadth_first(board, board_size)
+        moves = backtrace(history)
+        print(f"the runtime was: {runtime} seconds")
+        print(moves)
         new_car_list = breadth_first(board, board_size)
         #new_car_list = beam_search(board, board_size, 10)
 
