@@ -71,7 +71,7 @@ class Board:
                         
                         possible_boards.append(new_car_list)
 
-                        if x_left != 0 and self.rush_board[new_car.y, x_left] == '.':
+                        if x_left > 0:
                             x_left = (new_car.x - 1)
                             print(x_left)
                             print(car.car)
