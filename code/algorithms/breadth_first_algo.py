@@ -27,8 +27,9 @@ def breadth_first(board, board_size):
     if board_size == 12: 
         end_coord = 5, 11
 
+    unsolved = True
 
-    while True:
+    while unsolved:
         current_state = choices_queue.get()
         
         for states in current_state.check_move():
@@ -49,10 +50,8 @@ def breadth_first(board, board_size):
 
                 choices_queue.put(new_game)
 
-                if new_game.rush_board[end_coord] == "X":
-                    runtime = time.time() - start_time
-                    print(step)
-                    return runtime, history
-            else:
-                pass
-        
+                unsolved = new_game.rush_board[end_coord] != "X"
+
+    runtime = time.time() - start_time
+    # print(step)
+    return runtime, history
