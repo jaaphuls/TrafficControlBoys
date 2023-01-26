@@ -4,6 +4,7 @@ from code.classes.board import Board
 from code.visualisation.visualise import show_board
 from code.algorithms.random_algo import random_step
 from code.algorithms.breadth_first_algo import breadth_first
+from code.algorithms.beam_search_algo import beam_search
 import pandas as pd
 import argparse
 import random
@@ -49,7 +50,7 @@ if __name__ == '__main__':
     runtimes = []
     count_list = []
 
-    for i in tqdm(range(1)): 
+    for i in tqdm(range(100)): 
 
         # Run main with provide arguments
         board = Board(car_list, board_size)
@@ -57,6 +58,7 @@ if __name__ == '__main__':
         board.create_board()
         board.visualize()
         new_car_list = breadth_first(board, board_size)
+        #new_car_list = beam_search(board, board_size, 10)
 
         #count_list.append(new_car_list[0])
         #runtimes.append(new_car_list[1])
