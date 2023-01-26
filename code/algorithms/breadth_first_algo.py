@@ -34,7 +34,6 @@ def breadth_first(board, board_size):
             new_game = Board(states, board_size)
 
             if new_game.string_value not in board.states_list:
-                history.append(board.car_list)
 
                 states_visited += 1
                 # print(new_game.string_value)
