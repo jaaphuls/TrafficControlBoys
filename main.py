@@ -6,6 +6,7 @@ from code.algorithms.random_algo import random_step
 from code.algorithms.backtracking import backtrace
 from code.algorithms.breadth_first_algo import breadth_first
 from code.algorithms.beam_search_algo import beam_search
+from code.algorithms.random_beam_search_algo import random_beam_search
 import pandas as pd
 import argparse
 import random
@@ -79,12 +80,12 @@ if __name__ == '__main__':
         print(f"the amount of states visited is: {states_visited}")
         print('\n ------------------------------------------ \n ')
 
-    if (algorithm == '3' or algorithm.lower() == 'beam search'): 
+    if (algorithm == '3' or algorithm.lower() == 'random beam search'): 
         board = Board(car_list, board_size)
         board.create_state()
         board.create_board()
         board.visualize()
-        runtime, states_visited = beam_search(board, board_size)
+        runtime, states_visited = random_beam_search(board, board_size)
         print(f"the runtime was: {runtime} seconds")
         print(f"the amount of states visited is: {states_visited}")
 
