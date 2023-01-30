@@ -81,13 +81,17 @@ if __name__ == '__main__':
         print('\n ------------------------------------------ \n ')
 
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 
+        print("Calculating ... ... ")
         board = Board(car_list, board_size)
         board.create_state()
         board.create_board()
         board.visualize()
         runtime, states_visited = random_beam_search(board, board_size)
+        print('\n ------------------------------------------ \n ')
+        print(f'Game number: {game_number}, algorithm: beam  search')
         print(f"the runtime was: {runtime} seconds")
         print(f"the amount of states visited is: {states_visited}")
+        print('\n ------------------------------------------ \n ')
 
 
 
