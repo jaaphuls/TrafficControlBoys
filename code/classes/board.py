@@ -48,78 +48,58 @@ class Board:
                 x_left = (car.x - 1)
                 x_right = (car.x + car.length)
 
-                if x_left >= 0:
-                    step_left = 1
-                    while self.rush_board[car.y, x_left] == '.':                            
-                        if x_left >= 0:
-                            new_car_list = copy.deepcopy(self.car_list)
+                step_left = 1
+                while x_left >= 0 and self.rush_board[car.y, x_left] == '.':                            
+                    new_car_list = copy.deepcopy(self.car_list)
 
-                            new_car = new_car_list[index]
+                    new_car = new_car_list[index]
 
-                            new_car.x -= step_left
-                            step_left += 1
-                            x_left -= 1
-                            
-                            possible_boards.append(new_car_list)
-                        
-                        if x_left == -1:
-                            break
+                    new_car.x -= step_left
+                    step_left += 1
+                    x_left -= 1
+                    
+                    possible_boards.append(new_car_list)
+                                
+                step_right = 1
+                while x_right < self.N and self.rush_board[car.y, x_right] == '.': 
+                    new_car_list = copy.deepcopy(self.car_list)
 
-                if x_right < self.N:
-                    step_right = 1
-                    while self.rush_board[car.y, x_right] == '.': 
-                        if x_right < self.N:
-                            new_car_list = copy.deepcopy(self.car_list)
+                    new_car = new_car_list[index]
 
-                            new_car = new_car_list[index]
-
-                            new_car.x += step_right
-                            x_right += 1
-                            step_right += 1
-                            
-                            possible_boards.append(new_car_list)
-
-                        if x_right == self.N:
-                            break
-                        
+                    new_car.x += step_right
+                    x_right += 1
+                    step_right += 1
+                    
+                    possible_boards.append(new_car_list)                        
                         
             else:
                 y_down = (car.y + car.length)
                 y_up = (car.y - 1)
                 
-                if y_down < self.N:
-                    step_down = 1
-                    while self.rush_board[y_down, car.x] == '.':
-                        if y_down < self.N:
-                            new_car_list = copy.deepcopy(self.car_list)
+                step_down = 1
+                while y_down < self.N and self.rush_board[y_down, car.x] == '.':
+                    new_car_list = copy.deepcopy(self.car_list)
 
-                            new_car = new_car_list[index]
+                    new_car = new_car_list[index]
 
-                            new_car.y += step_down
-                            y_down += 1
-                            step_down += 1
-                            
-                            possible_boards.append(new_car_list)
-                        
-                        if y_down == self.N:
-                            break
+                    new_car.y += step_down
+                    y_down += 1
+                    step_down += 1
+                    
+                    possible_boards.append(new_car_list)
+                
+                step_up = 1
+                while y_up >= 0 and self.rush_board[y_up, car.x] == '.':
+                    new_car_list = copy.deepcopy(self.car_list)
 
-                if y_up >= 0:
-                    step_up = 1
-                    while self.rush_board[y_up, car.x] == '.':
-                        if y_up >= 0:
-                            new_car_list = copy.deepcopy(self.car_list)
+                    new_car = new_car_list[index]
 
-                            new_car = new_car_list[index]
-
-                            new_car.y -= step_up
-                            y_up -= 1
-                            step_up += 1
-                            
-                            possible_boards.append(new_car_list)
-                        
-                        if y_up == -1:
-                            break
+                    new_car.y -= step_up
+                    y_up -= 1
+                    step_up += 1
+                    
+                    possible_boards.append(new_car_list)
+                
         return possible_boards
 
     def visualize(self):
