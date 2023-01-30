@@ -51,48 +51,33 @@ if __name__ == '__main__':
 
 
     if (algorithm == '1' or algorithm.lower() == 'random'): 
-
-        runtimes = []
-        count_list = []
-
-        for i in tqdm(range(1000)): 
-
-            # Run main with provide arguments
-            board = Board(car_list, board_size)
-            board.create_state()
-            board.create_board()
-            board.visualize()
-            step, runtime = random_step(board, board_size)
-            count_list.append(step)
-            runtimes.append(runtime)
-
-        plt.figure(figsize=[10,6])
-        plt.hist(runtimes, bins = 30, label= f"mean runtime = {round(mean(runtimes), 5)} seconds \nleast amount of runtime is {round(min(runtimes), 5)} seconds \nmost amount of runtime is {round(max(runtimes), 5)} seconds")
-        plt.xlabel('time (in seconds)')
-        plt.ylabel('number of games')
-        plt.title('1000 games simulated')
-        plt.legend()
-        plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_runtime_game_{game_number}_2_steps')
-
-        plt.figure(figsize=[10,6])
-        plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps \nleast amount of steps is {min(count_list)} steps \nmost amount of steps is {max(count_list)} steps")
-        plt.xlabel('amount of steps')
-        plt.ylabel('number of games')
-        plt.title('1000 games simulated')
-        plt.legend()
-        plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_steps_game_{game_number}_2_steps')
+        print("Calculating ... ... ")
+        # Run main with provide arguments
+        board = Board(car_list, board_size)
+        board.create_state()
+        board.create_board()
+        board.visualize()
+        step, runtime = random_step(board, board_size)
+        print('\n ------------------------------------------ \n ')
+        print(f'Game number: {game_number}, algorithm: random')
+        print(f"The runtime was: {runtime} seconds")
+        print(f"The amount of steps taken is: {step}")
+        print('\n ------------------------------------------ \n ')
 
 
     if (algorithm == '2' or algorithm.lower() == 'breadth first search'): 
+        print("Calculating ... ... ")
         # Run main with provide arguments
         board = Board(car_list, board_size)
         board.create_state()
         board.create_board()
         board.visualize()
         runtime, states_visited = breadth_first(board, board_size)
+        print('\n ------------------------------------------ \n ')
+        print(f'Game number: {game_number}, algorithm: breadth first search')
         print(f"the runtime was: {runtime} seconds")
-        print(f"the amount of states visited is {states_visited}")
-
+        print(f"the amount of states visited is: {states_visited}")
+        print('\n ------------------------------------------ \n ')
 
     if (algorithm == '3' or algorithm.lower() == 'beam search'): 
         board = Board(car_list, board_size)
@@ -101,6 +86,42 @@ if __name__ == '__main__':
         board.visualize()
         runtime, states_visited = beam_search(board, board_size)
         print(f"the runtime was: {runtime} seconds")
-        print(f"the amount of states visited is {states_visited}")
+        print(f"the amount of states visited is: {states_visited}")
 
 
+
+
+
+
+
+##### extra code for running the random algorithm 1000 times #####
+
+        # runtimes = []
+        # count_list = []
+
+        # for i in tqdm(range(1000)): 
+
+        #     # Run main with provide arguments
+        #     board = Board(car_list, board_size)
+        #     board.create_state()
+        #     board.create_board()
+        #     board.visualize()
+        #     step, runtime = random_step(board, board_size)
+        #     count_list.append(step)
+        #     runtimes.append(runtime)
+
+        # plt.figure(figsize=[10,6])
+        # plt.hist(runtimes, bins = 30, label= f"mean runtime = {round(mean(runtimes), 5)} seconds \nleast amount of runtime is {round(min(runtimes), 5)} seconds \nmost amount of runtime is {round(max(runtimes), 5)} seconds")
+        # plt.xlabel('time (in seconds)')
+        # plt.ylabel('number of games')
+        # plt.title('1000 games simulated')
+        # plt.legend()
+        # plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_runtime_game_{game_number}_2_steps')
+
+        # plt.figure(figsize=[10,6])
+        # plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps \nleast amount of steps is {min(count_list)} steps \nmost amount of steps is {max(count_list)} steps")
+        # plt.xlabel('amount of steps')
+        # plt.ylabel('number of games')
+        # plt.title('1000 games simulated')
+        # plt.legend()
+        # plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_steps_game_{game_number}_2_steps')
