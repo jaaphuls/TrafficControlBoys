@@ -30,7 +30,9 @@ def breadth_first(board, board_size):
     while unsolved:
         current_state = choices_queue.get()
 
-        for states in current_state.check_move():
+        qwerty, movements = current_state.check_move()
+
+        for states in qwerty:
             
             new_game = Board(states, board_size)
 
