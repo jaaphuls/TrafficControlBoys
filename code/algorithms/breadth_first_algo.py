@@ -3,6 +3,7 @@ import time
 import queue
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
+from code.visualisation.visualise import show_board
 
 # breadth first algorithm
 def breadth_first(board, board_size):
@@ -48,6 +49,11 @@ def breadth_first(board, board_size):
         
             if new_game.rush_board[end_coord] == "X":
                 runtime = time.time() - start_time
+
+
+                for value in dict_moves.values():
+                    show_board(value, board_size)
+
 
                 return runtime, states_visited, step
 
