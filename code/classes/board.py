@@ -42,6 +42,8 @@ class Board:
             
     def check_move(self):
         possible_boards = []
+        movement_list = []
+        
         for index, car in enumerate(self.car_list):
             
             if car.orientation == 'H': 
@@ -59,6 +61,7 @@ class Board:
                     x_left -= 1
                     
                     possible_boards.append(new_car_list)
+                    movement_list.append(((car.car), -1))
                                 
                 step_right = 1
                 while x_right < self.N and self.rush_board[car.y, x_right] == '.': 
@@ -70,7 +73,8 @@ class Board:
                     x_right += 1
                     step_right += 1
                     
-                    possible_boards.append(new_car_list)                        
+                    possible_boards.append(new_car_list) 
+                    movement_list.append(((car.car), 1))                     
                         
             else:
                 y_down = (car.y + car.length)
@@ -86,7 +90,8 @@ class Board:
                     y_down += 1
                     step_down += 1
                     
-                    possible_boards.append(new_car_list)
+                    possible_boards.append(new_car_list) 
+                    movement_list.append(((car.car), 1))
                 
                 step_up = 1
                 while y_up >= 0 and self.rush_board[y_up, car.x] == '.':
@@ -98,9 +103,10 @@ class Board:
                     y_up -= 1
                     step_up += 1
                     
-                    possible_boards.append(new_car_list)
+                    possible_boards.append(new_car_list) 
+                    movement_list.append(((car.car), -1))
                 
-        return possible_boards
+        return possible_boards, movement_list
 
     def visualize(self):
         possible_moves = []

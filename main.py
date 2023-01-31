@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     game_number = int(input('Which game would you like to play? \nEnter game number: '))
 
-    algorithm = input('Which algorithm would you like to use? \n1. random \n2. breadth first search \n3. random beam search \n')
+    algorithm = input('Which algorithm would you like to use? \n1. random \n2. breadth first search \n3. beam search \n')
         
     csv_rh = (f'data/Rushhour{board_size}x{board_size}_{game_number}.csv')
 
@@ -58,11 +58,12 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        step, runtime = random_step(board, board_size)
+        step, runtime, movement = random_step(board, board_size)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: random')
         print(f"The runtime was: {runtime} seconds")
         print(f"The amount of steps taken is: {step}")
+        print(f"The list of movements taken is: {movement}")
         print('\n ------------------------------------------ \n ')
 
 
@@ -73,11 +74,10 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        runtime, states_visited, depth = breadth_first(board, board_size)
+        runtime, states_visited = breadth_first(board, board_size)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: breadth first search')
         print(f"the runtime was: {runtime} seconds")
-        print(f'the depth is: {depth}')
         print(f"the amount of states visited is: {states_visited}")
         print('\n ------------------------------------------ \n ')
 
@@ -87,11 +87,10 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        runtime, states_visited, depth = random_beam_search(board, board_size)
+        runtime, states_visited = random_beam_search(board, board_size)
         print('\n ------------------------------------------ \n ')
-        print(f'Game number: {game_number}, algorithm: random beam search')
+        print(f'Game number: {game_number}, algorithm: beam  search')
         print(f"the runtime was: {runtime} seconds")
-        print(f'the depth is: {depth}')
         print(f"the amount of states visited is: {states_visited}")
         print('\n ------------------------------------------ \n ')
 
@@ -101,7 +100,7 @@ if __name__ == '__main__':
 
 
 
-##### extra code for running the random algorithm 1000 times and generating plots #####
+##### extra code for running the random algorithm 1000 times #####
 
         # runtimes = []
         # count_list = []

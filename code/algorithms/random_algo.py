@@ -15,6 +15,7 @@ def random_step(board, board_size):
     # start the time and step count
     start_time = time.time()
     step = 0
+    movement_list = []
 
     if board_size == 6: 
         end_coord = 2,5
@@ -28,10 +29,16 @@ def random_step(board, board_size):
     # the loop needs to continue until the game is solved
     while board.rush_board[end_coord] != "X":
         # here all the posible moves are created in a list
-        choice = board.check_move()
+        choice, movements = board.check_move()
 
         # here one of the posible moves is randomly selected
         this_choice = random.choice(choice)
+
+        for i in range(len(choice)):
+            if this_choice == choice[i]:
+                movement = movements[i]
+
+        movement_list.append(movement)
 
         # here the board is overwritten
         board = Board(this_choice, board_size)
@@ -39,16 +46,13 @@ def random_step(board, board_size):
         # this is so visualize the board 
         # vis_flo = show_board(this_choice, board_size)
         step += 1
-        #board.create_state()
 
         # here the board is created
         board.create_board()
 
         # this is used by the check_move
         board.visualize()
-
-        # if this is met, the game is solved
     
     runtime = time.time() - start_time
     
-    return step, runtime
+    return step, runtime, movement_list
