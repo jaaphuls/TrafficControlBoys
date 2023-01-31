@@ -35,7 +35,7 @@ def breadth_first(board, board_size):
             
             new_game = Board(states, board_size)
             
-
+            
             if new_game.string_value not in previous_states:
                 
                 states_visited += 1
@@ -47,9 +47,8 @@ def breadth_first(board, board_size):
                 runtime = time.time() - start_time
                 return runtime, states_visited, step
 
-
         if choices_queue.qsize() == 0:           
-                 
+            
             step += 1
 
             for state in future_states:
