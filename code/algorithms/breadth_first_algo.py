@@ -9,7 +9,7 @@ def breadth_first(board, board_size):
     start_time = time.time()
     previous_states = board.states_list
     previous_states.add(board.string_value)
-
+    step = 0
     states_visited = 0
 
     choices_queue = queue.Queue()
@@ -35,7 +35,7 @@ def breadth_first(board, board_size):
             new_game = Board(states, board_size)
 
             if new_game.string_value not in board.states_list:
-
+                future_states = []
                 states_visited += 1
                 # print(new_game.string_value)
                 # print(board.states_list)
@@ -44,10 +44,14 @@ def breadth_first(board, board_size):
                 new_game.create_board()
                 new_game.visualize()
 
-                choices_queue.put(new_game)
+                future_states.append(new_game)
 
                 unsolved = new_game.rush_board[end_coord] != "X"
 
+                if  choices_queue.size() == 0:
+                    choices_queue.put(future_states)
+                    step += 1
+
     runtime = time.time() - start_time
-    # print(step)
+    print(step)
     return runtime, states_visited, depth
