@@ -66,7 +66,7 @@ if __name__ == '__main__':
         print(f"The amount of steps taken is: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
-        file_name = str(board_size) + "x" + str(board_size) + "_" + str(game_number) + "_" + str("random") + "."+ "csv"
+        file_name = "code/results/" + str(board_size) + "x" + str(board_size) + "_" + str(game_number) + "_" + str("random") + "."+ "csv"
         
         with open(file_name, "w", newline="") as file:
             writer = csv.writer(file)
@@ -90,7 +90,7 @@ if __name__ == '__main__':
         print(f"the amount of steps made: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
-        file_name = str(board_size) + "x" + str(board_size) + "_" + str(game_number) + "_" + str("breadth_first") + "."+ "csv"
+        file_name = "code/results/" + str(board_size) + "x" + str(board_size) + "_" + str(game_number) + "_" + str("breadth_first") + "."+ "csv"
         
         with open(file_name, "w", newline="") as file:
             writer = csv.writer(file)
@@ -112,7 +112,7 @@ if __name__ == '__main__':
         print(f"the amount of steps made: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
-        file_name = str(board_size) + "x" + str(board_size) + "_" + str(game_number) + "_" + str("random_beam_search") + "."+ "csv"
+        file_name = "code/results/" + str(board_size) + "x" + str(board_size) + "_" + str(game_number) + "_" + str("random_beam_search") + "."+ "csv"
         
         with open(file_name, "w", newline="") as file:
             writer = csv.writer(file)
