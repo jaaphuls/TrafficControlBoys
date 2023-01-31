@@ -4,7 +4,7 @@ import queue
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import show_board
-from code.algorithms.backtracking import backtrace
+from code.algorithms.backtracking import backtrace, check_50_path
 
 
 # breadth first algorithm
@@ -53,13 +53,15 @@ def breadth_first(board, board_size):
                 runtime = time.time() - start_time
                 
                 optimal_moves = backtrace(dict_moves, new_game)
-                optimal_moves = reversed(optimal_moves)
+                optimal_moves = optimal_moves[::-1]
 
                 for move in optimal_moves:
 
                     show_board(move.car_list, board_size)
 
-                return runtime, states_visited, step
+                the_path = check_50_path(optimal_moves)
+
+                return runtime, states_visited, step, the_path
 
         if choices_queue.qsize() == 0:           
                 

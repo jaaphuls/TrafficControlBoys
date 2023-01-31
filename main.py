@@ -58,12 +58,12 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        step, runtime, movement = random_step(board, board_size)
+        step, runtime, the_path = random_step(board, board_size)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: random')
         print(f"The runtime was: {runtime} seconds")
         print(f"The amount of steps taken is: {step}")
-        print(f"The list of movements taken is: {movement}")
+        print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
 
 
@@ -74,12 +74,13 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        runtime, states_visited, step = breadth_first(board, board_size)
+        runtime, states_visited, step, the_path = breadth_first(board, board_size)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: breadth first search')
         print(f"the runtime was: {runtime} seconds")
         print(f"the amount of states visited is: {states_visited}")
         print(f"the amount of steps made: {step}")
+        print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
 
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 

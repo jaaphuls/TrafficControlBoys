@@ -3,6 +3,7 @@ import time
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import show_board
+from code.algorithms.backtracking import backtrace, check_50_path
 
 
 ''' In random_step a random car is selected and moved and therefore create a new state. 
@@ -34,11 +35,7 @@ def random_step(board, board_size):
         # here one of the posible moves is randomly selected
         this_choice = random.choice(choice)
 
-        for i in range(len(choice)):
-            if this_choice == choice[i]:
-                movement = movements[i]
-
-        movement_list.append(movement)
+        movement_list.append(board)
 
         # here the board is overwritten
         board = Board(this_choice, board_size)
@@ -53,6 +50,8 @@ def random_step(board, board_size):
         # this is used by the check_move
         board.visualize()
     
+    the_path = check_50_path(movement_list)
+    
     runtime = time.time() - start_time
     
-    return step, runtime, movement_list
+    return step, runtime, the_path
