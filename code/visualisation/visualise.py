@@ -50,6 +50,6 @@ def show_board(state, N):
 
     # this will show the board and update it every tenth of a second and delete the old "picture"
     plt.imshow(gameboard)
-    plt.pause(0.1)
+    plt.pause(0.3)
     plt.clf()
   

@@ -14,7 +14,7 @@ class Board:
         self.string_value = self.create_state()
         self.create_board()
         self.visualize()
-        
+
     def create_state(self):
         total = ''
         for car in self.car_list:

@@ -4,11 +4,13 @@ import queue
 from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import show_board
+from code.algorithms.backtracking import backtrace
+
 
 # breadth first algorithm
 def breadth_first(board, board_size):
     dict_moves = {}
-    dict_moves[board.string_value] = 'start board'
+    dict_moves[board] = None
     future_states = []
     start_time = time.time()
     previous_states = set()
@@ -36,12 +38,12 @@ def breadth_first(board, board_size):
         states_list, movements = current_state.check_move()
 
         for states in states_list:
-            
+           
             new_game = Board(states, board_size)
-            
 
             if new_game.string_value not in previous_states:
-                
+                dict_moves[new_game] = current_state
+
                 states_visited += 1
                 previous_states.add(new_game.string_value)
                
@@ -49,17 +51,17 @@ def breadth_first(board, board_size):
         
             if new_game.rush_board[end_coord] == "X":
                 runtime = time.time() - start_time
+                
+                love = backtrace(dict_moves, current_state)
+                
+                for move in reversed(love):
 
-
-                for value in dict_moves.values():
-                    show_board(value, board_size)
-
+                    show_board(move.car_list, board_size)
 
                 return runtime, states_visited, step
 
         if choices_queue.qsize() == 0:           
-            dict_moves[new_game.string_value] = current_state.car_list
-            print(len(dict_moves))    
+                
             step += 1
 
             for state in future_states:
