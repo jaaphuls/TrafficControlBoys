@@ -52,9 +52,10 @@ def breadth_first(board, board_size):
             if new_game.rush_board[end_coord] == "X":
                 runtime = time.time() - start_time
                 
-                love = backtrace(dict_moves, current_state)
-                
-                for move in reversed(love):
+                love = backtrace(dict_moves, new_game)
+                love = reversed(love)
+
+                for move in love:
 
                     show_board(move.car_list, board_size)
 

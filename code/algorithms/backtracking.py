@@ -1,7 +1,7 @@
 
 
 def backtrace(dictionary, solution_state): 
-    lol = []
+    lol = [solution_state]
     
     while dictionary[solution_state] != None:
 
@@ -9,5 +9,5 @@ def backtrace(dictionary, solution_state):
 
         lol.append(solution_state)
     
-    print(len(lol))
+    
     return lol
