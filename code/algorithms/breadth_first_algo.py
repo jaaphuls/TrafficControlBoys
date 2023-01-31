@@ -66,6 +66,7 @@ def breadth_first(board, board_size):
         if choices_queue.qsize() == 0:           
                 
             step += 1
+            print(step)
 
             for state in future_states:
                 choices_queue.put(state)

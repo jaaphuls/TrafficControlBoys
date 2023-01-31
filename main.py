@@ -89,11 +89,13 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        runtime, states_visited = random_beam_search(board, board_size)
+        runtime, states_visited, step, the_path = random_beam_search(board, board_size, 3)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: beam  search')
         print(f"the runtime was: {runtime} seconds")
         print(f"the amount of states visited is: {states_visited}")
+        print(f"the amount of steps made: {step}")
+        print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
 
 
