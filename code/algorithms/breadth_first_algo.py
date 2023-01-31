@@ -30,9 +30,9 @@ def breadth_first(board, board_size):
     while unsolved:
         current_state = choices_queue.get()
 
-        qwerty, movements = current_state.check_move()
+        states_list, movements = current_state.check_move()
 
-        for states in qwerty:
+        for states in states_list:
             
             new_game = Board(states, board_size)
 
@@ -50,9 +50,15 @@ def breadth_first(board, board_size):
 
                 unsolved = new_game.rush_board[end_coord] != "X"
 
-                if  choices_queue.size() == 0:
-                    choices_queue.put(future_states)
+                if choices_queue.qsize() == 0:           
                     step += 1
+                    print(step)
+
+                    for i in future_states:
+                        choices_queue.put(i)
+                else:
+                    pass
+                    
 
     runtime = time.time() - start_time
     print(step)
