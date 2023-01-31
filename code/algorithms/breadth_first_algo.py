@@ -29,6 +29,7 @@ def breadth_first(board, board_size):
 
     while unsolved:
         current_state = choices_queue.get()
+
         for states in current_state.check_move():
             
             new_game = Board(states, board_size)
@@ -49,4 +50,4 @@ def breadth_first(board, board_size):
 
     runtime = time.time() - start_time
     # print(step)
-    return runtime, states_visited
+    return runtime, states_visited, depth
