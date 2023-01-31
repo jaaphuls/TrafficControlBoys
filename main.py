@@ -74,11 +74,12 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        runtime, states_visited = breadth_first(board, board_size)
+        runtime, states_visited, step = breadth_first(board, board_size)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: breadth first search')
         print(f"the runtime was: {runtime} seconds")
         print(f"the amount of states visited is: {states_visited}")
+        print(f"the amount of steps made: {step}")
         print('\n ------------------------------------------ \n ')
 
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 

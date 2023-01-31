@@ -7,9 +7,9 @@ from code.classes.board import Board
 # breadth first algorithm
 def breadth_first(board, board_size):
     start_time = time.time()
-    previous_states = board.states_list
+    previous_states = set()
     previous_states.add(board.string_value)
-    step = 0
+    step = 1
     states_visited = 0
 
     choices_queue = queue.Queue()
@@ -25,9 +25,8 @@ def breadth_first(board, board_size):
     if board_size == 12: 
         end_coord = 5, 11
 
-    unsolved = True
-
-    while unsolved:
+    future_states = []
+    while True :
         current_state = choices_queue.get()
 
         states_list, movements = current_state.check_move()
@@ -35,31 +34,24 @@ def breadth_first(board, board_size):
         for states in states_list:
             
             new_game = Board(states, board_size)
+            
 
-            if new_game.string_value not in board.states_list:
-                future_states = []
+            if new_game.string_value not in previous_states:
+                
                 states_visited += 1
-                # print(new_game.string_value)
-                # print(board.states_list)
-                board.states_list.add(new_game.string_value)
+                previous_states.add(new_game.string_value)
                
-                new_game.create_board()
-                new_game.visualize()
-
                 future_states.append(new_game)
+        
+            if new_game.rush_board[end_coord] == "X":
+                runtime = time.time() - start_time
+                return runtime, states_visited, step
 
-                unsolved = new_game.rush_board[end_coord] != "X"
 
-                if choices_queue.qsize() == 0:           
-                    step += 1
-                    print(step)
+        if choices_queue.qsize() == 0:           
+                 
+            step += 1
 
-                    for i in future_states:
-                        choices_queue.put(i)
-                else:
-                    pass
-                    
-
-    runtime = time.time() - start_time
-    print(step)
-    return runtime, states_visited, depth
+            for state in future_states:
+                choices_queue.put(state)
+            future_states = []

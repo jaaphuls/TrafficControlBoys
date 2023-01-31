@@ -11,10 +11,10 @@ class Board:
         self.N = N
         self.rush_board = np.zeros((N, N), dtype=Vehicle)
         self.car_list = cars
-        self.states_list = set()
         self.string_value = self.create_state()
-
-
+        self.create_board()
+        self.visualize()
+        
     def create_state(self):
         total = ''
         for car in self.car_list:
