@@ -6,12 +6,13 @@ from code.classes.board import Board
 from code.visualisation.visualise import show_board
 
 
-def random_beam_search(board, board_size, k=5):
+def random_beam_search(board, board_size, k=3):
     start_time = time.time()
     previous_states = board.states_list
     previous_states.add(board.string_value)
     
     step = 0
+    depth = 0
 
     choices_queue = queue.Queue()
     choices_queue.put(board)
@@ -41,6 +42,6 @@ def random_beam_search(board, board_size, k=5):
                 if new_game.rush_board[end_coord] == "X":
                     runtime = time.time() - start_time
                     
-                    return runtime, step
+                    return runtime, step, depth
             else:
                 pass
