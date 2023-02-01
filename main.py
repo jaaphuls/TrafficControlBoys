@@ -53,6 +53,7 @@ if __name__ == '__main__':
 
     # ------------------------------------- random algorithm -------------------------------------      
 
+
     if (algorithm == '1' or algorithm.lower() == 'random'): 
         print("Calculating ... ... ")
         # Run main with provide arguments
@@ -75,15 +76,22 @@ if __name__ == '__main__':
             for item in the_path:
                 writer.writerow(item)
 
-        lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: random', f"the runtime was: {runtime} seconds", 
-                f"The amount of steps taken is: {step}", f"The path of movements is: {the_path}", '\n ------------------------------------------ \n ']
+        lines = ['\n ------------------------------------------ \n ', 
+                f'Game number: {game_number}, algorithm: random', 
+                f"the runtime was: {runtime} seconds", 
+                f"The amount of steps taken is: {step}", 
+                f"The path of movements is: {the_path}", 
+                '\n ------------------------------------------ \n ']
                 
         with open(f'code/results/random_results/{board_size}x{board_size}_{game_number}terminal_output_random.txt', 'w') as f:
             for line in lines:
                 f.write(line)
                 f.write('\n')
 
+
     # ------------------------------------- breadth first search algorithm -------------------------------------      
+
+
 
     if (algorithm == '2' or algorithm.lower() == 'breadth first search'): 
         print("Calculating ... ... ")
@@ -108,16 +116,22 @@ if __name__ == '__main__':
             for item in the_path:
                 writer.writerow(item)
 
-        lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: breadth first search', f"the runtime was: {runtime} seconds", 
-        f"the amount of states visited is: {states_visited}", f"the amount of steps made: {step}", f"The path of movements is: {the_path}", 
-        '\n ------------------------------------------ \n ']
+        lines = ['\n ------------------------------------------ \n ',
+                f'Game number: {game_number}, algorithm: breadth first search',
+                f"the runtime was: {runtime} seconds", 
+                f"the amount of states visited is: {states_visited}", 
+                f"the amount of steps made: {step}", 
+                f"The path of movements is: {the_path}", 
+                '\n ------------------------------------------ \n ']
                 
         with open(f'code/results/breadth_first_search/{board_size}x{board_size}_{game_number}_terminal_output_bfs.txt', 'w') as f:
             for line in lines:
                 f.write(line)
                 f.write('\n')
 
+
         # ------------------------------------- random beam search algorithm -------------------------------------      
+
 
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 
         print("Calculating ... ... ")
@@ -141,54 +155,16 @@ if __name__ == '__main__':
             for item in the_path:
                 writer.writerow(item)
 
-        lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: beam  search', f"the runtime was: {runtime} seconds", 
-                f"the amount of states visited is: {states_visited}", f"the amount of steps made: {step}", f"The path of movements is: {the_path}", 
+        lines = ['\n ------------------------------------------ \n ', 
+                f'Game number: {game_number}, algorithm: beam  search', 
+                f"the runtime was: {runtime} seconds", 
+                f"the amount of states visited is: {states_visited}", 
+                f"the amount of steps made: {step}", 
+                f"The path of movements is: {the_path}", 
                 '\n ------------------------------------------ \n ']
-                
+                        
         with open(f'code/results/random_beam_search/{board_size}x{board_size}_{game_number}_terminal_output_rbs.txt', 'w') as f:
             for line in lines:
                 f.write(line)
                 f.write('\n')
 
-
-
-
-
-
-
-
-
-
-
-
-##### extra code for running the random algorithm 1000 times #####
-
-        # runtimes = []
-        # count_list = []
-
-        # for i in tqdm(range(1000)): 
-
-        #     # Run main with provide arguments
-        #     board = Board(car_list, board_size)
-        #     board.create_state()
-        #     board.create_board()
-        #     board.visualize()
-        #     step, runtime = random_step(board, board_size)
-        #     count_list.append(step)
-        #     runtimes.append(runtime)
-
-        # plt.figure(figsize=[10,6])
-        # plt.hist(runtimes, bins = 30, label= f"mean runtime = {round(mean(runtimes), 5)} seconds \nleast amount of runtime is {round(min(runtimes), 5)} seconds \nmost amount of runtime is {round(max(runtimes), 5)} seconds")
-        # plt.xlabel('time (in seconds)')
-        # plt.ylabel('number of games')
-        # plt.title('1000 games simulated')
-        # plt.legend()
-        # plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_runtime_game_{game_number}_2_steps')
-
-        # plt.figure(figsize=[10,6])
-        # plt.hist(count_list, bins = 30, label = f"mean steps = {mean(count_list)} steps \nleast amount of steps is {min(count_list)} steps \nmost amount of steps is {max(count_list)} steps")
-        # plt.xlabel('amount of steps')
-        # plt.ylabel('number of games')
-        # plt.title('1000 games simulated')
-        # plt.legend()
-        # plt.savefig(f'code/results/random_results/random_algorithm/2_step/results_steps_game_{game_number}_2_steps')
