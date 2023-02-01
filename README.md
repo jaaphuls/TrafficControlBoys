@@ -17,7 +17,10 @@ An example can be run by calling:
 
 The user is subsequently asked for a few prompts: 
 
-``` What are the board dimensions (6x6, 9x9 or 12x12)? ```
+``` 
+What are the board dimensions (6x6, 9x9 or 12x12)? 
+
+```
 
 ``` Which game would you like to play?```
 
