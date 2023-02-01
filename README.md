@@ -15,7 +15,19 @@ An example can be run by calling:
 
 ``` python main.py ```
 
-This python script will run several loops using different algorithms to find solution of the board. 
+The user is subsequently asked for a few prompts: 
+
+``` What are the board dimensions (6x6, 9x9 or 12x12)? ```
+
+``` Which game would you like to play? ```
+``` Enter game number: ``` 
+
+``` Which algorithm would you like to use?  ```
+``` 1. random ```
+``` 2. breadth first search ```
+``` 3. beam search ```
+
+
 
 ## - Structure
 
