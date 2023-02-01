@@ -4,6 +4,8 @@ In this section the results of our experiments will be shown and evaluated.
 
 
 *Breadth first on game 2 in action*
+
+
 ![GIF Rush Hour](https://github.com/jaaphuls/TrafficControlBoys/blob/main/data/gif_rh_AdobeExpress.gif)
 
 ## - Structure
