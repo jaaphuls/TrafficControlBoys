@@ -4,7 +4,7 @@ In this section the results of our experiments will be shown and evaluated.
 
 
 
-This table shows the steps required to reach the solution (random algorithm displays the mean steps) 
+*This table shows the steps required to reach the solution (random algorithm displays the mean steps)*
 |     | `Random algorithm` | `Breadth first search algorithm` | `Random beam search algorithm` |
 | --- | --- | --- | --- |
 | `Game 1 (6x6)` | Row 1, Column 2 | Row 1, Column 3 | Row 1, Column 4 |
