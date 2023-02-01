@@ -50,6 +50,8 @@ def breadth_first(board, board_size):
                 future_states.append(new_game)
         
             if new_game.rush_board[end_coord] == "X":
+
+                print('Solution found! ')
                 runtime = time.time() - start_time
                 
                 optimal_moves = backtrace(dict_moves, new_game)
@@ -64,9 +66,9 @@ def breadth_first(board, board_size):
                 return runtime, states_visited, step, the_path
 
         if choices_queue.qsize() == 0:           
-                
+            
             step += 1
-            print(step)
+            print(f'depth = {step}')
 
             for state in future_states:
                 choices_queue.put(state)

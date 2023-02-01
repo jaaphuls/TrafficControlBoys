@@ -53,7 +53,7 @@ def random_beam_search(board, board_size, k):
         
             if new_game.rush_board[end_coord] == "X":
 
-                print("you are there")
+                print("Solution found! ")
                 runtime = time.time() - start_time
                 
                 optimal_moves = backtrace(dict_moves, new_game)
@@ -70,7 +70,7 @@ def random_beam_search(board, board_size, k):
         if choices_queue.qsize() == 0:           
                 
             step += 1
-            print(step)
+            print(f'depth = {step}')
 
             for state in future_states:
                 choices_queue.put(state)
