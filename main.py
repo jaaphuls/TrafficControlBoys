@@ -159,7 +159,6 @@ if __name__ == '__main__':
 
 
 
-a
 
 
 ##### extra code for running the random algorithm 1000 times #####
