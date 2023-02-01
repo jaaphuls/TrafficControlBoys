@@ -103,7 +103,7 @@ Now let's imagine that vehicles can drive over each other, stand on top of each 
 This simplification can lead to a larger state space, but it is easier to calculate and gives a good estimation of how the board size and especially the number of vehicles drastically increase the state space.
 
 Because the number of moves a vehicle can make on a free board of width $N$ is equal to $N - 1$ for a car and $N-2$ for a truck, the state space formula would then be:
-$$state \: space={\left( width - 1 \right)}^{number\:of\:cars}\cdot {\left( width - 2 \right)}^{number\:of\:trucks}$$
+$$state \ space={\left( width - 1 \right)}^{number\ of \cars}\cdot {\left( width - 2 \right)}^{number\ of\ trucks}$$
 ## Auteurs
 - David van Hulst
 - Jaap Hulsbosch
