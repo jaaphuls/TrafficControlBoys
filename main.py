@@ -123,7 +123,8 @@ if __name__ == '__main__':
         lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: beam  search', f"the runtime was: {runtime} seconds", 
                 f"the amount of states visited is: {states_visited}", f"the amount of steps made: {step}", f"The path of movements is: {the_path}", 
                 '\n ------------------------------------------ \n ']
-        with open(f'{game_number}_terminal_output_random_beam_search.txt', 'w') as f:
+                
+        with open(f'code/results/random_beam_search/{game_number}_terminal_output_rbs.txt', 'w') as f:
             for line in lines:
                 f.write(line)
                 f.write('\n')
