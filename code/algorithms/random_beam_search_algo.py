@@ -5,6 +5,8 @@ from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import show_board
 from code.algorithms.backtracking import backtrace, check_50_path
+# Importing the libraries and functions
+
 
 # random beam search first algorithm
 def random_beam_search(board, board_size, k):

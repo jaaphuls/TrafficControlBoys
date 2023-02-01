@@ -4,6 +4,7 @@ from code.classes.vehicle import Vehicle
 from code.classes.board import Board
 from code.visualisation.visualise import show_board
 from code.algorithms.backtracking import backtrace, check_50_path
+# Importing the libraries and functions
 
 
 def random_step(board, board_size):
