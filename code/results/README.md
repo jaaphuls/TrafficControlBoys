@@ -3,7 +3,7 @@
 In this section the results of our experiments will be shown and evaluated. 
 
 
-*Breadth first on game 2 in action*
+The GIF below visualises the breadth first search algorithm on game 2
 
 
 ![GIF Rush Hour](https://github.com/jaaphuls/TrafficControlBoys/blob/main/data/gif_rh_AdobeExpress.gif)
@@ -44,3 +44,22 @@ It also contains a txt file with the terminal output of the game and algorithm -
 | `Game 6 (9x9)` | *1.03 seconds* | *no output yet* | *no output yet* |
 | `Game 7 (12x12)` | *4.19 seconds* | *no output yet* | *no output yet* |
 | `Hardest game (6x6)` | *0.49 seconds* | *13.94 seconds* | *11.38 seconds* |
+
+## - Histograms
+
+Three histograms of the random distributions (the others can be found [here](https://github.com/jaaphuls/TrafficControlBoys/tree/main/code/results/random_results/random_algorithm)): 
+
+Game 1: 
+
+![game1](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_2_2_steps.png) 
+
+
+Game 5: 
+
+![game5](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_5_2_steps.png)
+
+Game 8 (hardest game): 
+
+![game8](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_8_2_steps.png)
+
+## - Evaluation
