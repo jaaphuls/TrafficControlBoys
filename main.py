@@ -20,34 +20,41 @@ if __name__ == '__main__':
     
     # this code block asks for a user input and keeps asking until a good input is given
     board_size = None
-
     while type(board_size) != int:
+        
+        # this dictionary allows the user to give two different input notations for the board size
         dimensions = {'6x6' : '6', '9x9' : '9', '12x12' : '12'}
         
         board_size = input("What are the board dimensions (6x6, 9x9 or 12x12)? \n")
         
+        # the input should first be used as a key in the dimensions dictionary if the NxN notation was used
         if board_size in dimensions:
             board_size = int(dimensions[board_size])
         
+        # the input can be directly converted into an integer if the N notation was used
         elif board_size in dimensions.values():
             board_size = int(board_size)
 
         else:
             print("There are no boards with these dimensions, please choose the correct dimensions!")
 
+    # the user is asked which game should be played with which algorithm
     game_number = int(input('Which game would you like to play? \nEnter game number: '))
-
     algorithm = input('Which algorithm would you like to use? \n1. random \n2. breadth first search \n3. beam search \n')
-        
+    
+    # here the input is converted into a file name to load the csv from the data directory
     csv_rh = (f'data/Rushhour{board_size}x{board_size}_{game_number}.csv')
 
     # read the csv input file as a pandas dataframe
     dataframe = pd.read_csv(csv_rh)
 
-    # loop through the indices and rows of the car positions dataframe
+    # this will be the original list of cars on the starting positions
     car_list = []
-
+    
+    # loop through the indices and rows of the car positions dataframe
     for i, row in dataframe.iterrows():
+        
+        # create Vehicle objects with data from the csv file and put them in car_list
         car_list.append(Vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
 
 
