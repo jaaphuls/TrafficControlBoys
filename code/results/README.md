@@ -44,3 +44,9 @@ It also contains a txt file with the terminal output of the game and algorithm -
 | `Game 6 (9x9)` | *1.03 seconds* | *no output yet* | *no output yet* |
 | `Game 7 (12x12)` | *4.19 seconds* | *no output yet* | *no output yet* |
 | `Hardest game (6x6)` | *0.49 seconds* | *13.94 seconds* | *11.38 seconds* |
+
+## - Histograms
+
+
+
+## - Evaluation
