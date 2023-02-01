@@ -96,7 +96,7 @@ In our case, "Order" actually means the positions on the game board. These prope
 
 This is therefore also a "Yes", because when a parking space is available, a car may be moved there, even if this space has been occupied before.
 
-This together means that the general formula to be used is: $$state space = {n)}^{r}
+This together means that the general formula to be used is: $$state space = {n)}^{r}$$
 
 ## Auteurs
 - David van Hulst
