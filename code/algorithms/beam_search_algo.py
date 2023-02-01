@@ -21,7 +21,6 @@ def beam_search(board, board_size, beam_width):
     # add the current state to the list of seen states
     previous_states.add(board.string_value)
     
-    
     #initialize a queue to store the possible next states of the puzzle
     choices_queue = queue.Queue()
     choices_queue.put(board)
