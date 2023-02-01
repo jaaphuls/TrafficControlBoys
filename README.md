@@ -104,6 +104,12 @@ This simplification can lead to a larger state space, but it is easier to calcul
 
 Because the number of moves a vehicle can make on a free board of width $N$ is equal to $N - 1$ for a car and $N-2$ for a truck, the state space formula would then be:
 $$state\ space={\left( width - 1 \right)}^{number\ of\ cars}\cdot {\left( width - 2 \right)}^{number\ of\ trucks}$$
+The state spaces for the various gameboards in our data directory is calculated below:
+
+6x6 (game 1) = (6 - 1)12 ⋅ (6 - 2)1 = 976,562,500
+9x9 (game 4) = (9 - 1)12 ⋅ (9 - 2)10 = 1.94 ⋅ 10^19
+12x12 (game 7) = (12 - 1)28 ⋅ (12 - 2)16 = 1.44 ⋅ 10^45
+
 ## Auteurs
 - David van Hulst
 - Jaap Hulsbosch
