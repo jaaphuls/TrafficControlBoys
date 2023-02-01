@@ -27,7 +27,7 @@ It also contains a txt file with the terminal output of the game and algorithm -
 | `Game 7 (12x12)` | *38410 steps* | *no output yet* | *no output yet* |
 | `Hardest game (6x6)` | *18704 steps* | *49 steps* | *69 steps* |
 
-*This table shows the time required to reach the solution (random algorithm displays the mean of 1000 iterations)*
+*The next table shows the time required to reach the solution (random algorithm displays the mean of 1000 iterations)*
 |     | `Random algorithm` | `Breadth first search algorithm` | `Random beam search algorithm` |
 | --- | --- | --- | --- |
 | `Game 1 (6x6)` | *0.13 seconds* | *0.34 seconds* | *0.30 seconds* |
