@@ -1,7 +1,7 @@
 # Rush hour project
 
-This project consists of solving various Rush Hour puzzles. On the game board, there are 2 types of vehicles: cars, that occupy two spaces, and trucks, that occupy 3 spaces on the board. The puzzle is solved when the red car is moved through the exit on the board by shifting the cars and trucks out of the path of the red car.The player is not allowed to move one car over the other car or remove it from the board. It can be very difficult to decide whether a move brings you closer to the solution or further away, so it would be interesting to write some algorithms that can solve these puzzles with as few moves as possible. 
-All the results we have collected are listed in the results folder and some insights are provided in the [results README](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/README.md). The goal is to create an algorithm that solves the puzzels in as few steps as possible as displayed in the image below.
+This project consists of solving various Rush Hour puzzles. On the game board, there are 2 types of vehicles: cars, that occupy two spaces, and trucks, that occupy 3 spaces on the board. The puzzle is solved when the red car is moved through the exit on the board by shifting the cars and trucks out of the path of the red car. The player is not allowed to move one car over the other car or remove it from the board. It can be very difficult to decide whether a move brings you closer to the solution or further away. The goal is to create an algorithm that solves the puzzles in as few steps as possible as displayed in the image below.
+All the results we have collected are listed in the results folder and some insights are provided in the [results README](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/README.md). 
 
 ![RushHour2](https://user-images.githubusercontent.com/98396172/211304990-5ac416e4-6c5f-41ac-90bc-79ca68478e87.jpeg)
 
@@ -64,8 +64,6 @@ The following list describes the most important folders and files in the project
 
 ## - Algorithms & heurstics
 
-Hier een stukje schrijven over elk algoritme: 
-
 - **Random** 
 *Our random algorithm is given a start state and from this start state checks for every possible next-state. it picks one of these next-stape and considers that a step in the game. Our algorithm has no added constraints next to the rules of the game rush-hour, thus it can revisit previous states. The algorithm repeats this process untill a solution is found.*
 
@@ -82,7 +80,7 @@ Try to minimalise the amount of steps that it takes to solve the puzzle
 
 Think about constraits; no negative amount of steps, no jumping of cars etc. 
 
-## - State-space
+## - State space
 
 To better understand the case and to have an idea of the scale of the problem, it may be a good idea to get an estimation of the size of the state space of the case.
 The state space is the total number of valid states that are possible in the case. In our case, the number of possible positions that the vehicles can have on the board. \
@@ -117,7 +115,7 @@ The state spaces for the various gameboards in our data directory is calculated 
 
 These large numbers show us that the state space of the games of Rush Hour are very high. This may cause problems in finding an optimal solution for some of the boards. For instance, game 7's state space is incredibly high. This will probably result in a breadth first search taking too long to find the ideal solution, which is why a beam search algorithm may be a good idea for solving these bigger game boards.
 
-## Auteurs
+## Authors
 - David van Hulst
 - Jaap Hulsbosch
 - Samuel Rose
