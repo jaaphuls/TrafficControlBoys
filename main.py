@@ -65,13 +65,21 @@ if __name__ == '__main__':
         print(f"The amount of steps taken is: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
-        file_name = f"code/results/{board_size}x{board_size}_{game_number}_random.csv"
+        file_name = f"{board_size}x{board_size}_{game_number}_random.csv"
 
-        with open(file_name, "w", newline="") as file:
+        with open(f'code/results/random_results/{file_name}', "w", newline="") as file:
             writer = csv.writer(file)
             writer.writerow(["car", "move"])
             for item in the_path:
                 writer.writerow(item)
+
+        lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: random', f"the runtime was: {runtime} seconds", 
+                f"The amount of steps taken is: {step}", f"The path of movements is: {the_path}", '\n ------------------------------------------ \n ']
+                
+        with open(f'code/results/random_results/{board_size}x{board_size}_{game_number}terminal_output_random.txt', 'w') as f:
+            for line in lines:
+                f.write(line)
+                f.write('\n')
 
 
     if (algorithm == '2' or algorithm.lower() == 'breadth first search'): 
@@ -97,7 +105,7 @@ if __name__ == '__main__':
             for item in the_path:
                 writer.writerow(item)
 
-        lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: beam  search', f"the runtime was: {runtime} seconds", 
+        lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: breadth first search', f"the runtime was: {runtime} seconds", 
         f"the amount of states visited is: {states_visited}", f"the amount of steps made: {step}", f"The path of movements is: {the_path}", 
         '\n ------------------------------------------ \n ']
                 
