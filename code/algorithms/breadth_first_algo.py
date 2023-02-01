@@ -10,9 +10,9 @@ from code.algorithms.backtracking import backtrace, check_50_path
 
 def breadth_first(board, board_size):
     """
-    Implements the breadth first earch algorithm to solve the "Rush Hour" puzzle game.
+    Implements the breadth first search algorithm to solve the "Rush Hour" puzzle game.
     The function takes in the initial state of the puzzle and the size of the board.
-    It returns the runtime, which is the time elapsed since the start of the search.
+    It returns the runtime, the amount of states visited, the depth and the path to the solution.
     """
     
     dict_moves = {}
