@@ -61,15 +61,20 @@ The following list describes the most important folders and files in the project
 - **/main.py**: this is the main python file in which all the needed files are called and output is created
 - **/requirements.txt**: contains all the packages that need to be installed to run the script
 
-## - Algorithms
+## - Algorithms & heurstics
 
 Hier een stukje schrijven over elk algoritme: 
 
 - **Random**
 
+Our random algorithm is given a start state and from this start state checks for every possible next-state. it picks one of these next-stape and considers that a step in the game. Our algorithm has no added constraints next to the rules of the game rush-hour, thus it can revisit previous states. The algorithm repeats this process untill a solution is found.
+
 - **Breadth first search**
+Our breadth-first algorithm is given a mother state and finds all possible child states. it then goes over these child states and considers them the new mother states and finds their child states. Each time it does this it is considered a move or step. it repeats this process untill a child state is the solution. Once the solution is found we use a backtrace function that finds the direct pass from the first mother state to the final child state.
 
 - **Beam search**
+our beam search heuristic is applied to our breadth-first algorithm in the bigger board sizes (9x9, 12x12). Instead of going through all the possible child states it randomly selects an x amount of child states to continue breadth-first on untill it finds the solution. This is because the state-space of these board is so large, which means it would take too long for our breadth-first algorithm to finish these boards.
+
 
 ## - Objective function
 
