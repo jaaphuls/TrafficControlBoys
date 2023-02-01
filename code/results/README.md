@@ -26,3 +26,15 @@ It also contains a txt file with the terminal output of the game and algorithm -
 | `Game 6 (9x9)` | *18582 steps* | *no output yet* | *no output yet* |
 | `Game 7 (12x12)` | *38410 steps* | *no output yet* | *no output yet* |
 | `Hardest game (6x6)` | *18704 steps* | *49 steps* | *69 steps* |
+
+*This table shows the time required to reach the solution (random algorithm displays the mean of 1000 iterations)*
+|     | `Random algorithm` | `Breadth first search algorithm` | `Random beam search algorithm` |
+| --- | --- | --- | --- |
+| `Game 1 (6x6)` | *0.13 seconds* | *0.34 seconds* | *0.30 seconds* |
+| `Game 2 (6x6)` | *0.04 seconds* | *1.99 seconds* | *1.88 seconds* |
+| `Game 3 (6x6)` | *0.50 seconds* | *6.67 seconds* | *5.15 seconds* |
+| `Game 4 (9x9)` | *0.78 seconds* | *527 seconds* | *409 seconds* |
+| `Game 5 (9x9)` | *1.04 seconds* | *no output yet* | *no output yet* |
+| `Game 6 (9x9)` | *1.03 seconds* | *no output yet* | *no output yet* |
+| `Game 7 (12x12)` | *4.19 seconds* | *no output yet* | *no output yet* |
+| `Hardest game (6x6)` | *0.49 seconds* | *13.94 seconds* | *11.38 seconds* |
