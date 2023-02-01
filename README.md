@@ -1,6 +1,7 @@
 # Rush hour project
 
-This project consist of solving various Rush Hour puzzels. There are 2 types of cars, there are cars that cover two spaces on the board and there are trucks that cover 3 spaces on the board. The puzzle is solved when the red car is moved out the exit in the board by shifting the cars and truck out of the path of the red car. It is not possible to move one car over the other car or pick it up. It is really hard to decide if one move is helpfull to do or if it just makes it worse. All of the results we collected are listed in the results folder and some insights are given in the [results README](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/README.md). The goal is to create an algorithm that solves the puzzels in as few steps as possible as displayed in the image below.
+This project consists of solving various Rush Hour puzzles. On the game board, there are 2 types of vehicles: cars, that occupy two spaces, and trucks, that occupy 3 spaces on the board. The puzzle is solved when the red car is moved through the exit on the board by shifting the cars and truck out of the path of the red car. It is not possible to move one car over the other car or to pick it up. t can be very difficult to decide whether a move will bring you closer to the solution or further away.
+All the results we have collected are listed in the results folder and some insights are provided in the [results README](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/README.md). The goal is to create an algorithm that solves the puzzels in as few steps as possible as displayed in the image below.
 
 ![RushHour2](https://user-images.githubusercontent.com/98396172/211304990-5ac416e4-6c5f-41ac-90bc-79ca68478e87.jpeg)
 
@@ -113,6 +114,8 @@ The state spaces for the various gameboards in our data directory is calculated 
 9x9 (game 5) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{6} = 2.12\cdot 10^{21}$\
 9x9 (game 6) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{8} = 1.91\cdot 10^{23}$\
 12x12 (game 7) = ${\left( 12 - 1 \right)}^{28}\cdot {\left( 12 - 2 \right)}^{16} = 1.44\cdot 10^{45}$\
+
+These large numbers show us that the state space of the games of Rush Hour are very high. This may cause problems in finding an optimal solution for some of the boards. For instance, game 7's state space is incredibly high. This will probably result in a breadth first search taking too long to find the ideal solution, which is why a beam search algorithm may be a good idea for solving these bigger game boards.
 
 ## Auteurs
 - David van Hulst
