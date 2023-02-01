@@ -90,13 +90,22 @@ if __name__ == '__main__':
         print(f"the amount of steps made: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
-        file_name = f"code/results/{board_size}x{board_size}_{game_number}_breadth_first.csv"
+        file_name = f"code/results/breadth_first_search/{board_size}x{board_size}_{game_number}_bfs.csv"
 
         with open(file_name, "w", newline="") as file:
             writer = csv.writer(file)
             writer.writerow(["car", "move"])
             for item in the_path:
                 writer.writerow(item)
+
+        lines = ['\n ------------------------------------------ \n ', f'Game number: {game_number}, algorithm: beam  search', f"the runtime was: {runtime} seconds", 
+        f"the amount of states visited is: {states_visited}", f"the amount of steps made: {step}", f"The path of movements is: {the_path}", 
+        '\n ------------------------------------------ \n ']
+                
+        with open(f'code/results/breadth_first_search/{board_size}x{board_size}_{game_number}_terminal_output_bfs.txt', 'w') as f:
+            for line in lines:
+                f.write(line)
+                f.write('\n')
 
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 
         print("Calculating ... ... ")
