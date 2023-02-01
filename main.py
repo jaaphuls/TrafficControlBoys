@@ -70,13 +70,17 @@ if __name__ == '__main__':
         # run the random algorithm until a solution is found
         step, runtime, the_path = random_step(board, board_size)
 
-        # give the user some information about the run
-        print('\n ------------------------------------------ \n ')
-        print(f'Game number: {game_number}, algorithm: random')
-        print(f"The runtime was: {runtime} seconds")
-        print(f"The amount of steps taken is: {step}")
-        print(f"The path of movements is: {the_path}")
-        print('\n ------------------------------------------ \n ')
+        # create lines with information about the run
+        lines = ['\n ------------------------------------------ \n ', 
+                f'Game number: {game_number}, algorithm: random', 
+                f"the runtime was: {runtime} seconds", 
+                f"The amount of steps taken is: {step}", 
+                f"The path of movements is: {the_path}", 
+                '\n ------------------------------------------ \n ']
+
+        # give the user some information about the run in the terminal
+        for line in lines:
+            print(line)
 
         # create the output file name for the random algorithm
         file_name = f"{board_size}x{board_size}_{game_number}_random.csv"
@@ -87,14 +91,6 @@ if __name__ == '__main__':
             writer.writerow(["car", "move"])
             for item in the_path:
                 writer.writerow(item)
-
-        # create lines with information about the run
-        lines = ['\n ------------------------------------------ \n ', 
-                f'Game number: {game_number}, algorithm: random', 
-                f"the runtime was: {runtime} seconds", 
-                f"The amount of steps taken is: {step}", 
-                f"The path of movements is: {the_path}", 
-                '\n ------------------------------------------ \n ']
 
         # write the lines in the output file   
         with open(f'code/results/random_results/{board_size}x{board_size}_{game_number}terminal_output_random.txt', 'w') as f:
@@ -116,14 +112,18 @@ if __name__ == '__main__':
         # run the breadth first search algorithm until a solution is found
         runtime, states_visited, step, the_path = breadth_first(board, board_size)
 
-        # give the user some information about the run
-        print('\n ------------------------------------------ \n ')
-        print(f'Game number: {game_number}, algorithm: breadth first search')
-        print(f"the runtime was: {runtime} seconds")
-        print(f"the amount of states visited is: {states_visited}")
-        print(f"the amount of steps made: {step}")
-        print(f"The path of movements is: {the_path}")
-        print('\n ------------------------------------------ \n ')
+        # create lines with information about the run
+        lines = ['\n ------------------------------------------ \n ',
+                f'Game number: {game_number}, algorithm: breadth first search',
+                f"the runtime was: {runtime} seconds", 
+                f"the amount of states visited is: {states_visited}", 
+                f"the amount of steps made: {step}", 
+                f"The path of movements is: {the_path}", 
+                '\n ------------------------------------------ \n ']
+
+        # give the user some information about the run in the terminal
+        for line in lines:
+            print(line)
 
         # create the output file name for the breadth first search algorithm
         file_name = f"{board_size}x{board_size}_{game_number}_bfs.csv"
@@ -134,15 +134,6 @@ if __name__ == '__main__':
             writer.writerow(["car", "move"])
             for item in the_path:
                 writer.writerow(item)
-
-        # create lines with information about the run
-        lines = ['\n ------------------------------------------ \n ',
-                f'Game number: {game_number}, algorithm: breadth first search',
-                f"the runtime was: {runtime} seconds", 
-                f"the amount of states visited is: {states_visited}", 
-                f"the amount of steps made: {step}", 
-                f"The path of movements is: {the_path}", 
-                '\n ------------------------------------------ \n ']
 
         # write the lines in the output file  
         with open(f'code/results/breadth_first_search/{board_size}x{board_size}_{game_number}_terminal_output_bfs.txt', 'w') as f:
@@ -163,14 +154,18 @@ if __name__ == '__main__':
         # run the random beam search algorithm with k = 3 until a solution is found
         runtime, states_visited, step, the_path = random_beam_search(board, board_size, 3)
 
-        # give the user some information about the run
-        print('\n ------------------------------------------ \n ')
-        print(f'Game number: {game_number}, algorithm: beam  search')
-        print(f"the runtime was: {runtime} seconds")
-        print(f"the amount of states visited is: {states_visited}")
-        print(f"the amount of steps made: {step}")
-        print(f"The path of movements is: {the_path}")
-        print('\n ------------------------------------------ \n ')
+        # create lines with information about the run
+        lines = ['\n ------------------------------------------ \n ', 
+                f'Game number: {game_number}, algorithm: beam  search', 
+                f"the runtime was: {runtime} seconds", 
+                f"the amount of states visited is: {states_visited}", 
+                f"the amount of steps made: {step}", 
+                f"The path of movements is: {the_path}", 
+                '\n ------------------------------------------ \n ']
+
+        # give the user some information about the run in the terminal
+        for line in lines:
+            print(line)
 
         # create the output file name for the random beam search algorithm
         file_name = f"{board_size}x{board_size}_{game_number}_rbs.csv"
@@ -181,15 +176,6 @@ if __name__ == '__main__':
             writer.writerow(["car", "move"])
             for item in the_path:
                 writer.writerow(item)
-
-        # create lines with information about the run
-        lines = ['\n ------------------------------------------ \n ', 
-                f'Game number: {game_number}, algorithm: beam  search', 
-                f"the runtime was: {runtime} seconds", 
-                f"the amount of states visited is: {states_visited}", 
-                f"the amount of steps made: {step}", 
-                f"The path of movements is: {the_path}", 
-                '\n ------------------------------------------ \n ']
 
         # write the lines in the output file              
         with open(f'code/results/random_beam_search/{board_size}x{board_size}_{game_number}_terminal_output_rbs.txt', 'w') as f:
