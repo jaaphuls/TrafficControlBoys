@@ -112,9 +112,9 @@ if __name__ == '__main__':
         print(f"the amount of steps made: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
-        file_name = f"code/results/{board_size}x{board_size}_{game_number}_random_beam_search.csv"
+        file_name = f"{board_size}x{board_size}_{game_number}_rbs.csv"
 
-        with open(file_name, "w", newline="") as file:
+        with open(f'code/results/random_beam_search/{file_name}', "w", newline="") as file:
             writer = csv.writer(file)
             writer.writerow(["car", "move"])
             for item in the_path:
@@ -124,7 +124,7 @@ if __name__ == '__main__':
                 f"the amount of states visited is: {states_visited}", f"the amount of steps made: {step}", f"The path of movements is: {the_path}", 
                 '\n ------------------------------------------ \n ']
                 
-        with open(f'code/results/random_beam_search/{game_number}_terminal_output_rbs.txt', 'w') as f:
+        with open(f'code/results/random_beam_search/{board_size}x{board_size}_{game_number}_terminal_output_rbs.txt', 'w') as f:
             for line in lines:
                 f.write(line)
                 f.write('\n')
