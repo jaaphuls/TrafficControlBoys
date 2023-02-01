@@ -47,7 +47,7 @@ It also contains a txt file with the terminal output of the game and algorithm -
 
 ## - Histograms
 
-Three histograms of the random distributions: 
+Three histograms of the random distributions (the others can be found [here](https://github.com/jaaphuls/TrafficControlBoys/tree/main/code/results/random_results/random_algorithm)): 
 
 Game 1: 
 
