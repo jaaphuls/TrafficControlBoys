@@ -15,6 +15,7 @@ import numpy as np
 import time
 from tqdm import tqdm
 from statistics import mean
+import csv
 
 if __name__ == '__main__':
     
@@ -65,6 +66,13 @@ if __name__ == '__main__':
         print(f"The amount of steps taken is: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
+        file_name = f"code/results/{board_size}x{board_size}_{game_number}_random.csv"
+
+        with open(file_name, "w", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow(["car", "move"])
+            for item in the_path:
+                writer.writerow(item)
 
 
     if (algorithm == '2' or algorithm.lower() == 'breadth first search'): 
@@ -82,6 +90,13 @@ if __name__ == '__main__':
         print(f"the amount of steps made: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
+        file_name = f"code/results/{board_size}x{board_size}_{game_number}_breadth_first.csv"
+
+        with open(file_name, "w", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow(["car", "move"])
+            for item in the_path:
+                writer.writerow(item)
 
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 
         print("Calculating ... ... ")
@@ -89,12 +104,21 @@ if __name__ == '__main__':
         board.create_state()
         board.create_board()
         board.visualize()
-        runtime, states_visited = random_beam_search(board, board_size)
+        runtime, states_visited, step, the_path = random_beam_search(board, board_size, 3)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: beam  search')
         print(f"the runtime was: {runtime} seconds")
         print(f"the amount of states visited is: {states_visited}")
+        print(f"the amount of steps made: {step}")
+        print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
+        file_name = f"code/results/{board_size}x{board_size}_{game_number}_random_beam_search.csv"
+
+        with open(file_name, "w", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow(["car", "move"])
+            for item in the_path:
+                writer.writerow(item)
 
 
 
