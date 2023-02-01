@@ -51,8 +51,7 @@ Three histograms of the random distributions (the others can be found [here](htt
 
 Game 1: 
 
-<img src="[Assets/icon.png](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_2_2_steps.png)" width="200">
-<!-- ![game1](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_2_2_steps.png) -->
+![game1](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_2_2_steps.png) 
 
 
 Game 2: 
