@@ -65,9 +65,6 @@ if __name__ == '__main__':
         print("Calculating ... ... ")
         # Run main with provide arguments
         board = Board(car_list, board_size)
-        board.create_state()
-        board.create_board()
-        board.visualize()
         step, runtime, the_path = random_step(board, board_size)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: random')
@@ -104,9 +101,6 @@ if __name__ == '__main__':
         print("Calculating ... ... ")
         # Run main with provide arguments
         board = Board(car_list, board_size)
-        board.create_state()
-        board.create_board()
-        board.visualize()
         runtime, states_visited, step, the_path = breadth_first(board, board_size)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: breadth first search')
@@ -143,9 +137,6 @@ if __name__ == '__main__':
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 
         print("Calculating ... ... ")
         board = Board(car_list, board_size)
-        board.create_state()
-        board.create_board()
-        board.visualize()
         runtime, states_visited, step, the_path = random_beam_search(board, board_size, 3)
         print('\n ------------------------------------------ \n ')
         print(f'Game number: {game_number}, algorithm: beam  search')
