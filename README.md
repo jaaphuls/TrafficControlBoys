@@ -83,11 +83,20 @@ Think about constraits; no negative amount of steps, no jumping of cars etc.
 
 ## - State-space
 
+To better understand the case and to have an idea of the scale of the problem, it may be a good idea to get an estimation of the size of the state space of the case.
+The state space is the total number of valid states that are possible in the case. In our case, the number of possible positions that the vehicles can have on the board. 
+To calculate this number, it must first be clear which formula should be used. There are four possible formulas, which are listed below. Which formula is applicable in our case depends on two questions:
+
+1. Does the order matter?
+2. Can the same possibilities be repeated?
 
 ![State-space formulas](https://user-images.githubusercontent.com/117074945/216120687-4053e0e8-6c7a-4aa4-b5cd-e942caf0519f.png)
-Order = does order matter?
-Repetition = can I repeat same possibilitiy?
-                
+
+In our case, "Order" actually means the positions on the game board. These properties are of course important, so the first answer is "Yes". The second question seems a bit more difficult to answer, but for us, this question actually means: "Are vehicles allowed to have been in the same place?"
+
+This is therefore also a "Yes", because when a parking space is available, a car may be moved there, even if this space has been occupied before.
+
+This together means that the general formula to be used is: $$state space = {n)}^{r}
 
 ## Auteurs
 - David van Hulst
