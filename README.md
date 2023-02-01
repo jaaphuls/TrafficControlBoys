@@ -5,6 +5,10 @@ This project consist of solving various Rush Hour puzzels. There are 2 types of 
 
 ![RushHour2](https://user-images.githubusercontent.com/98396172/211304990-5ac416e4-6c5f-41ac-90bc-79ca68478e87.jpeg)
 
+
+![GIF Rush Hour](https://github.com/jaaphuls/TrafficControlBoys/blob/main/data/gif_rh_AdobeExpress.gif)
+
+
 ## - Requirements
 
 This codebase is written entirely in Python 3.9.13
