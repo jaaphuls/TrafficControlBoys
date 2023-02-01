@@ -2,13 +2,14 @@
 
 In this section the results of our experiments will be shown and evaluated. 
 
+## - Structure
+
 The folder is divided into three subfolders: 
   - **breadth_first_search**: contains the results from the breadth first search algorithm
   - **random_beam_search**: contains the results from the random beam search algorithm
   - **random_results**: contains the results from the random algorithm
 
-
-
+## - Tables
 
 *This table shows the steps required to reach the solution (random algorithm displays the mean of 1000 iterations)*
 |     | `Random algorithm` | `Breadth first search algorithm` | `Random beam search algorithm` |
