@@ -20,7 +20,6 @@ class Board:
         self.car_list = cars
         self.create_board()
         self.string_value = self.create_state()
-        self.visualize()
     
     def create_board(self):
         """
@@ -97,7 +96,7 @@ class Board:
                 step_left = 1
 
                 # check if the Vehicle can (still) make a move to the left
-                while x_left >= 0 and self.rush_board[car.y, x_left] == '.':  
+                while x_left >= 0 and self.rush_board[car.y, x_left] == 0:  
 
                     # create a deep copy of the car list to remain the current state                          
                     new_car_list = copy.deepcopy(self.car_list)
@@ -118,7 +117,7 @@ class Board:
                 step_right = 1
 
                 # check if the Vehicle can (still) make a move to the right
-                while x_right < self.N and self.rush_board[car.y, x_right] == '.': 
+                while x_right < self.N and self.rush_board[car.y, x_right] == 0: 
 
                     # create a deep copy of the car list to remain the current state 
                     new_car_list = copy.deepcopy(self.car_list)
@@ -147,7 +146,7 @@ class Board:
                 step_down = 1
 
                 # check if the Vehicle can (still) make a move down
-                while y_down < self.N and self.rush_board[y_down, car.x] == '.':
+                while y_down < self.N and self.rush_board[y_down, car.x] == 0:
 
                     # create a deep copy of the car list to remain the current state 
                     new_car_list = copy.deepcopy(self.car_list)
@@ -168,7 +167,7 @@ class Board:
                 step_up = 1
 
                 # check if the Vehicle can (still) make a move up
-                while y_up >= 0 and self.rush_board[y_up, car.x] == '.':
+                while y_up >= 0 and self.rush_board[y_up, car.x] == 0:
 
                     # create a deep copy of the car list to remain the current state 
                     new_car_list = copy.deepcopy(self.car_list)
@@ -186,18 +185,3 @@ class Board:
                     movement_list.append(((car.car), -1))
                 
         return possible_boards, movement_list
-
-
-    ### deze functie kan weg als alles klaar is ###
-
-    def visualize(self):
-        possible_moves = []
-
-        for row in range(len(self.rush_board)):
-            for column in range(len(self.rush_board)):
-
-                if self.rush_board[row, column] == 0:
-                   possible_moves.append((row, column))
-                   self.rush_board[row, column] = '.'
-        # print(self.rush_board)
-        return self.rush_board
