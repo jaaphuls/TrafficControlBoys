@@ -5,7 +5,6 @@ from code.visualisation.visualise import show_board
 from code.algorithms.random_algo import random_step
 from code.algorithms.backtracking import backtrace
 from code.algorithms.breadth_first_algo import breadth_first
-from code.algorithms.beam_search_algo import beam_search
 from code.algorithms.random_beam_search_algo import random_beam_search
 import pandas as pd
 import argparse
@@ -90,9 +89,9 @@ if __name__ == '__main__':
         print(f"the amount of steps made: {step}")
         print(f"The path of movements is: {the_path}")
         print('\n ------------------------------------------ \n ')
-        file_name = f"code/results/breadth_first_search/{board_size}x{board_size}_{game_number}_bfs.csv"
+        file_name = f"{board_size}x{board_size}_{game_number}_bfs.csv"
 
-        with open(file_name, "w", newline="") as file:
+        with open(f'code/results/breadth_first_search/{file_name}', "w", newline="") as file:
             writer = csv.writer(file)
             writer.writerow(["car", "move"])
             for item in the_path:
