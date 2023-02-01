@@ -1,0 +1,11 @@
+
+ ------------------------------------------ 
+ 
+Game number: 2, algorithm: beam  search
+the runtime was: 1.9944138526916504 seconds
+the amount of states visited is: 2620
+the amount of steps made: 15
+The path of movements is: [('A', -2), ('B', -2), ('C', -1), ('D', -1), ('G', -2), ('H', -1), ('F', 2), ('X', -1), ('K', -2), ('I', -3), ('L', -3), ('K', 2), ('F', -1), ('H', 3), ('X', 3)]
+
+ ------------------------------------------ 
+ 
