@@ -33,6 +33,10 @@ def random_beam_search(board, board_size, k):
     states_visited = 0
     # states_visited is a variable that stores the number of states visited during the search.
 
+    choices_queue = queue.Queue()
+    # Initialise the queue for the algorithm
+    choices_queue.put(board)
+    # Put the begin state in the queue
 
     # The following if-statements determine the end coordinate of the red car based on the size of the board.     
     if board_size == 6: 
