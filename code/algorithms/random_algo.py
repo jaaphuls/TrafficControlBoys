@@ -42,15 +42,7 @@ def random_step(board, board_size):
         # here the board is overwritten
         board = Board(this_choice, board_size)
 
-        # this is so visualize the board 
-        # vis_flo = show_board(this_choice, board_size)
         step += 1
-
-        # here the board is created
-        board.create_board()
-
-        # this is used by the check_move
-        board.visualize()
     
     the_path = check_50_path(movement_list)
     
