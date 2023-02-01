@@ -49,6 +49,11 @@ The following list describes the most important folders and files in the project
   - **/code/classes**: contains the code for the classes of this case
   - **/code/visualisation**: contains the code for the visualization
 - **/data**: contains the various data files needed to create and visualize the board
+- **/docs**: contains the UML diagram of the code
+- **/.gitignore**: specifies intentionally untracked files that Git should ignore
+- **/README.md**: contains the readme file that is shown on the main page of the repository (the file you are currently reading)
+- **/main.py**: this is the main python file in which all the needed files are called and output is created
+- **/requirements.txt**: contains all the packages that need to be installed to run the script
 
 ## - Objective function
 
