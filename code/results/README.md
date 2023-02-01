@@ -54,11 +54,12 @@ Game 1:
 ![game1](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_2_2_steps.png) 
 
 
-Game 2: 
+Game 5: 
 
-
+![game5](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_5_2_steps.png)
 
 Game 8 (hardest game): 
 
+![game8](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/random_results/random_algorithm/2_step/results_steps_game_8_2_steps.png)
 
 ## - Evaluation
