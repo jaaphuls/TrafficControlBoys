@@ -93,10 +93,9 @@ To calculate this number, it must first be clear which general formula should be
 ![State-space formulas](https://user-images.githubusercontent.com/117074945/216120687-4053e0e8-6c7a-4aa4-b5cd-e942caf0519f.png)
 
 In our case, "Order" actually means the positions on the game board. These properties are of course important, so the first answer is "Yes". The second question seems a bit more difficult to answer, but for us, this question actually means: "Are vehicles allowed to have been in the same place?"
-
-This is therefore also a "Yes", because when a parking space is available, a car may be moved there, even if this space has been occupied before.
-
+The answer to the second question is therefore also a "Yes", because when a parking space is available, a car may be moved there, even if this space has been occupied before.
 This together means that the general formula to be used is:  ${n}^{r}$
+In this formula, $n$ would correspond to the number of choices a vehicle can make, in other words, the number of positions it can be moved to. This number is raised to the exponent r, which corresponds to the total amount of vehicles that could make a move.
 
 ## Auteurs
 - David van Hulst
