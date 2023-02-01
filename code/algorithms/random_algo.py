@@ -6,12 +6,13 @@ from code.visualisation.visualise import show_board
 from code.algorithms.backtracking import backtrace, check_50_path
 
 
-''' In random_step a random car is selected and moved and therefore create a new state. 
-The inputs for the function are, a board that contains the info of what car is where on the board,
- and the board size wich is needed to know when the game is solved for the end position of the red (X) car. 
-Also the time and the amound of steps it takes to solve the game is tracked. '''
-        
 def random_step(board, board_size):
+    ''' 
+    In random_step a random car is selected and moved and therefore create a new state. 
+    The inputs for the function are, a board that contains the info of what car is where on the board,
+    and the board size wich is needed to know when the game is solved for the end position of the red (X) car. 
+    Also the time and the amound of steps it takes to solve the game is tracked. 
+    '''
 
     # start the time and step count
     start_time = time.time()
