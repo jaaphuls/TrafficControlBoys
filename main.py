@@ -51,6 +51,8 @@ if __name__ == '__main__':
         car_list.append(Vehicle(row['car'], row['orientation'], row['col'], row['row'], row['length']))
 
 
+    # ------------------------------------- random algorithm -------------------------------------      
+
     if (algorithm == '1' or algorithm.lower() == 'random'): 
         print("Calculating ... ... ")
         # Run main with provide arguments
@@ -81,6 +83,7 @@ if __name__ == '__main__':
                 f.write(line)
                 f.write('\n')
 
+    # ------------------------------------- breadth first search algorithm -------------------------------------      
 
     if (algorithm == '2' or algorithm.lower() == 'breadth first search'): 
         print("Calculating ... ... ")
@@ -114,6 +117,8 @@ if __name__ == '__main__':
                 f.write(line)
                 f.write('\n')
 
+        # ------------------------------------- random beam search algorithm -------------------------------------      
+
     if (algorithm == '3' or algorithm.lower() == 'random beam search'): 
         print("Calculating ... ... ")
         board = Board(car_list, board_size)
@@ -144,6 +149,12 @@ if __name__ == '__main__':
             for line in lines:
                 f.write(line)
                 f.write('\n')
+
+
+
+
+
+
 
 
 

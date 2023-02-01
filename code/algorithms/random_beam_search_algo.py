@@ -6,7 +6,7 @@ from code.classes.board import Board
 from code.visualisation.visualise import show_board
 from code.algorithms.backtracking import backtrace, check_50_path
 
-# breadth first algorithm
+# random beam search first algorithm
 def random_beam_search(board, board_size, k):
     dict_moves = {}
     dict_moves[board] = None
