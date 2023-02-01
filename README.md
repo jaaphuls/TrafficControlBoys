@@ -13,7 +13,7 @@ This codebase is written entirely in Python 3.9.13
 
 An example can be run by calling:
 
-''' python main.py '''
+``` python main.py ```
 
 This python script will run several loops using different algorithms to find solution of the board. 
 
