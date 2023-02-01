@@ -47,6 +47,7 @@ The following list describes the most important folders and files in the project
 - **/code**: contains all the code of this project
   - **/code/algorithms**: contains the code for the algorithms
   - **/code/classes**: contains the code for the classes of this case
+  - **/code/results**: contains all the results of the various algorithms
   - **/code/visualisation**: contains the code for the visualization
 - **/data**: contains the various data files needed to create and visualize the board
 - **/docs**: contains the UML diagram of the code
