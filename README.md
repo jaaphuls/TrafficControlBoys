@@ -61,6 +61,16 @@ The following list describes the most important folders and files in the project
 - **/main.py**: this is the main python file in which all the needed files are called and output is created
 - **/requirements.txt**: contains all the packages that need to be installed to run the script
 
+## - Algorithms
+
+Hier een stukje schrijven over elk algoritme: 
+
+- **Random**
+
+- **Breadth first search**
+
+- **Beam search**
+
 ## - Objective function
 
 Try to minimalise the amount of steps that it takes to solve the puzzle
