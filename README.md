@@ -111,7 +111,7 @@ The state spaces for the various gameboards in our data directory is calculated 
 9x9 (game 4) = ${\left( 9 - 1 \right)}^{12}\cdot {\left( 9 - 2 \right)}^{10} = 1.94\cdot 10^{19}$\
 9x9 (game 5) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{6} = 2.12\cdot 10^{21}$\
 9x9 (game 6) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{8} = 1.91\cdot 10^{23}$\
-12x12 (game 7) = ${\left( 12 - 1 \right)}^{28}\cdot {\left( 12 - 2 \right)}^{16} = 1.44\cdot 10^{45}$\
+12x12 (game 7) = ${\left( 12 - 1 \right)}^{28}\cdot {\left( 12 - 2 \right)}^{16} = 1.44\cdot 10^{45}$
 
 These large numbers show us that the state space of the games of Rush Hour are very high. This may cause problems in finding an optimal solution for some of the boards. For instance, game 7's state space is incredibly high. This will probably result in a breadth first search taking too long to find the ideal solution, which is why a beam search algorithm may be a good idea for solving these bigger game boards.
 
