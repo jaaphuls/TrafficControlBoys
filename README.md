@@ -99,8 +99,11 @@ This together means that the general formula to be used is:  ${n}^{r}$.\
 In this formula, $n$ would correspond to the number of choices a vehicle can make. In other words: the number of positions it can be moved to. This number is raised to the exponent $r$, which corresponds to the total amount of vehicles that could make a move.
 
 The number of possible moves always depends on the current game board position, which is constantly changing. This makes it difficult to exactly calculate the total state space in this case, which is why we need a simplification:\
-Now let's imagine that vehicles can drive over each other, stand on top of each other and thus no longer obstruct each other's way. Although this is just one simplification, the amount of possible moves will now only be determined by the start positions and will not change together with the board. This simplification can lead to a larger state space, but it is easier to calculate and gives a good estimation of how the board size and especially the number of vehicles drastically increase the state space.
+Now let's imagine that vehicles can drive over each other, stand on top of each other and thus no longer obstruct each other's way. Although this is just one simplification, the amount of possible moves will now only be determined by the start positions and will not change together with the board.\
+This simplification can lead to a larger state space, but it is easier to calculate and gives a good estimation of how the board size and especially the number of vehicles drastically increase the state space.
 
+Because the number of moves a vehicle can make on a free board of width $N$ is equal to $N - 1$ for a car and $N-2$ for a truck, the state space formula would then be:
+$$state \: space={\left( width - 1 \right)}^{number\:of\:cars}\cdot {\left( width - 2 \right)}^{number\:of\:trucks}$$
 ## Auteurs
 - David van Hulst
 - Jaap Hulsbosch
