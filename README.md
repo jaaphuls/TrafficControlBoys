@@ -8,6 +8,11 @@ This project consist of solving various Rush Hour puzzels. There are 2 types of 
 ## - Requirements
 
 This codebase is written entirely in Python 3.9.13
+requirements.txt contains all the packages needed to succesfully run the file. 
+To install these packages use the following code: 
+
+``` pip install -r requirements.txt ```
+
 
 ## - Usage
 
