@@ -1,6 +1,6 @@
 # Rush hour project
 
-This project consists of solving various Rush Hour puzzles. On the game board, there are 2 types of vehicles: cars, that occupy two spaces, and trucks, that occupy 3 spaces on the board. The puzzle is solved when the red car is moved through the exit on the board by shifting the cars and trucks out of the path of the red car. The player is not allowed to move one car over the other car or remove it from the board. It can be very difficult to decide whether a move brings you closer to the solution or further away. The goal is to create an algorithm that solves the puzzles in as few steps as possible as displayed in the image below.
+This project consists of solving various Rush Hour puzzles. On the game board, there are 2 types of vehicles: cars, that occupy two spaces, and trucks, that occupy 3 spaces on the board. The puzzle is solved when the red car is moved through the exit on the board by shifting the cars and trucks out of the path of the red car. The player is not allowed to move one car over another car or remove it from the board. It can be very difficult to decide whether a move brings you closer to the solution or further away. The goal is to create an algorithm that solves the puzzles in as few steps as possible as displayed in the image below.
 All the results we have collected are listed in the results folder and some insights are provided in the [results README](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/README.md). 
 
 ![RushHour2](https://user-images.githubusercontent.com/98396172/211304990-5ac416e4-6c5f-41ac-90bc-79ca68478e87.jpeg)
@@ -43,7 +43,7 @@ Which algorithm would you like to use?
 3. beam search 
 ```
 
-The scirpt will run the chosen algorithm on the chosen game and output the file in the [results](https://github.com/jaaphuls/TrafficControlBoys/tree/main/code/results) folder
+The script will run the chosen algorithm on the chosen game and output the file in the [results](https://github.com/jaaphuls/TrafficControlBoys/tree/main/code/results) folder
 
 
 ## - Structure
