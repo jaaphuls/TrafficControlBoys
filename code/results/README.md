@@ -47,6 +47,17 @@ It also contains a txt file with the terminal output of the game and algorithm -
 
 ## - Histograms
 
+Three histograms of the random distributions: 
+
+Game 1: 
+
+
+
+Game 2: 
+
+
+
+Game 8 (hardest game): 
 
 
 ## - Evaluation
