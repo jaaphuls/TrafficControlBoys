@@ -9,7 +9,8 @@ The folder is divided into three subfolders:
   - **random_beam_search**: contains the results from the random beam search algorithm
   - **random_results**: contains the results from the random algorithm
 
-Every subfolder contains a csv file with cointaining the moves -- ([example](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/breadth_first_search/6x6_1_bfs.csv)) 
+Every subfolder contains a csv file cointaining the moves -- ([example](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/breadth_first_search/6x6_1_bfs.csv)) 
+It also contains a txt file with the terminal output of the game and algorithm -- ([example](https://github.com/jaaphuls/TrafficControlBoys/blob/main/code/results/breadth_first_search/6x6_1_terminal_output_bfs.txt))
 
 ## - Tables
 
