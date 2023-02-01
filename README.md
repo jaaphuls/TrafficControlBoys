@@ -37,6 +37,7 @@ Which algorithm would you like to use?
 3. beam search 
 ```
 
+The scirpt will run the chosen algorithm on the chosen game and output the file in the [results](https://github.com/jaaphuls/TrafficControlBoys/tree/main/code/results) folder
 
 
 ## - Structure
