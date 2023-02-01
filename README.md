@@ -94,8 +94,12 @@ To calculate this number, it must first be clear which general formula should be
 
 In our case, "Order" actually means the positions on the game board. These properties are of course important, so the first answer is "Yes". The second question seems a bit more difficult to answer, but for us, this question actually means: "Are vehicles allowed to have been in the same place?"
 The answer to the second question is therefore also a "Yes", because when a parking space is available, a car may be moved there, even if this space has been occupied before.
+
 This together means that the general formula to be used is:  ${n}^{r}$
 In this formula, $n$ would correspond to the number of choices a vehicle can make, in other words, the number of positions it can be moved to. This number is raised to the exponent r, which corresponds to the total amount of vehicles that could make a move.
+
+The number of possible moves always depends on the current game board position, which is constantly changing. This makes it difficult to exactly calculate the total state space in this case, which is why we need a simplification:
+Now let's imagine that vehicles can drive over each other, stand on top of each other and thus no longer obstruct each other's way. Although this is just one simplification, the amount of possible moves will now only be determined by the start positions and will not change together with the board. This simplification can lead to a larger state space, but it is easier to calculate and gives a good estimation of how the board size and especially the number of vehicles drastically increase the state space.
 
 ## Auteurs
 - David van Hulst
