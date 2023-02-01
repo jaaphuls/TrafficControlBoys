@@ -65,8 +65,7 @@ The following list describes the most important folders and files in the project
 
 Hier een stukje schrijven over elk algoritme: 
 
-- **Random**
-
+- **Random** 
 Our random algorithm is given a start state and from this start state checks for every possible next-state. it picks one of these next-stape and considers that a step in the game. Our algorithm has no added constraints next to the rules of the game rush-hour, thus it can revisit previous states. The algorithm repeats this process untill a solution is found.
 
 - **Breadth first search**
