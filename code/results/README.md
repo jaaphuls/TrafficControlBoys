@@ -8,3 +8,11 @@ In this section the results of our experiments will be shown and evaluated.
 | . |      :---:   |     :---:      |   :---: |
 | . | git status   | git status     | git status    |
 | . | git diff     | git diff       | git diff      |
+
+
+| Column 1 | Column 2 | Column 3 | Column 4 |
+| --- | --- | --- | --- |
+| Row 1, Column 1 | Row 1, Column 2 | Row 1, Column 3 | Row 1, Column 4 |
+| Row 2, Column 1 | Row 2, Column 2 | Row 2, Column 3 | Row 2, Column 4 |
+| Row 3, Column 1 | Row 3, Column 2 | Row 3, Column 3 | Row 3, Column 4 |
+| Row 4, Column 1 | Row 4, Column 2 | Row 4, Column 3 | Row 4, Column 4 |
