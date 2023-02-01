@@ -106,13 +106,13 @@ Because the number of moves a vehicle can make on a free board of width $N$ is e
 $$state\ space={\left( width - 1 \right)}^{number\ of\ cars}\cdot {\left( width - 2 \right)}^{number\ of\ trucks}$$
 The state spaces for the various gameboards in our data directory is calculated below:
 
-6x6 (game 1) = ${\left( 6 - 1 \right)}^{12}\cdot {\left( 6 - 2 \right)}^{1} = 976,562,500$
-6x6 (game 2) = ${\left( 6 - 1 \right)}^{12}\cdot {\left( 6 - 2 \right)}^{1} = 976,562,500$
-6x6 (game 3) = ${\left( 6 - 1 \right)}^{6}\cdot {\left( 6 - 2 \right)}^{3} = 976,562,500$
-9x9 (game 4) = ${\left( 9 - 1 \right)}^{12}\cdot {\left( 9 - 2 \right)}^{10} = 1.94\cdot 10^{19}$
-9x9 (game 5) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{6} = 1.94\cdot 10^{19}$
-9x9 (game 6) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{8} = 1.94\cdot 10^{19}$
-12x12 (game 7) = ${\left( 12 - 1 \right)}^{28}\cdot {\left( 12 - 2 \right)}^{16} = 1.44\cdot 10^{45}$
+6x6 (game 1) = ${\left( 6 - 1 \right)}^{12}\cdot {\left( 6 - 2 \right)}^{1} = 976,562,500$\
+6x6 (game 2) = ${\left( 6 - 1 \right)}^{12}\cdot {\left( 6 - 2 \right)}^{1} = 976,562,500$\
+6x6 (game 3) = ${\left( 6 - 1 \right)}^{6}\cdot {\left( 6 - 2 \right)}^{3} = 1,000,000$\
+9x9 (game 4) = ${\left( 9 - 1 \right)}^{12}\cdot {\left( 9 - 2 \right)}^{10} = 1.94\cdot 10^{19}$\
+9x9 (game 5) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{6} = 2.12\cdot 10^{21}$\
+9x9 (game 6) = ${\left( 9 - 1 \right)}^{18}\cdot {\left( 9 - 2 \right)}^{8} = 1.91\cdot 10^{23}$\
+12x12 (game 7) = ${\left( 12 - 1 \right)}^{28}\cdot {\left( 12 - 2 \right)}^{16} = 1.44\cdot 10^{45}$\
 
 ## Auteurs
 - David van Hulst
