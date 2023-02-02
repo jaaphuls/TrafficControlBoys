@@ -152,7 +152,7 @@ if __name__ == '__main__':
         board = Board(car_list, board_size)
 
         # run the random beam search algorithm with k = 3 until a solution is found
-        runtime, states_visited, step, the_path = random_beam_search(board, board_size, 3)
+        runtime, states_visited, step, the_path = random_beam_search(board, board_size, 2)
 
         # create lines with information about the run
         lines = ['\n ------------------------------------------ \n ', 
