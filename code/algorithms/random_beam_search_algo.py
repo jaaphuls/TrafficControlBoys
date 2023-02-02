@@ -88,9 +88,9 @@ def random_beam_search(board, board_size, k):
                 optimal_moves = optimal_moves[::-1]
                 # Backtrack the moves for the moves made in the optimal path
 
-                for move in optimal_moves:
+                # for move in optimal_moves:
 
-                    show_board(move.car_list, board_size)
+                #     show_board(move.car_list, board_size)
                     # Visualise the solution
 
                 the_path = check_50_path(optimal_moves)
