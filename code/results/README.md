@@ -24,14 +24,14 @@ It also contains a txt file with the terminal output of the game and algorithm -
 *This table shows the steps required to reach the solution (random algorithm displays the mean of 1000 iterations)*
 |     | `Random algorithm` | `Breadth first search algorithm` | `Random beam search algorithm` |
 | --- | --- | --- | --- |
-| `Game 1 (6x6)` | *6537 steps* | *21 steps* | *27 steps* |
-| `Game 2 (6x6)` | *1534 steps* | *15 steps* | *23 steps* |
-| `Game 3 (6x6)` | *21735 steps* | *33 steps* | *54 steps* |
-| `Game 4 (9x9)` | *16440 steps* | *27 steps* | *44 steps* |
-| `Game 5 (9x9)` | *23627 steps* | *no output yet* | *35 steps* |
-| `Game 6 (9x9)` | *18582 steps* | *no output yet* | *52 steps* |
-| `Game 7 (12x12)` | *38410 steps* | *no output yet* | *no output yet* |
-| `Hardest game (6x6)` | *18704 steps* | *49 steps* | *69 steps* |
+| `Game 1 (6x6)` | *6500 steps* | *21 steps* | *27 steps* |
+| `Game 2 (6x6)` | *1500 steps* | *15 steps* | *23 steps* |
+| `Game 3 (6x6)` | *21000 steps* | *33 steps* | *54 steps* |
+| `Game 4 (9x9)` | *16000 steps* | *27 steps* | *44 steps* |
+| `Game 5 (9x9)` | *23000 steps* | *no output yet* | *35 steps* |
+| `Game 6 (9x9)` | *18000 steps* | *no output yet* | *52 steps* |
+| `Game 7 (12x12)` | *38000 steps* | *no output yet* | *no output yet* |
+| `Hardest game (6x6)` | *18000 steps* | *49 steps* | *69 steps* |
 
 *The next table shows the time required to reach the solution (random algorithm displays the mean of 1000 iterations)*
 |     | `Random algorithm` | `Breadth first search algorithm` | `Random beam search algorithm` |
