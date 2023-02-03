@@ -29,7 +29,7 @@ It also contains a txt file with the terminal output of the game and algorithm -
 | `Game 3 (6x6)` | *21735 steps* | *33 steps* | *54 steps* |
 | `Game 4 (9x9)` | *16440 steps* | *27 steps* | *44 steps* |
 | `Game 5 (9x9)` | *23627 steps* | *no output yet* | *35 steps* |
-| `Game 6 (9x9)` | *18582 steps* | *no output yet* | *no output yet* |
+| `Game 6 (9x9)` | *18582 steps* | *no output yet* | *52 steps* |
 | `Game 7 (12x12)` | *38410 steps* | *no output yet* | *no output yet* |
 | `Hardest game (6x6)` | *18704 steps* | *49 steps* | *69 steps* |
 
